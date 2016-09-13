@@ -4,6 +4,3 @@ require('babel-polyfill')
 
 /* Route */
 import ReactDom from 'react-dom'
-import App from './routes'
-
-ReactDom.render(App, document.getElementById('main'))
