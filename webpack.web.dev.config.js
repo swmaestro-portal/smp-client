@@ -8,8 +8,6 @@ module.exports = {
     app: [
       "webpack-dev-server/client?http://0.0.0.0:8080",
       "webpack/hot/only-dev-server",
-      "bootstrap-sass!./src/styles/theme/bootstrap-sass.config.js",
-      'font-awesome-webpack!./src/styles/theme/font-awesome.config.js',
       "./src/main.js"
     ]
   },
