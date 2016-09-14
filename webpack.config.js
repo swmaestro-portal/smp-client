@@ -28,7 +28,10 @@ var config = {
         loader : 'babel'
       },
       { test: /\.css$/, 
-        loader: ExtractTextPlugin.extract('style', 'css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!postcss-loader') 
+        loader: ExtractTextPlugin.extract("style-loader", "css-loader") 
+      },
+      { test: /\.scss$/, 
+        loader: ExtractTextPlugin.extract('style-loader', 'css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!postcss-loader')
       }
     ]
   },
