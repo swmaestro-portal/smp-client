@@ -1,14 +1,29 @@
+/* External Dependencies */
 import React from 'react'
-import styles from './App.css'
-import styles2 from './App.scss'
+
+/* Internal Dependencies */
+import styles from './App.scss'
+import LeftBar from '../LeftBar'
+import MainPanel from '../MainPanel'
+// import Temp from '../Temp'
+
 
 class App extends React.Component {
-  
+
+  constructor() {
+    super()
+  }
+
+  componentWillMount() {
+    console.log('App mount')
+  }
 
   render() {
-    console.log(1, styles, styles2)
     return (
-      <div className={styles2.temp}> First app </div>
+      <div className={styles.wrapper}>
+        <LeftBar/>
+        <MainPanel/>
+      </div>
     )
   }
 

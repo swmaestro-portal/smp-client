@@ -1,0 +1,6 @@
+{
+  "name": "MainPanel",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./MainPanel.jsx"
+}
