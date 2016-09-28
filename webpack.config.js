@@ -38,7 +38,7 @@ var config = {
     ]
   },
   devServer: {
-    
+    historyApiFallback: true
   }
 };
 

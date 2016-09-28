@@ -17,10 +17,11 @@ class App extends React.Component {
   }
 
   render() {
+    console.log(1, this.props.children)
     return (
       <div className={styles.wrapper}>
-        <LeftBar/>
-        <MainPanel/>
+        app
+        {this.props.children}
       </div>
     )
   }
