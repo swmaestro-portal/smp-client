@@ -12,7 +12,8 @@
   "license": "ISC",
   "dependencies": {
     "react": "^15.3.1",
-    "react-dom": "^15.3.1"
+    "react-dom": "^15.3.1",
+    "react-router": "^2.8.1"
   },
   "devDependencies": {
     "babel-loader": "^6.2.5",

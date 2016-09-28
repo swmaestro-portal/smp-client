@@ -9,7 +9,7 @@ var config = {
   entry: [
     'webpack-dev-server/client?http://localhost:8080',
     'webpack/hot/only-dev-server',
-    APP_DIR + '/main.jsx',
+    APP_DIR + '/main.js',
     
   ],
   output: {
@@ -25,6 +25,7 @@ var config = {
       {
         test : /\.jsx?/,
         include : APP_DIR,
+        exclude: /node_modules/,
         loader : 'babel'
       },
       {

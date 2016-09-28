@@ -1,10 +1,10 @@
 /* Route */
 import ReactDom from 'react-dom'
 import React from 'react'
-import App from './component/App'
+import routes from './routes'
 
 /* CSS */
 require('normalize.css')
 require('./style/global.css')
 
-ReactDom.render(<App/>, document.getElementById('main'))
+ReactDom.render(routes, document.getElementById('main'))
