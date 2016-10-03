@@ -2,20 +2,25 @@
 import React from 'react'
 
 /* Internal Dependencies */
-import styles from './Main.scss'
+import styles from './Home.scss'
 import LeftBar from '../LeftBar'
+import { fetchTemp } from '../../fetch/API'
 
-class Logo extends React.Component {
+class Home extends React.Component {
 
   componentWillMount() {
     console.log('Main mount')
   }
 
+  componentDidMount() {
+    var x = fetchTemp()
+    console.log(1, x)
+  }
 
   render() {
     return (
       <div className={styles.wrapper}>
-        Main
+        Home
         <LeftBar/>
         {this.props.children}
       </div>
@@ -24,4 +29,4 @@ class Logo extends React.Component {
 
 }
 
-export default Logo
+export default Home

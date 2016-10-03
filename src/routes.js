@@ -5,7 +5,7 @@ import App from './container/App'
 import Signin from './container/Signin'
 import Signup from './container/Signup'
 import LeftBar from './component/LeftBar'
-import Main from './component/Main'
+import Home from './component/Home'
 // import Task from './container/Task'
 // import MyPage from './container/MyPage'
 import { Router, Route, Link, browserHistory, IndexRoute } from 'react-router'
@@ -13,7 +13,7 @@ import { Router, Route, Link, browserHistory, IndexRoute } from 'react-router'
 function authCheck(nextState, replaceState) {
   console.log(3)
   if (true) {
-    replaceState('/main')
+    replaceState('/home')
   }
 }
 
@@ -23,7 +23,8 @@ export default (
       <IndexRoute onEnter={authCheck}/>
       <Route path="signup" component={Signup}/>
       <Route path="signin" component={Signin}/>
-      <Route path="main" component={Main}>
+      <Route path="home" component={Home}>
+
       </Route>
     </Route>
   </Router>

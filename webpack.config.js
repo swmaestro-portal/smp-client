@@ -18,7 +18,10 @@ var config = {
   },
   plugins: [
     new ExtractTextPlugin('style.css', { allChunks: true }),
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.ProvidePlugin({
+      'fetch': 'imports?this=>global!exports?global.fetch!whatwg-fetch'
+    })
   ],
   module : {
     loaders : [
@@ -38,7 +41,8 @@ var config = {
     ]
   },
   devServer: {
-    historyApiFallback: true
+    historyApiFallback: true,
+    headers: { "Access-Control-Allow-Origin": "*" }
   }
 };
 
