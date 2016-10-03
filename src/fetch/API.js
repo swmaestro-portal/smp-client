@@ -1,8 +1,3 @@
-/**
- * Created by engine on 10/1/16.
- */
-
-
 export function fetchTemp() {
 
   fetch('http://api.github.com/users/enginehenryed', {
