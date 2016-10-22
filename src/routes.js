@@ -12,7 +12,7 @@ import createStore from './redux/main'
 const store = createStore()
 
 function authCheck(nextState, replaceState) {
-  console.log(3)
+  console.log('auth check')
   if (true) {
     replaceState('/home')
   }

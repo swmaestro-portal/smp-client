@@ -1,5 +1,6 @@
 /* External Dependencies */
 import React from 'react'
+import classNames from 'classnames'
 
 /* Internal Dependencies */
 import styles from './MainPanel.scss'
@@ -10,14 +11,10 @@ import MyArticleBoard from '../MyArticleBoard'
 
 class MainPanel extends React.Component {
 
-  componentWillMount() {
-    console.log('MainPanel mount')
-  }
-
-
   render() {
     return (
-      <div className={styles.wrapper}>
+      <div
+        className={classNames(styles.wrapper, this.props.className)}>
         <Masthead/>
         <div className={styles.boardList}>
           <RecentBoard/>
