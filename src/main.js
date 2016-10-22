@@ -1,13 +1,10 @@
-/* Route */
-import ReactDom from 'react-dom'
+/**/
 import React from 'react'
+import { render } from 'react-dom'
+
+/**/
 import routes from './routes'
 
-/* global import */
-require('es6-promise').polyfill();
+render(routes, document.getElementById('main'))
 
-/* CSS */
-require('normalize.css')
-require('./style/global.css')
-
-ReactDom.render(routes, document.getElementById('main'))
+                

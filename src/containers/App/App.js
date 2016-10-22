@@ -1,10 +1,12 @@
 /* External Dependencies */
 import React from 'react'
+require('es6-promise').polyfill();
+require('whatwg-fetch')
 
 /* Internal Dependencies */
+require('../../style/normalize.css')
+
 import styles from './App.scss'
-import LeftBar from '../../component/LeftBar'
-import MainPanel from '../../component/MainPanel'
 
 class App extends React.Component {
 
@@ -13,15 +15,11 @@ class App extends React.Component {
   }
 
   componentWillMount() {
-    console.log('App mount')
   }
 
   render() {
-    console.log(2, this.props.children)
     return (
       <div className={styles.wrapper}>
-        <LeftBar/>
-        <MainPanel/>
         {this.props.children}
       </div>
     )

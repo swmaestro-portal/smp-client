@@ -1,14 +1,15 @@
-/* Route */
-import ReactDom from 'react-dom'
 import React from 'react'
-import App from './container/App'
-import Signin from './container/Signin'
-import Signup from './container/Signup'
-import LeftBar from './component/LeftBar'
-import Home from './component/Home'
-// import Task from './container/Task'
-// import MyPage from './container/MyPage'
 import { Router, Route, Link, browserHistory, IndexRoute } from 'react-router'
+import { Provider } from 'react-redux'
+
+import App from './containers/App/App'
+import Signin from './containers/Signin'
+import Signup from './containers/Signup'
+import Home from './components/Home'
+import createStore from './redux/main'
+
+
+const store = createStore()
 
 function authCheck(nextState, replaceState) {
   console.log(3)
@@ -18,16 +19,19 @@ function authCheck(nextState, replaceState) {
 }
 
 export default (
-  <Router history={browserHistory}>
-    <Route path="/" component={App}>
-      <IndexRoute onEnter={authCheck}/>
-      <Route path="signup" component={Signup}/>
-      <Route path="signin" component={Signin}/>
-      <Route path="home" component={Home}>
+  <Provider store={store}>
+    <Router history={browserHistory}>
+      <Route path="/" component={App}>
+        <IndexRoute onEnter={authCheck}/>
+        <Route path="signup" component={Signup}/>
+        <Route path="signin" component={Signin}/>
+        <Route path="home" component={Home}>
 
+        </Route>
       </Route>
-    </Route>
-  </Router>
+    </Router>
+  </Provider>
+  
 )
 
 

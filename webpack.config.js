@@ -23,13 +23,26 @@ var config = {
       'fetch': 'imports?this=>global!exports?global.fetch!whatwg-fetch'
     })
   ],
+  resolve: {
+    extensions: ['', '.js', '.jsx']
+  },
   module : {
     loaders : [
       {
-        test : /\.jsx?/,
-        include : APP_DIR,
+        test: /\.jsx?$/,
         exclude: /node_modules/,
-        loader : 'babel'
+        loader: 'babel-loader',
+        query: {
+          presets:[ 'es2015', 'react', 'stage-2' ]
+        }
+      },
+      {
+        test: /\.js?$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader',
+        query: {
+          presets:[ 'es2015', 'react', 'stage-2' ]
+        }
       },
       {
         test: /\.scss$/,

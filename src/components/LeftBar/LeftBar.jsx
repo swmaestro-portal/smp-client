@@ -13,7 +13,6 @@ class LeftBar extends React.Component {
     console.log('LeftBar mount')
   }
 
-
   render() {
     return (
       <div className={styles.wrapper}>
