@@ -1,5 +1,6 @@
 /* External Dependencies */
 import React from 'react'
+import classNames from 'classnames'
 
 /* Internal Dependencies */
 import styles from './LeftBar.scss'
@@ -13,10 +14,10 @@ class LeftBar extends React.Component {
     console.log('LeftBar mount')
   }
 
-
   render() {
     return (
-      <div className={styles.wrapper}>
+      <div
+        className={classNames(styles.wrapper, this.props.className)}>
         <div className={styles.offset}></div>
         <div className={styles.content}>
           <Logo/>
