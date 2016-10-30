@@ -4,7 +4,6 @@ import { connect } from 'react-redux'
 
 /* Internal Dependencies */
 import styles from './Masthead.scss'
-import * as FooActionCreator from '../../actionCreators/FooActionCreator'
 
 class Masthead extends React.Component {
 
@@ -19,19 +18,15 @@ class Masthead extends React.Component {
 
   handleClick(event) {
     console.log('clicked')
-    fetch('http://172.16.101.150:8081/lectures', {
-      method: 'GET',
-      headers: {
-        'temp': '1',
-        'bar': '2',
-        'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2FwaS5zd21hZXN0cm8ubmV0IiwiZXhwIjoxNDgxNDU4NzMzLCJ1c2VyX2lkIjo0LCJpYXQiOjE0NzYyNzQ3MzN9.95sFi_ICx57Jh2tHeycmxusZg_-luWkQf5AF2Y8p9qY'
-
-      }
-    }).then(function(response) {
-      console.log(2, response)
-    })
-
-    // this.props.dispatch(FooActionCreator.getTime(100))
+    
+    // fetch('http://172.16.101.150:8081/lectures', {
+    //   method: 'GET',
+    //   headers: {
+    //     'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2FwaS5zd21hZXN0cm8ubmV0IiwiZXhwIjoxNDgxNDU4NzMzLCJ1c2VyX2lkIjo0LCJpYXQiOjE0NzYyNzQ3MzN9.95sFi_ICx57Jh2tHeycmxusZg_-luWkQf5AF2Y8p9qY'
+    //   }
+    // }).then(function(response) {
+    //   console.log(2, response)
+    // })
 
   }
 
@@ -43,7 +38,6 @@ class Masthead extends React.Component {
         <button onClick={this.handleClick}>
           123
         </button>
-        <span></span>
       </div>
     )
   }
@@ -52,8 +46,7 @@ class Masthead extends React.Component {
 
 const mapStateToProps = (state/*, props*/) => {
   return {
-    foo: state.foo,
-    reduxState: state
+    foo: state.foo
   }
 }
 

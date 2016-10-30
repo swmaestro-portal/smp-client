@@ -1,8 +1,10 @@
 /* External Dependencies */
 import React from 'react'
+import { connect } from 'react-redux'
 
 /* Internal Dependencies */
 import styles from './Signin.scss'
+import * as UserActionCreator from '../../actions/UserActionCreator'
 
 class Signin extends React.Component {
 
@@ -16,10 +18,11 @@ class Signin extends React.Component {
   }
 
   handleClickSignin(event) {
-    const username = this.nodes.username.value
-    const password = this.nodes.password.value
-    console.log(3, username, password)
-    // apicall post => request username, password
+    const userInfo = {
+      username: this.nodes.username.value,
+      password: this.nodes.password.value
+    }
+    this.props.dispatch(UserActionCreator.signin(userInfo))
   }
 
   render() {
@@ -51,4 +54,13 @@ class Signin extends React.Component {
 
 }
 
-export default Signin
+
+const mapStateToProps = (state/*, props*/) => {
+  return {
+    reduxState: state
+  }
+}
+
+const ConnectedSignin = connect(mapStateToProps)(Signin)
+
+export default ConnectedSignin
