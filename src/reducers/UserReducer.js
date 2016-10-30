@@ -1,22 +1,23 @@
-export default function _time(state = {}, action) {
-  console.log('_time', state, action);
+import ActionTypes from '../actions/ActionTypes'
+import { browserHistory } from 'react-router'
+
+export default function _user(state = {}, action) {
+  console.log('_user', state, action)
 
   switch (action.type) {
-    case 'GET_TIME_REQUEST':
+    case ActionTypes.SIGNIN_REQUEST:
       return {
         ...state,
-        frozen: true
       }
-    case 'GET_TIME_SUCCESS':
+    case ActionTypes.SIGNIN_SUCCESS:
+      window.sessionStorage.setItem('smp-token', action.result.token)
+      browserHistory.push('/home')
       return {
         ...state,
-        time: action.result.time,
-        frozen: false
       }
-    case 'GET_TIME_FAILURE':
+    case ActionTypes.SIGNIN_FAILURE:
       return {
         ...state,
-        frozen: false
       }
     default:
       return state

@@ -7,9 +7,13 @@ import LeftBar from '../LeftBar'
 import MainPanel from '../MainPanel'
 
 class Home extends React.Component {
+
+  componentWillMount() {
+    console.log('home')
+  }
   
   render () {
-    console.log(1, this.props.reduxState)
+
     return (
       <div className={styles.wrapper}>
         <LeftBar className={styles.leftBar}/>

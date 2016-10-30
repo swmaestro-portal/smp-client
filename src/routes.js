@@ -1,37 +1,37 @@
+/**/
 import React from 'react'
-import { Router, Route, Link, browserHistory, IndexRoute } from 'react-router'
-import { Provider } from 'react-redux'
+import { Router, Route, Link, browserHistory, IndexRoute, IndexRedirect } from 'react-router'
 
+/**/
 import App from './containers/App/App'
 import Signin from './containers/Signin'
 import Signup from './containers/Signup'
 import Home from './components/Home'
-import createStore from './redux/main'
-
-
-const store = createStore()
 
 function authCheck(nextState, replaceState) {
-  console.log('auth check')
-  if (true) {
-    replaceState('/home')
+  
+  
+  
+  if (!window.sessionStorage.hasOwnProperty('smp-token')) {
+    replaceState({
+      pathname: '/signin',
+      state: { nextPathname: nextState.location.pathname }
+    })
   }
 }
 
 export default (
-  <Provider store={store}>
     <Router history={browserHistory}>
       <Route path="/" component={App}>
-        <IndexRoute onEnter={authCheck}/>
+        <IndexRedirect to='/home'/>
         <Route path="signup" component={Signup}/>
         <Route path="signin" component={Signin}/>
-        <Route path="home" component={Home}>
+        <Route path="home" component={Home} onEnter={authCheck}>
 
         </Route>
       </Route>
     </Router>
-  </Provider>
-  
+
 )
 
 
