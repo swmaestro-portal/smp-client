@@ -1,15 +1,21 @@
 /* External Dependencies */
 import React from 'react'
+import { connect } from 'react-redux'
 
 /* Internal Dependencies */
 import styles from './MainMenu.scss'
+import * as LectureActionCreator from '../../actions/LectureActionCreator'
 
 class MainMenu extends React.Component {
 
-  componentWillMount() {
-    console.log('MainMenu mount')
+  constructor() {
+    super()
+    this.handleClickLectures = this.handleClickLectures.bind(this)
   }
 
+  handleClickLectures(event) {
+    this.props.dispatch(LectureActionCreator.getLectures())
+  }
 
   render() {
     return (
@@ -17,7 +23,11 @@ class MainMenu extends React.Component {
         <ul>
           <li>회원관리</li>
           <li>과제관리</li>
-          <li>강의관리</li>
+          <li className="">
+            <span onClick={this.handleClickLectures}>
+              강의관리
+            </span>
+          </li>
           <li>MyPage</li>
         </ul>
       </div>
@@ -26,4 +36,6 @@ class MainMenu extends React.Component {
 
 }
 
-export default MainMenu
+const ConnectedMainMenu = connect()(MainMenu)
+
+export default ConnectedMainMenu
