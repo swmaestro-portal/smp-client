@@ -6,7 +6,7 @@ import { withRouter } from 'react-router'
 /* Internal Dependencies */
 import styles from './LeftBar.scss'
 import MainMenu from '../MainMenu'
-import Logo from '../Logo'
+import Logo from '../Logo/Logo'
 import UserInfo from '../UserInfo'
 
 class LeftBar extends React.Component {
@@ -21,18 +21,14 @@ class LeftBar extends React.Component {
   }
 
   handleClick(event) {
-    // console.log(1, this.props.router.push('signup'))
     this.props.router.push('/signup')
-
   }
 
   render() {
     return (
       <div
         className={classNames(styles.wrapper, this.props.className)}>
-        <div className={styles.offset}></div>
         <div className={styles.content}>
-          <Logo/>
           <UserInfo/>
           <MainMenu/>
           <div>

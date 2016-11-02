@@ -2,5 +2,5 @@
   "name": "Masthead",
   "version": "0.0.0",
   "private": true,
-  "main": "./Masthead.jsx"
+  "main": "./Masthead.js"
 }
