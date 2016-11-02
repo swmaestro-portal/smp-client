@@ -16,7 +16,17 @@ class Masthead extends React.Component {
     return (
       <div className={styles.wrapper}>
         <div className={styles.content}>
-          <Logo/>
+          <div className={styles.logoStand}>
+            <Logo/>
+          </div>
+          <div className={styles.searchBox}>
+            <input
+              className={styles.searchBox}
+              type="text"/>
+          </div>
+          <div className={styles.rightBtnGroup}>
+            <button>to swm</button>
+          </div>
         </div>
         <div className={styles.offset}></div>
       </div>
