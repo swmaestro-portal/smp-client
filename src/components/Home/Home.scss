@@ -1,7 +1,6 @@
 .wrapper {
   border: 1px solid green;
-  display: flex;
-  flex-direction: row;
+
 
   > div {
 
@@ -13,6 +12,11 @@
 
   .mainPanel {
     width: calc(100% - 220px);
+  }
+
+  .body {
+    display: flex;
+    flex-direction: row;
   }
 
 }

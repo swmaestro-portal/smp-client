@@ -4,7 +4,7 @@ import classNames from 'classnames'
 
 /* Internal Dependencies */
 import styles from './MainPanel.scss'
-import Masthead from '../Masthead'
+import Masthead from '../Masthead/Masthead'
 import RecentBoard from '../RecentBoard'
 import MyArticleBoard from '../MyArticleBoard'
 
@@ -15,7 +15,6 @@ class MainPanel extends React.Component {
     return (
       <div
         className={classNames(styles.wrapper, this.props.className)}>
-        <Masthead/>
         <div className={styles.boardList}>
           <RecentBoard/>
           <MyArticleBoard/>

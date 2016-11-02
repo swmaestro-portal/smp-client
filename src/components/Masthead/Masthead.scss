@@ -1,7 +1,17 @@
-
+@import '../../style/color.scss';
 
 .wrapper {
   border: 1px solid black;
-  height: 60px;
+
+  .offset {
+    height: 50px;
+  }
+
+  .content {
+    position: fixed;
+    background-color: $gray;
+    height: 50px;
+    width: 100%;
+  }
 
 }

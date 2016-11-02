@@ -1,15 +1,30 @@
 /**/
 import React from 'react'
 import { render } from 'react-dom'
-import { Provider } from 'react-redux'
 
 /**/
-import reduxInit from './redux'
 import routes from './routes'
-const store = reduxInit()
+
+
+/************************************************************
+ * Redux
+ ************************************************************/
+import store from './redux'
+import { Provider } from 'react-redux'
+
+
+/************************************************************
+ * Global style
+ ************************************************************/
+require('./style/global.scss')
+
+
+
+
+
 
 render(
-  <Provider store={store}>
+  <Provider store={store()}>
     {routes}
   </Provider>,
   document.getElementById('main')

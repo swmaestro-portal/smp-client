@@ -13,9 +13,7 @@ class Logo extends React.Component {
 
   render() {
     return (
-      <div className={styles.wrapper}>
-        logo
-      </div>
+      <p className={styles.wrapper}/>
     )
   }
 
