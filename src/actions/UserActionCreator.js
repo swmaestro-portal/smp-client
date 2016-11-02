@@ -1,16 +1,14 @@
-import {get, post} from '../apis'
-import ATG from './ActionTypeGenerator'
+import * as UserAPI from '../apis/UserApi'
+import createType from './ActionTypeGenerator'
 
 export function signin(user) {
+
+  console.log(1, user)
   return {
-    types: ATG('SIGNIN'),
+    types: createType('SIGNIN'),
     promise: () => {
-      
-      
-      return get()
-      return fetch(`http://172.16.101.199:8888/auth/token?email=${user.username}&password=${user.password}`, {
-        method: 'GET'
-      })
+
+      return UserAPI.signin(user.username, user.password)
     }
   }
 }
