@@ -10,10 +10,12 @@ class Logo extends React.Component {
     console.log('Logo mount')
   }
 
-
   render() {
     return (
-      <p className={styles.wrapper}/>
+      <div className={styles.wrapper}>
+        <p className={styles.img}/>
+        <p className={styles.text}>SW Maestro</p>
+      </div>
     )
   }
 
