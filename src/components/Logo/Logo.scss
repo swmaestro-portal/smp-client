@@ -1,9 +1,31 @@
+@import '../../style/color.scss';
+
+$height: 35px;
+$width: auto;
+$imgWidth: 80px;
+$textWidth: 60px;
 
 .wrapper {
 
-  width: 140px;
-  height: 50px;
+  width: $width;
+  height: $height;
+  display: flex;
+  align-items: center;
 
-  background-image: url('http://www.swmaestro.kr/web/web/_Img/Common/logo.gif');
+  > p {
+  }
+
+  .img {
+    height: 100%;
+    width: $textWidth;
+    background-image: url('http://www.swmaestro.kr/web/web/_Img/Common/logo.gif');
+  }
+
+  .text {
+    text-align: center;
+    font-weight: bold;
+    color: $dark;
+    align-items: center;
+  }
 
 }
