@@ -3,9 +3,6 @@ import React from 'react'
 require('es6-promise').polyfill();
 require('whatwg-fetch')
 
-/* Internal Dependencies */
-require('../../style/normalize.css')
-
 import styles from './App.scss'
 
 class App extends React.Component {
