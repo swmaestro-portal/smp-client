@@ -1,26 +1,26 @@
+/* */
 import React from 'react'
 import { connect } from 'react-redux'
+import BigCalendarComponent from 'react-big-calendar'
+import moment from 'moment';
 
-/**/
-import styles from './Home.scss'
-import LeftBar from '../LeftBar/LeftBar'
-import MainPanel from '../MainPanel'
-import Masthead from '../Masthead/Masthead'
+/* Internal Dependencies */
+import styles from './BigCalendar.scss'
+require('../../style/react-big-calendar/react-big-calendar.css')
 
-class Home extends React.Component {
+BigCalendarComponent.setLocalizer(
+  BigCalendarComponent.momentLocalizer(moment)
+);
 
-  componentWillMount() {
-    console.log('home')
-  }
-  
+class BigCalendar extends React.Component {
+
   render () {
     return (
       <div className={styles.wrapper}>
-        <Masthead>1</Masthead>
-        <div className={styles.body}>
-          <LeftBar className={styles.leftBar}/>
-          <MainPanel className={styles.mainPanel}/>
-        </div>
+        <BigCalendarComponent
+          events={this.props.events}
+          startAccessor='startDate'
+          endAccessor='endDate'/>
       </div>
     )
   }
@@ -32,7 +32,7 @@ const mapStateToProps = (state/*, props*/) => {
   }
 }
 
-const ConnectedHome = connect(mapStateToProps)(Home)
+const ConnectedBigCalendar = connect(mapStateToProps)(BigCalendar)
 
-export default ConnectedHome
+export default ConnectedBigCalendar
 
