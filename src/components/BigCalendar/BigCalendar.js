@@ -6,7 +6,7 @@ import moment from 'moment';
 
 /* Internal Dependencies */
 import styles from './BigCalendar.scss'
-require('../../style/react-big-calendar/react-big-calendar.css')
+require('../../styles/react-big-calendar/react-big-calendar.css')
 
 BigCalendarComponent.setLocalizer(
   BigCalendarComponent.momentLocalizer(moment)
