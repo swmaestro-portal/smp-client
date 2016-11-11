@@ -1,4 +1,4 @@
-import * as UserAPI from '../apis/UserApi'
+import * as UserAPI from '../apis/userApi'
 import createType from './ActionTypeGenerator'
 
 export function signin(user) {

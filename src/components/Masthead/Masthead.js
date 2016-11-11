@@ -21,11 +21,24 @@ class Masthead extends React.Component {
           </div>
           <div className={styles.searchBox}>
             <input
-              className={styles.searchBox}
               type="text"/>
           </div>
           <div className={styles.rightBtnGroup}>
-            <button>to swm</button>
+            <ul>
+              <li>
+                <a href="https://www.facebook.com/groups/199546453425248/">
+                  <i className="fa fa-facebook-official" aria-hidden="true"/>
+                </a>
+              </li>
+              <li>
+                <a href="http://swmaestro.kr/">
+                <i className="fa fa-barcode" aria-hidden="true"/>
+                </a>
+              </li>
+              <li>
+                <p className={styles.ministry}/>
+              </li>
+            </ul>
           </div>
         </div>
         <div className={styles.offset}></div>

@@ -1,5 +1,8 @@
-.wrapper {
-  border: 1px solid red;
-  min-height: 100%;
+@import '../../style/color.scss';
 
+.wrapper {
+  min-height: 100%;
+  background-color: $light;
+
+  font-size: 14px;
 }
