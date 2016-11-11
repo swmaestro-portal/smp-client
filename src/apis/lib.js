@@ -1,4 +1,4 @@
-const ROOT = 'http://172.16.101.65:8081/'
+const ROOT = 'https://smp-dev.heek.kr/'
 
 function checkStatus(response) {
   return response.text()
