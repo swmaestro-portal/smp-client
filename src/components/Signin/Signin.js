@@ -6,6 +6,7 @@ import { withRouter } from 'react-router'
 /* Internal Dependencies */
 import styles from './Signin.scss'
 import * as UserActionCreator from '../../actions/UserActionCreator'
+import WelcomeBase from '../Welcome/WelcomeBase'
 
 class Signin extends React.Component {
 
@@ -34,34 +35,36 @@ class Signin extends React.Component {
 
   render() {
     return (
-      <div className={styles.wrapper}>
-        <div className={styles.content}>
-          <div className={styles.inputContainer}>
-            <div>
-              <label htmlFor="">email</label>
-              <input
-                type="text"
-                ref={(elem)=>{this.nodes.username = elem}}/>
+      <WelcomeBase>
+        <div className={styles.wrapper}>
+          <div className={styles.content}>
+            <div className={styles.inputContainer}>
+              <div>
+                <label htmlFor="">email</label>
+                <input
+                  type="text"
+                  ref={(elem)=>{this.nodes.username = elem}}/>
+              </div>
+              <div>
+                <label htmlFor="">password</label>
+                <input
+                  type="password"
+                  ref={(elem)=>{this.nodes.password = elem}}/>
+              </div>
             </div>
-            <div>
-              <label htmlFor="">password</label>
-              <input
-                type="password"
-                ref={(elem)=>{this.nodes.password = elem}}/>
+            <div className={styles.buttonStand}>
+              <button
+                onClick={this.handleClickSignin}>
+                Sign In
+              </button>
+              <button
+                onClick={this.handleClickSignup}>
+                Sign Up
+              </button>
             </div>
-          </div>
-          <div className={styles.buttonStand}>
-            <button
-              onClick={this.handleClickSignin}>
-              Sign In
-            </button>
-            <button
-              onClick={this.handleClickSignup}>
-              Sign Up
-            </button>
           </div>
         </div>
-      </div>
+      </WelcomeBase>
     )
   }
 
