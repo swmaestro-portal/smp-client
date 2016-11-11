@@ -9,8 +9,7 @@ import Signup from './containers/Signup'
 import Home from './components/Home'
 
 function authCheck(nextState, replaceState) {
-  if (false) {
-  // if (!window.sessionStorage.hasOwnProperty('smp-token')) {
+  if (!window.sessionStorage.hasOwnProperty('smp-token')) {
     replaceState({
       pathname: '/signin',     
       state: { nextPathname: nextState.location.pathname }

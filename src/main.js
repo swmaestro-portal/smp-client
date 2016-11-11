@@ -16,8 +16,10 @@ import { Provider } from 'react-redux'
 /************************************************************
  * Global style
  ************************************************************/
+require('./style/normalize.css')
 require('./style/global.scss')
 require('./style/font-awesome.css')
+
 
 
 render(
