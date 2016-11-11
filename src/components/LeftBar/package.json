@@ -1,6 +1,6 @@
 {
-  "name": "LeftBar",
+  "name": "Leftbar",
   "version": "0.0.0",
   "private": true,
-  "main": "./LeftBar.jsx"
+  "main": "./Leftbar.js"
 }
