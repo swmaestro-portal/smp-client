@@ -9,10 +9,6 @@ import Masthead from '../Masthead/Masthead'
 
 class Home extends React.Component {
 
-  componentWillMount() {
-    console.log('home')
-  }
-  
   render () {
     return (
       <div className={styles.wrapper}>
