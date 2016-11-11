@@ -4,21 +4,12 @@
 
   width: 220px;
   height: 100%;
-  background-color: $light;
-
-  .offset {
-    height: 50px;
-    background-color: gray;
-    padding: 10px 0;
-  }
 
   .content {
 
-    > div {
-      border-bottom: 1px solid gray;
-      padding: 0 20px;
+    > div:not(:last-child) {
+      border-bottom: 1px solid $dark;
     }
   }
-
 
 }

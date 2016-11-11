@@ -4,20 +4,17 @@ import classNames from 'classnames'
 import { withRouter } from 'react-router'
 
 /* Internal Dependencies */
-import styles from './LeftBar.scss'
-import MainMenu from '../MainMenu'
-import Logo from '../Logo/Logo'
+import styles from './Leftbar.scss'
+import GeneralMenu from './Menu/GeneralMenu'
+import MemberMenu from './Menu/MemberMenu'
 import UserInfo from '../UserInfo'
+import Notifications from '../Notifications'
 
-class LeftBar extends React.Component {
+class Leftbar extends React.Component {
 
   constructor() {
     super()
     this.handleClick = this.handleClick.bind(this)
-  }
-
-  componentWillMount() {
-    console.log('LeftBar mount')
   }
 
   handleClick(event) {
@@ -30,20 +27,15 @@ class LeftBar extends React.Component {
         className={classNames(styles.wrapper, this.props.className)}>
         <div className={styles.content}>
           <UserInfo/>
-          <MainMenu/>
-          <div>
-            List of tasks
-            <button
-              onClick={this.handleClick}>
-              button
-            </button>
-          </div>
+          <GeneralMenu/>
+          <MemberMenu/>
+          <Notifications/>
         </div>
       </div>
     )
   }
 }
 
-const routedLeftbar = withRouter(LeftBar)
+const routedLeftbar = withRouter(Leftbar)
 
 export default routedLeftbar

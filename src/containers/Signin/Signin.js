@@ -1,6 +1,7 @@
 /* External Dependencies */
 import React from 'react'
 import { connect } from 'react-redux'
+import { withRouter } from 'react-router' 
 
 /* Internal Dependencies */
 import styles from './Signin.scss'
@@ -11,6 +12,8 @@ class Signin extends React.Component {
   constructor() {
     super()
     this.nodes = {}
+    this.handleClickSignin = this.handleClickSignin.bind(this)
+    this.handleClickSignup = this.handleClickSignup.bind(this)
   }
 
   componentWillMount() {
@@ -23,6 +26,10 @@ class Signin extends React.Component {
       password: this.nodes.password.value
     }
     this.props.dispatch(UserActionCreator.signin(userInfo))
+  }
+
+  handleClickSignup() {
+    this.props.router.push('/signup')
   }
 
   render() {
@@ -44,8 +51,14 @@ class Signin extends React.Component {
             </div>
           </div>
           <div className={styles.buttonStand}>
-            <button onClick={this.handleClickSignin.bind(this)}>Sign In</button>
-            <button>Sign Up</button>
+            <button
+              onClick={this.handleClickSignin}>
+              Sign In
+            </button>
+            <button
+              onClick={this.handleClickSignup}>
+              Sign Up
+            </button>
           </div>
         </div>
       </div>
@@ -61,6 +74,7 @@ const mapStateToProps = (state/*, props*/) => {
   }
 }
 
-const ConnectedSignin = connect(mapStateToProps)(Signin)
+const routedSignin = withRouter(Signin)
+const connectedSignin = connect(mapStateToProps)(routedSignin)
 
-export default ConnectedSignin
+export default connectedSignin

@@ -1,17 +1,14 @@
 /* External Dependencies */
 import React from 'react'
-require('es6-promise').polyfill();
-require('whatwg-fetch')
+import { connect } from 'react-redux'
 
-import styles from './App.scss'
+/* Internal Dependencies */
+import styles from './MenuBase.scss'
 
-class App extends React.Component {
+class MenuBase extends React.Component {
 
   constructor() {
     super()
-  }
-
-  componentWillMount() {
   }
 
   render() {
@@ -24,4 +21,4 @@ class App extends React.Component {
 
 }
 
-export default App
+export default MenuBase

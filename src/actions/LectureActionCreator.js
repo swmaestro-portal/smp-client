@@ -1,4 +1,4 @@
-import * as LectureAPI from '../apis/LectureApi'
+import * as LectureAPI from '../apis/lectureApi'
 import ATG from './ActionTypeGenerator'
 
 export function getLectures() {
