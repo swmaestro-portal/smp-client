@@ -13,7 +13,7 @@ var config = {
     'webpack-dev-server/client?http://localhost:3001',
     'webpack/hot/only-dev-server',
     APP_DIR + '/main.js',
-    
+
   ],
   output: {
     path: BUILD_DIR,
@@ -51,7 +51,7 @@ var config = {
         test: /\.scss$/,
         loader: ExtractTextPlugin.extract('style', 'css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!sass!postcss-loader')
       },
-      { test: /\.css$/, 
+      { test: /\.css$/,
         loader: ExtractTextPlugin.extract("style-loader", "css-loader", "postcss-loader")
       },
       {
@@ -70,10 +70,14 @@ var config = {
   },
   devtool: "source-map",
   devServer: {
-    historyApiFallback: true,
+    historyApiFallback: {
+      index: 'index.html'
+    },
     headers: { "Access-Control-Allow-Origin": "*" }
   },
   postcss: [ autoprefixer({ browsers: ['last 2 versions'] }) ]
 };
 
 module.exports = config;
+
+// historyApiFallback: true,
