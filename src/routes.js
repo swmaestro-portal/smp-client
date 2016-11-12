@@ -8,6 +8,8 @@ import App from './components/App'
 import Signin from './components/Signin'
 import Signup from './components/Signup'
 import Home from './components/Home'
+import MainFrame from './components/MainFrame'
+import Lectures$ from './components/Lectures'
 
 /************************************************************
  * Redux
@@ -19,48 +21,37 @@ import { Provider } from 'react-redux'
 function authCheck(nextState, replace) {
   console.log('auth')
   if (!window.sessionStorage.hasOwnProperty('smp-token')) {
-    // replace('/signin')
-  } else {
-    // replace('/home')
+    replace('/signin')
   }
 }
 
-function temp(nextState, replace) {
-  console.log('t')
-}
+// const appHistory = useRouterHistory(createHashHistory)()
 
-
-const appHistory = useRouterHistory(createHashHistory)({ queryKey: true })
-
+const Temp = ({ power }) => (
+  <div className="Sidebar">
+    {power}
+  </div>
+)
 
 export default (
   <Provider store={store()}>
-    <Router history={appHistory}>
-      <Route path="/" component={App} onEnter={temp}>
-        <IndexRoute onEnter={authCheck} />
-        <Route path="signin" component={Signin} />
-        <Route path="signup" component={Signup} />
-        <Route path="home" component={Home}/>
-        <Route path="lectures" component={Home}/>
-        <Route path="lectures/:id" component={Home}/>
+    <Router history={browserHistory}>
+      <Route path="/" component={App}>
+        <Route component={({a,b})=>(<div>{a}</div>)}>
+          <IndexRoute component={Home}/>
+          <Route path="/lectures" components={{a: Lectures$, b: Signin}}/>
+
+        </Route>
       </Route>
+
     </Router>
   </Provider>
 )
 
 
 
-// <Router history={appHistory}>
-//   <Route path="/" component={App}>
-//   <Route path="signup" component={Signup}/>
-//   <Route path="signin" component={Signin}/>
-//   <Route path="home" component={Home} onEnter={authCheck}/>
-//   <Route path="lectures" component={Home} onEnter={authCheck}>
-//   <Route path="lectures/:id" component={Home}/>
-//   </Route>
+
+// <Route path="lectures/:id" component={null}/>
 //
-//   <Route path="*" component={Home} onEnter={authCheck}/>
-//
-//   </Route>
-//   </Router>
-//
+//   <Route path="assignments" component={null}/>
+//   <Route path="assignments/:id" component={null}/>
