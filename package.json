@@ -6,19 +6,22 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack-dev-server --colors --content-base build/ --host 0.0.0.0 --port 3001",
-    "build": "webpack -p"
+    "build": "npm run clean && webpack -p",
+    "clean": "rm -rf ./build"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "classnames": "^2.2.5",
     "es6-promise": "^4.0.5",
+    "history": "^4.4.0",
     "keymirror": "^0.1.1",
+    "moment": "^2.16.0",
     "react": "^15.3.1",
     "react-big-calendar": "^0.11.0",
     "react-dom": "^15.3.1",
     "react-redux": "^4.4.5",
-    "react-router": "^2.8.1",
+    "react-router": "^3.0.0",
     "redux": "^3.6.0",
     "whatwg-fetch": "^1.0.0"
   },
@@ -31,9 +34,9 @@
     "babel-preset-stage-2": "^6.17.0",
     "css-loader": "^0.25.0",
     "exports-loader": "^0.6.3",
+    "express": "^4.14.0",
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.9.0",
-    "history": "^4.4.0",
     "imports-loader": "^0.6.5",
     "less-loader": "^2.2.3",
     "node-sass": "^3.10.0",
