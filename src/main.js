@@ -1,32 +1,28 @@
 /**/
 import React from 'react'
-import { render } from 'react-dom'
+import ReactDom from 'react-dom'
 
 /**/
 import routes from './routes'
 
 
 /************************************************************
- * Redux
+ * Polyfills
  ************************************************************/
-import store from './redux'
-import { Provider } from 'react-redux'
-
+require('es6-promise').polyfill();
+require('whatwg-fetch')
 
 /************************************************************
  * Global style
  ************************************************************/
 require('./styles/normalize.css')
+require('./styles/reset.scss')
 require('./styles/global.scss')
 require('./styles/font-awesome.css')
 
-
-
-render(
-  <Provider store={store()}>
-    {routes}
-  </Provider>,
-  document.getElementById('main')
+ReactDom.render(
+  routes,
+  window.document.getElementById('main')
 )
 
                 
