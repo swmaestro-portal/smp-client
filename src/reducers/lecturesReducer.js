@@ -1,8 +1,8 @@
 import AT from '../actions/ActionTypes'
 import Lectures from '../models/LecturesModel'
 
-initialState = {
-  lectures: 
+const initialState = {
+  lectures: Lectures.getInstance()
 }
 
 export default function (state = initialState, action) {
@@ -10,12 +10,13 @@ export default function (state = initialState, action) {
 
   switch (action.type) {
     
-    const _lectures = state. 
+    // const _lectures = state.
 
     case AT.GET_LECTURES:
-      console.log(1)
-
-      return state
+      return {
+        ...state,
+        lectures: Lectures.setInstance(action.payload)
+      }
 
     default:
       return state

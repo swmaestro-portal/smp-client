@@ -5,7 +5,7 @@ import AT from './ActionTypes'
 
 export default {
   getLectures: (user) => (dispatch, getState) => {
-    LectureAPI.requestGetLectures()
-      .then(res => air(AT.GET_LECTURES, res))
+    return LectureAPI.requestGetLectures()
+      .then(res => dispatch(air(AT.GET_LECTURES, res)))
   }
 }
