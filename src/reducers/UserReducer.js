@@ -7,7 +7,6 @@ export default function _user(state = {}, action) {
   switch (action.type) {
 
     case AT.SIGNIN:
-      console.log(2, action)
       window.sessionStorage.setItem('smp-token', action.payload.token)
       browserHistory.push('/')
       return state

@@ -5,6 +5,7 @@ import { connect } from 'react-redux'
 /* */
 import styles from './Lectures$.scss'
 import { lectureActions } from '../../actions'
+import Lectures from '../../components/Lectures'
 
 class Lectures$ extends React.Component {
 
@@ -16,15 +17,9 @@ class Lectures$ extends React.Component {
     this.props.dispatch(lectureActions.getLectures())
   }
 
-  componentDidMount() {
-    console.log(2)
-  }
-
   render() {
     return (
-      <div className={styles.wrapper}>
-        Lectures
-      </div>
+      <Lectures lectures={this.props.lectures}/>
     )
   }
 
@@ -32,11 +27,10 @@ class Lectures$ extends React.Component {
 
 const mapStateToProps = (state/*, props*/) => {
   return {
-    
-    reduxState: state
+    lectures: state.lecturesReducer.lectures
   }
 }
 
-const ConnectedLectures$ = connect()(Lectures$)
+const ConnectedLectures$ = connect(mapStateToProps)(Lectures$)
 
 export default ConnectedLectures$
