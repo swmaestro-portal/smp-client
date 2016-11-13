@@ -1,24 +1,33 @@
 /* External Dependencies */
 import React from 'react'
+import { withRouter, Link } from 'react-router'
 
 /* Internal Dependencies */
 import styles from './Logo.scss'
 
 class Logo extends React.Component {
 
-  componentWillMount() {
-    console.log('Logo mount')
+  constructor() {
+    super()
   }
 
   render() {
     return (
       <div className={styles.wrapper}>
-        <p className={styles.img}/>
-        <p className={styles.text}>SW Maestro</p>
+        <Link to="/">
+          <p className={styles.img}/>
+        </Link>
+        <Link to="/">
+          <p className={styles.text}>
+            SW Maestro
+          </p>
+        </Link>
       </div>
     )
   }
 
 }
 
-export default Logo
+const routedLogo = withRouter(Logo)
+
+export default routedLogo

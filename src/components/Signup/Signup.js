@@ -1,105 +1,75 @@
 /* External Dependencies */
 import React from 'react'
+import { connect } from 'react-redux'
+import { withRouter } from 'react-router'
 
 /* Internal Dependencies */
 import styles from './Signup.scss'
 import WelcomeBase from '../Welcome/WelcomeBase'
-
+import { userActions } from '../../actions'
 
 /*이메일,비밀번호,비밀번호확(Re-enter),성명,전화번호,성별,기수,타입*/
 class Signup extends React.Component {
 
   constructor() {
     super()
-    this.nodes = {}
-    this.radio_values = {}
+    this.handleClickSignup = this.handleClickSignup.bind(this)
   }
 
   handleClickSignup(event) {
-    const username = this.nodes.username.value
-    const password = this.nodes.password.value
-    const re_password = this.nodes.repassword.value
-    const name = this.nodes.name.value
-    const tel = this.nodes.tel.value
-    const generation = this.nodes.generation.value
-    if (this.nodes.radio_male.checked) {
-      this.radio_values.gender = 'male'
-    } else if(this.nodes.radio_female.checked) {
-      this.radio_values.gender = 'female'
-    } else {
-      this.radio_values.gender = 'unknown'
-    }
+    const inputs = document.querySelectorAll('#signup-form input, #signup-form select')
+    let arr = [], ret = {}
 
-    if (this.nodes.radio_mentor.checked) {
-      this.radio_values.grade = 'mentor'
-    } else if(this.nodes.radio_mentee.checked) {
-      this.radio_values.grade = 'mentee'
-    } else {
-      this.radio_values.grade = 'unknown'
-    }
+    arr.forEach.call(inputs, function(elem) {
+      ret[elem.name] = elem.value
+    })
 
-    console.log(3, username, password, re_password, name, tel, generation, this.radio_values.gender,
-        this.radio_values.grade)
-    // apicall post => request username, password
+    console.log(2, ret)
+    this.props.dispatch(userActions.signup(ret))
+      .then(this.props.router.push('/signin'))
   }
 
   render() {
     return (
       <WelcomeBase>
         <div className={styles.wrapper}>
-          <div className={styles.content}>
+          <form id="signup-form" className={styles.content}>
             <div className={styles.inputContainer}>
               <div>
-                <label htmlFor="">email</label>
-                <input
-                  type="text"
-                  ref={(elem)=>{this.nodes.username = elem}}/>
+                <span>email</span>
+                <input type="text" name="email"/>
               </div>
               <div>
-                <label htmlFor="">password</label>
-                <input
-                  type="password"
-                  ref={(elem)=>{this.nodes.password = elem}}/>
+                <span>password</span>
+                <input type="password" name="pw"/>
               </div>
               <div>
-                <label htmlFor="">re-enter password</label>
-                <input
-                  type="password"
-                  ref={(elem)=>{this.nodes.repassword = elem}}/>
+                <span>re-enter password</span>
+                <input type="password" name="rePw"/>
               </div>
               <div>
-                <label htmlFor="">name</label>
-                <input
-                  type="text"
-                  ref={(elem)=>{this.nodes.name = elem}}/>
+                <span>name</span>
+                <input type="text" name="name"/>
               </div>
               <div>
-                <label htmlFor="">tel</label>
-                <input
-                  type="tel"
-                  ref={(elem)=>{this.nodes.tel = elem}}/>
+                <span>tel</span>
+                <input type="tel" name="tel"/>
               </div>
               <div>
-                <label htmlFor="">generation</label>
-                <select ref={(elem)=>{this.nodes.generation = elem}}>
-                  <option value="7">7기</option>
-                </select>
-                <label htmlFor="">멘토</label>
-                <input type="radio" name="grade" ref={(elem)=>{this.nodes.radio_mentor = elem}}/>
-                <label htmlFor="">멘티</label>
-                <input type="radio" name="grade" ref={(elem)=>{this.nodes.radio_mentee = elem}}/>
-              </div>
-              <div>
-                <label htmlFor="">남</label>
-                <input type="radio" name="gender" ref={(elem)=>{this.nodes.radio_male = elem}}/>
-                <label htmlFor="">여</label>
-                <input type="radio" name="gender" ref={(elem)=>{this.nodes.radio_female = elem}}/>
+                <span>남</span>
+                <input type="radio" name="gender" value="male"/>
+                <span>여</span>
+                <input type="radio" name="gender" value="female"/>
               </div>
             </div>
-            <div className={styles.buttonStand}>
-              <button onClick={this.handleClickSignup.bind(this)}>Sign Up</button>
+            <div className={styles.buttonContainer}>
+              <button
+                type="button"
+                onClick={this.handleClickSignup}>
+                Sign Up
+              </button>
             </div>
-          </div>
+          </form>
         </div>
       </WelcomeBase>
 
@@ -108,4 +78,19 @@ class Signup extends React.Component {
 
 }
 
-export default Signup
+const routedSignup = withRouter(Signup)
+const ConnectedSignup = connect()(routedSignup)
+
+export default ConnectedSignup
+
+
+// <div>
+// <span>generation</span>
+// <select name="generation">
+//   <option value="7">7기</option>
+// </select>
+// <span>멘토</span>
+// <input type="radio" name="grade" value="mentor"/>
+//   <span>멘티</span>
+//   <input type="radio" name="grade" value="mentee"/>
+//   </div>

@@ -1,8 +1,8 @@
 /* External Dependencies */
 import React from 'react'
-import {browserHistory} from 'react-router'
+require('es6-promise').polyfill();
+require('whatwg-fetch')
 
-/* */
 import styles from './App.scss'
 
 class App extends React.Component {

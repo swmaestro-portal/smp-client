@@ -7,9 +7,13 @@ import { createHashHistory } from 'history'
 import App from './components/App'
 import Signin from './components/Signin'
 import Signup from './components/Signup'
-import Home from './components/Home'
+import Home$ from './containers/Home$'
 import MainFrame from './components/MainFrame'
-import Lectures$ from './components/Lectures'
+import Lectures$ from './containers/Lectures$'
+import Lecture$ from './containers/Lectures$'
+import Leftbar from './components/Leftbar'
+import Masthead from './components/Masthead'
+import MainPanel from './components/MainPanel'
 
 /************************************************************
  * Redux
@@ -17,29 +21,33 @@ import Lectures$ from './components/Lectures'
 import store from './redux'
 import { Provider } from 'react-redux'
 
-
 function authCheck(nextState, replace) {
   console.log('auth')
   if (!window.sessionStorage.hasOwnProperty('smp-token')) {
+    console.log('not logged in')
     replace('/signin')
   }
 }
 
 // const appHistory = useRouterHistory(createHashHistory)()
 
-const Temp = ({ power }) => (
-  <div className="Sidebar">
-    {power}
-  </div>
-)
 
 export default (
   <Provider store={store()}>
     <Router history={browserHistory}>
       <Route path="/" component={App}>
-        <Route component={({a,b})=>(<div>{a}</div>)}>
-          <IndexRoute component={Home}/>
-          <Route path="/lectures" components={{a: Lectures$, b: Signin}}/>
+        <Route path="signin" component={Signin}/>
+        <Route path="signup" component={Signup}/>
+        <Route component={MainFrame} onEnter={authCheck}>
+          <IndexRoute components={{mainPanel: Home$}}/>
+          <Route
+            path="lectures"
+            components={{mainPanel: Lectures$}}
+            />
+          <Route
+            path="lectures/:lectureID"
+            components={{mainPanel: Lecture$}}
+          />
 
         </Route>
       </Route>
@@ -49,9 +57,3 @@ export default (
 )
 
 
-
-
-// <Route path="lectures/:id" component={null}/>
-//
-//   <Route path="assignments" component={null}/>
-//   <Route path="assignments/:id" component={null}/>

@@ -1,5 +1,7 @@
-import UserReducer from './UserReducer'
+import userReducer from './userReducer'
+import lecturesReducer from './lecturesReducer'
 
 export default {
-  UserReducer: UserReducer
+  userReducer,
+  lecturesReducer
 }

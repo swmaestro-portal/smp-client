@@ -1,8 +1,8 @@
-import LectureActions from ''
+import lectureActions from './LectureActionCreator'
+import userActions from './UserActionCreator'
 
 module.exports = {
-  notificationsApi,
-  userApi,
-  lectureApi
+  userActions,
+  lectureActions
 }
 

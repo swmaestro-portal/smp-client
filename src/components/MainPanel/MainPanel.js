@@ -9,21 +9,11 @@ import MyArticleBoard from '../MyArticleBoard'
 import BigCalendar from '../BigCalendar'
 
 
-var events = [
-  {
-    'title': 'All Day Event',
-    'allDay': true,
-    'start': new Date(2015, 3, 0),
-    'end': new Date(2015, 3, 0)
-  },
-  {
-    'title': 'Long Event',
-    'start': new Date(2015, 3, 7),
-    'end': new Date(2015, 3, 10)
-  }
-]
-
 class MainPanel extends React.Component {
+
+  componentDidMount() {
+    console.log('main panel', this.props.children)
+  }
 
   render() {
     return (
@@ -35,12 +25,9 @@ class MainPanel extends React.Component {
          </span>
         </div>
         <div className={styles.content}>
-          <BigCalendar events={events}/>
-          
-          <div className={styles.boardGroup}>
-            <RecentBoard/>
-            <MyArticleBoard/>
-          </div>
+
+          {this.props.children}
+
         </div>
 
       </div>
@@ -50,3 +37,11 @@ class MainPanel extends React.Component {
 }
 
 export default MainPanel
+
+
+// <BigCalendar events={events}/>
+//
+//   <div className={styles.boardGroup}>
+// <RecentBoard/>
+// <MyArticleBoard/>
+// </div>

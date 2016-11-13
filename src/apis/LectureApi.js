@@ -1,8 +1,7 @@
 import * as API from './lib.js'
 
-/**
- *
- */
-export function getLectures() {
-  return API.get(`lectures`)
+export default {
+  requestGetLectures: function() {
+    return API.get(`lectures`)
+  }
 }
