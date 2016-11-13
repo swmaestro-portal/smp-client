@@ -3,9 +3,9 @@ import React from 'react'
 import {browserHistory} from 'react-router'
 
 /* */
-import styles from './App.scss'
+import styles from './Lecture$.scss'
 
-class App extends React.Component {
+class Lecture$ extends React.Component {
 
   constructor() {
     super()
@@ -17,11 +17,11 @@ class App extends React.Component {
   render() {
     return (
       <div className={styles.wrapper}>
-        {this.props.children}
+        Lecture
       </div>
     )
   }
 
 }
 
-export default App
+export default Lecture$

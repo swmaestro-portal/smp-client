@@ -5,8 +5,15 @@ import { withRouter } from 'react-router'
 
 /* Internal Dependencies */
 import styles from './Signin.scss'
-import * as UserActionCreator from '../../actions/UserActionCreator'
+import { userActions } from '../../actions'
 import WelcomeBase from '../Welcome/WelcomeBase'
+
+function withdrawMoney(amount) {
+  return {
+    type: 'WITHDRAW',
+    amount
+  };
+}
 
 class Signin extends React.Component {
 
@@ -17,16 +24,15 @@ class Signin extends React.Component {
     this.handleClickSignup = this.handleClickSignup.bind(this)
   }
 
-  componentWillMount() {
-    console.log('Signin mount')
-  }
-
   handleClickSignin(event) {
     const userInfo = {
       username: this.nodes.username.value,
       password: this.nodes.password.value
     }
-    this.props.dispatch(UserActionCreator.signin(userInfo))
+    this.props.dispatch(userActions.signin(userInfo))
+      // .then(this.props.router.push('/'))
+      // .catch(error => {console.log(2, error)})
+
   }
 
   handleClickSignup() {

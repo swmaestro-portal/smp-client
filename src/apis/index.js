@@ -1,11 +1,10 @@
-
-import notificationsApi from './notificationsApi'
-import userApi from './userApi'
-import lectureApi from './lectureApi'
+/* */
+// import notificationsApi from './notificationsApi'
+import LectureAPI from './LectureApi'
+import UserAPI from './UserAPI'
 
 module.exports = {
-  notificationsApi,
-  userApi,
-  lectureApi
+  UserAPI,
+  LectureAPI
 }
 

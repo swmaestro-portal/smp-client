@@ -13,10 +13,12 @@ $textWidth: 60px;
   align-items: center;
 
   > p {
+    cursor: pointer;
   }
 
   .img {
     height: 100%;
+    margin-right: 10px;
     width: $textWidth;
     background-image: url('http://www.swmaestro.kr/web/web/_Img/Common/logo.gif');
   }

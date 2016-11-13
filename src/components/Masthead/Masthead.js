@@ -16,7 +16,7 @@ class Masthead extends React.Component {
     return (
       <div className={styles.wrapper}>
         <div className={styles.content}>
-          <div className={styles.logoStand}>
+          <div className={styles.logoContainer}>
             <Logo/>
           </div>
           <div className={styles.searchBox}>
@@ -36,7 +36,9 @@ class Masthead extends React.Component {
                 </a>
               </li>
               <li>
-                <p className={styles.ministry}/>
+                <a href="http://www.msip.go.kr/">
+                  <p className={styles.ministry}/>
+                </a>
               </li>
             </ul>
           </div>

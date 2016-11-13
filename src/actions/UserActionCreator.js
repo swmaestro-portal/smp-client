@@ -1,14 +1,17 @@
-import * as UserAPI from '../apis/userApi'
-import createType from './ActionTypeGenerator'
+import { UserAPI } from '../apis'
+import air from './air'
+import AT from './ActionTypes'
 
-export function signin(user) {
+export default {
+  signin: (user) => (dispatch, getState) => {
+    return UserAPI.requestSignin(user.username, user.password)
+      .then(res => dispatch(air(AT.SIGNIN, res))
+    )
+  },
 
-  console.log(1, user)
-  return {
-    types: createType('SIGNIN'),
-    promise: () => {
-
-      return UserAPI.signin(user.username, user.password)
-    }
+  signup: (user) => (dispatch, getState) => {
+    return UserAPI.requestSignup(user)
+      .then(res => dispatch(air(AT.SIGNUP, res)))
   }
 }
+
