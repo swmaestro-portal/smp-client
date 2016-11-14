@@ -9,6 +9,8 @@ import Signin from './components/Signin'
 import Signup from './components/Signup'
 import Home$ from './containers/Home$'
 import MainFrame from './components/MainFrame'
+import Users$ from './containers/Users$'
+import User$ from './containers/User$'
 import Lectures$ from './containers/Lectures$'
 import Lecture$ from './containers/Lectures$'
 import Leftbar from './components/Leftbar'
@@ -41,6 +43,14 @@ export default (
         <Route component={MainFrame} onEnter={authCheck}>
           <IndexRoute components={{mainPanel: Home$}}/>
           <Route
+            path="users"
+            components={{mainPanel: Users$}}
+            />
+          <Route
+            path="users/:userID"
+            components={{mainPanel: User$}}
+          />
+          <Route
             path="lectures"
             components={{mainPanel: Lectures$}}
             />
@@ -55,5 +65,3 @@ export default (
     </Router>
   </Provider>
 )
-
-

@@ -12,6 +12,11 @@ export default {
   signup: (user) => (dispatch, getState) => {
     return UserAPI.requestSignup(user)
       .then(res => dispatch(air(AT.SIGNUP, res)))
-  }
+  },
+
+  getUsers: () => (dispatch, getState) => {
+    return UserAPI.requestGetUsers()
+      .then(res => dispatch(air(AT.GET_USERS, res)))
+  },
 }
 

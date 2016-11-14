@@ -16,5 +16,9 @@ export default {
     console.log(1, data)
 
     return API.post(`users`, data)
-  }
+  },
+
+  requestGetUsers: function() {
+    return API.get(`users`)
+  },
 }
