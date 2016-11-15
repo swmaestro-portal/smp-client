@@ -1,8 +1,10 @@
+import Immutable from 'immutable'
+
 import AT from '../actions/ActionTypes'
 import Users from '../models/UsersModel'
 
 const initialState = {
-  users: Users.getInstance()
+  users: Users.setInstance()
 }
 
 export default function (state = initialState, action) {
@@ -13,6 +15,12 @@ export default function (state = initialState, action) {
       return {
         ...state,
         users: Users.setInstance(action.payload)
+      }
+
+    case AT.GET_USER:
+      return {
+        ...state,
+        users: Users.updateInstance(state.users, [action.payload])
       }
 
     default:

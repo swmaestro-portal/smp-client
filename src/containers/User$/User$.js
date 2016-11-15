@@ -29,9 +29,13 @@ class User$ extends React.Component {
 
 }
 
-const mapStateToProps = (state/*, props*/) => {
+const getTargetUser = (users, id) => {
+  return users.filter((user) => { return user.get('userId') == id }).first()
+}
+
+const mapStateToProps = (state, props) => {
   return {
-    user: state.userReducer.user
+    user: getTargetUser(state.usersReducer.users, props.params.userID)
   }
 }
 

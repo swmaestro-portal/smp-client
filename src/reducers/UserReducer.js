@@ -12,12 +12,6 @@ export default function _user(state = {}, action) {
       browserHistory.push('/')
       return state
 
-    case AT.GET_USER:
-      return {
-        ...state,
-        user: new User(action.payload)
-      }
-
     default:
       return state
   }
