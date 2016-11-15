@@ -21,4 +21,8 @@ export default {
   requestGetUsers: function() {
     return API.get(`users`)
   },
+
+  requestGetUser: function(id) {
+    return API.get(`users/` + id)
+  },
 }

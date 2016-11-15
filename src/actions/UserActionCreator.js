@@ -18,5 +18,9 @@ export default {
     return UserAPI.requestGetUsers()
       .then(res => dispatch(air(AT.GET_USERS, res)))
   },
-}
 
+  getUser: (id) => (dispatch, getState) => {
+    return UserAPI.requestGetUser(id)
+      .then(res => dispatch(air(AT.GET_USER, res)))
+  }
+}

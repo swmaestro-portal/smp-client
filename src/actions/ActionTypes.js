@@ -5,5 +5,6 @@ export default keymirror({
   'SIGNUP': null,
 
   'GET_USERS': null,
+  'GET_USER': null,
   'GET_LECTURES': null,
 })

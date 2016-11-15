@@ -1,9 +1,11 @@
 /* External Dependencies */
 import React from 'react'
-import {browserHistory} from 'react-router'
+import { connect } from 'react-redux'
 
 /* */
 import styles from './User$.scss'
+import { userActions } from '../../actions'
+import User from '../../components/User'
 
 class User$ extends React.Component {
 
@@ -12,17 +14,27 @@ class User$ extends React.Component {
   }
 
   componentWillMount() {
-
+    const id = this.props.params.userID
+    this.props.dispatch(userActions.getUser(id))
   }
 
   render() {
     return (
       <div className={styles.wrapper}>
-        User
+        <User user={this.props.user}>
+        </User>
       </div>
     )
   }
 
 }
 
-export default User$
+const mapStateToProps = (state/*, props*/) => {
+  return {
+    user: state.userReducer.user
+  }
+}
+
+const ConnectedUser$ = connect(mapStateToProps)(User$)
+
+export default ConnectedUser$
