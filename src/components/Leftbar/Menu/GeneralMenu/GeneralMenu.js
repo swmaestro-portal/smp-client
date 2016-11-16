@@ -5,6 +5,7 @@ import { connect } from 'react-redux'
 /* Internal Dependencies */
 import styles from './GeneralMenu.scss'
 import MenuBase from '../MenuBase'
+import Link from '../../../Link'
 
 class GeneralMenu extends React.Component {
 
@@ -29,8 +30,10 @@ class GeneralMenu extends React.Component {
             <span>지원</span>
           </li>
           <li className={styles.item}>
-            <i className="fa fa-address-card-o" aria-hidden="true"/>
-            <span>사람들</span>
+            <Link to="/users">
+              <i className="fa fa-address-card-o" aria-hidden="true"/>
+              <span>사람들</span>
+            </Link>
           </li>
         </ul>
       </MenuBase>

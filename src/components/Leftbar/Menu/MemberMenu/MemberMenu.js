@@ -18,20 +18,24 @@ class MemberMenu extends React.Component {
     return (
       <MenuBase>
         <ul>
-          <li>
-            <Link to="/lectures">
+          <Link to="/assignments">
+            <li>
               <i className="fa fa-book" aria-hidden="true"/>
               <span>과제</span>
-            </Link>
-          </li>
-          <li>
-            <i className="fa fa-calendar" aria-hidden="true"/>
-            <span>강의</span>
-          </li>
-          <li>
-            <i className="fa fa-user-o" aria-hidden="true"/>
-            <span>MyPage</span>
-          </li>
+            </li>
+          </Link>
+          <Link to="/lectures">
+            <li>
+              <i className="fa fa-calendar" aria-hidden="true"/>
+              <span>강의</span>
+            </li>
+          </Link>
+          <Link to="/me">
+            <li>
+              <i className="fa fa-user-o" aria-hidden="true"/>
+              <span>MyPage</span>
+            </li>
+          </Link>
         </ul>
       </MenuBase>
     )

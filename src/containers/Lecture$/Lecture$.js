@@ -1,9 +1,11 @@
 /* External Dependencies */
 import React from 'react'
-import {browserHistory} from 'react-router'
+import { connect } from 'react-redux'
 
 /* */
 import styles from './Lecture$.scss'
+import { lectureActions } from '../../actions'
+import Lecture from '../../components/Lecture'
 
 class Lecture$ extends React.Component {
 
@@ -12,16 +14,30 @@ class Lecture$ extends React.Component {
   }
 
   componentWillMount() {
+    const id = this.props.params.lectureID
+    this.props.dispatch(lectureActions.getLecture(id))
   }
 
   render() {
     return (
       <div className={styles.wrapper}>
-        Lecture
+        <Lecture lecture={this.props.lecture} />
       </div>
     )
   }
 
 }
 
-export default Lecture$
+const getTargetLecture = (lectures, id) => {
+  return lectures.filter((lecture) => { return lecture.get('articleId') == id }).first()
+}
+
+const mapStateToProps = (state, props) => {
+  return {
+    lecture: getTargetLecture(state.lecturesReducer.lectures, props.params.lectureID)
+  }
+}
+
+const ConnectedLecture$ = connect(mapStateToProps)(Lecture$)
+
+export default ConnectedLecture$
