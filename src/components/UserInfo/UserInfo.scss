@@ -1,0 +1,26 @@
+@import '../../styles/color.scss';
+
+.wrapper {
+  height: 75px;
+
+  display: flex;
+  align-items: center;
+
+  .avatar {
+    width: 70px;
+    font-size: 40px;
+    text-align: center;
+    color: $dark;
+  }
+
+  .info {
+    width: 100%;
+    padding-left: 5px;
+
+    > p {
+      font-size: 12px;
+      margin-bottom: 3px;
+      color: $blackish;
+    }
+  }
+}

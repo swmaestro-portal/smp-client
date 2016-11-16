@@ -1,0 +1,15 @@
+@import '../../styles/color.scss';
+
+.wrapper {
+
+  width: 220px;
+  height: 100%;
+
+  .content {
+
+    > div:not(:last-child) {
+      border-bottom: 1px solid $dark;
+    }
+  }
+
+}

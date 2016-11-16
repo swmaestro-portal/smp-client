@@ -1,33 +1,67 @@
-/* Route */
-import ReactDom from 'react-dom'
+/**/
 import React from 'react'
-import App from './container/App'
-import Signin from './container/Signin'
-import Signup from './container/Signup'
-import LeftBar from './component/LeftBar'
-import Home from './component/Home'
-// import Task from './container/Task'
-// import MyPage from './container/MyPage'
-import { Router, Route, Link, browserHistory, IndexRoute } from 'react-router'
+import { Router, Route, Link, browserHistory, useRouterHistory, hashHistory, IndexRoute, IndexRedirect } from 'react-router'
+import { createHashHistory } from 'history'
 
-function authCheck(nextState, replaceState) {
-  console.log(3)
-  if (true) {
-    replaceState('/home')
+/**/
+import App from './components/App'
+import Signin from './components/Signin'
+import Signup from './components/Signup'
+import Home$ from './containers/Home$'
+import MainFrame from './components/MainFrame'
+import Users$ from './containers/Users$'
+import User$ from './containers/User$'
+import Lectures$ from './containers/Lectures$'
+import Lecture$ from './containers/Lectures$'
+import Leftbar from './components/Leftbar'
+import Masthead from './components/Masthead'
+import MainPanel from './components/MainPanel'
+
+/************************************************************
+ * Redux
+ ************************************************************/
+import store from './redux'
+import { Provider } from 'react-redux'
+
+function authCheck(nextState, replace) {
+  console.log('auth')
+  if (!window.sessionStorage.hasOwnProperty('smp-token')) {
+    console.log('not logged in')
+    replace('/signin')
   }
 }
 
+// const appHistory = useRouterHistory(createHashHistory)()
+
+
 export default (
-  <Router history={browserHistory}>
-    <Route path="/" component={App}>
-      <IndexRoute onEnter={authCheck}/>
-      <Route path="signup" component={Signup}/>
-      <Route path="signin" component={Signin}/>
-      <Route path="home" component={Home}>
+  <Provider store={store()}>
+    <Router history={browserHistory}>
+      <Route path="/" component={App}>
+        <Route path="signin" component={Signin}/>
+        <Route path="signup" component={Signup}/>
+        <Route component={MainFrame} onEnter={authCheck}>
+          <IndexRoute components={{mainPanel: Home$}}/>
+          <Route
+            path="users"
+            components={{mainPanel: Users$}}
+            />
+          <Route
+            path="users/:userID"
+            components={{mainPanel: User$}}
+          />
+          <Route
+            path="lectures"
+            components={{mainPanel: Lectures$}}
+            />
+          <Route
+            path="lectures/:lectureID"
+            components={{mainPanel: Lecture$}}
+          />
 
+        </Route>
       </Route>
-    </Route>
-  </Router>
+
+    </Router>
+  </Provider>
 )
-
-

@@ -1,0 +1,23 @@
+@import '../../styles/color.scss';
+
+.wrapper {
+  background-color: $light;
+
+  > div {
+
+  }
+
+  .leftar {
+
+  }
+
+  .mainPanel {
+    width: calc(100% - 220px);
+  }
+
+  .body {
+    display: flex;
+    flex-direction: row;
+  }
+
+}
