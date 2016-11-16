@@ -1,5 +1,3 @@
-import Immutable from 'immutable'
-
 import AT from '../actions/ActionTypes'
 import Users from '../models/UsersModel'
 
@@ -11,6 +9,7 @@ export default function (state = initialState, action) {
   console.log('_users', state, action)
 
   switch (action.type) {
+
     case AT.GET_USERS:
       return {
         ...state,
