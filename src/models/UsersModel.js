@@ -29,7 +29,7 @@ class UsersModel {
 
       // Update if exists
       users = users.map((existsUser) => {
-        return existsUser.userId == user.userId ? User.updateINstance(existsUser, user) : existsUser
+        return existsUser.userId == user.userId ? User.updateInstance(existsUser, user) : existsUser
       })
     })
 
