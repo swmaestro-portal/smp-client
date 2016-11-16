@@ -7,4 +7,5 @@ export default keymirror({
   'GET_USERS': null,
   'GET_USER': null,
   'GET_LECTURES': null,
+  'GET_LECTURE': null
 })
