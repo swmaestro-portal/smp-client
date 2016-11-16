@@ -16,5 +16,13 @@ export default {
     console.log(1, data)
 
     return API.post(`users`, data)
-  }
+  },
+
+  requestGetUsers: function() {
+    return API.get(`users`)
+  },
+
+  requestGetUser: function(id) {
+    return API.get(`users/` + id)
+  },
 }
