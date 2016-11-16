@@ -5,7 +5,7 @@ const initialState = {
   lectures: Lectures.setInstance()
 }
 
-export default function (state = initialState, action) {
+export default function(state = initialState, action) {
   console.log('_lectures', state, action)
 
   switch (action.type) {
