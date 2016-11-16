@@ -21,7 +21,7 @@ class UsersModel {
 
   static updateInstance(users, newUsers) {
     newUsers.map((user) => {
-      if (users.filter((user) => { return user.get('userId') == id }).size == 0) {
+      if (users.filter((existsUser) => { return existsUser.get('userId') == user.userId }).size == 0) {
         // Append if not exists
         users = users.push(new User(user))
         return
