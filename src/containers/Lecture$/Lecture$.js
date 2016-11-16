@@ -5,6 +5,7 @@ import { connect } from 'react-redux'
 /* */
 import styles from './Lecture$.scss'
 import { lectureActions } from '../../actions'
+import Lecture from '../../components/Lecture'
 
 class Lecture$ extends React.Component {
 
@@ -20,8 +21,7 @@ class Lecture$ extends React.Component {
   render() {
     return (
       <div className={styles.wrapper}>
-        Lecture
-        {this.props.lecture}
+        <Lecture lecture={this.props.lecture} />
       </div>
     )
   }
