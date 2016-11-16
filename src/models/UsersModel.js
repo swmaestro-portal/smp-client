@@ -6,7 +6,7 @@ import User from './UserModel'
 
 class UsersModel {
   constructor() {
-    console.warn('DO NOT instantiate UserModel')
+    console.warn('DO NOT instantiate UsersModel')
   }
 
   static setInstance(users=null) {
@@ -15,7 +15,7 @@ class UsersModel {
     }
 
     return Immutable.List(
-      users.map(elem => { return new User(elem) })
+      users.map(elem => { return User.setInstance(elem) })
     )
   }
 
@@ -29,7 +29,7 @@ class UsersModel {
 
       // Update if exists
       users = users.map((existsUser) => {
-        return existsUser.userId == user.userId ? new User(user) : existsUser
+        return existsUser.userId == user.userId ? User.updateINstance(existsUser, user) : existsUser
       })
     })
 
