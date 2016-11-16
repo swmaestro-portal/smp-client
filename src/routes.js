@@ -13,6 +13,8 @@ import Users$ from './containers/Users$'
 import User$ from './containers/User$'
 import Lectures$ from './containers/Lectures$'
 import Lecture$ from './containers/Lecture$'
+import Assignments$ from './containers/Assignments$'
+//import Assignment$ from './containers/Assignment$'
 import Leftbar from './components/Leftbar'
 import Masthead from './components/Masthead'
 import MainPanel from './components/MainPanel'
@@ -57,6 +59,11 @@ export default (
           <Route
             path="lectures/:lectureID"
             components={{mainPanel: Lecture$}}
+          />
+
+          <Route
+              path="assignments"
+              components={{mainPanel: Assignments$}}
           />
 
         </Route>
