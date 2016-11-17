@@ -15,7 +15,7 @@ import Lectures$ from './containers/Lectures$'
 import Lecture$ from './containers/Lecture$'
 import Assignments$ from './containers/Assignments$'
 //import Assignment$ from './containers/Assignment$'
-import Leftbar from './components/Leftbar'
+import LeftBar from './components/LeftBar'
 import Masthead from './components/Masthead'
 import MainPanel from './components/MainPanel'
 

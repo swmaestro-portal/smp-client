@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 
 /**/
 import styles from './MainFrame.scss'
-import Leftbar from '../Leftbar'
+import LeftBar from '../LeftBar'
 import MainPanel from '../MainPanel'
 import Masthead from '../Masthead/Masthead'
 
@@ -12,7 +12,7 @@ const MainFrame = ({mainPanel}) => {
     <div className={styles.wrapper}>
       <Masthead/>
       <div className={styles.body}>
-        <Leftbar className={styles.leftbar}/>
+        <Leftbar className={styles.leftBar}/>
         <MainPanel className={styles.mainPanel}>
           {mainPanel}
         </MainPanel>

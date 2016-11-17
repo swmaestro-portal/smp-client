@@ -1,8 +1,8 @@
 /* */
 // import notificationsApi from './notificationsApi'
 import LectureAPI from './LectureApi'
-import UserAPI from './UserAPI'
-import AssignmentAPI from './AssignmentAPI'
+import UserAPI from './UserApi'
+import AssignmentAPI from './AssignmentApi'
 
 module.exports = {
   UserAPI,

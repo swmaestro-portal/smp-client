@@ -4,13 +4,13 @@ import classNames from 'classnames'
 import { withRouter } from 'react-router'
 
 /* Internal Dependencies */
-import styles from './Leftbar.scss'
+import styles from './LeftBar.scss'
 import GeneralMenu from './Menu/GeneralMenu'
 import MemberMenu from './Menu/MemberMenu'
 import UserInfo from '../UserInfo'
 import Notifications from '../Notifications'
 
-class Leftbar extends React.Component {
+class LeftBar extends React.Component {
 
   constructor() {
     super()
@@ -36,6 +36,6 @@ class Leftbar extends React.Component {
   }
 }
 
-const routedLeftbar = withRouter(Leftbar)
+const routedLeftBar = withRouter(LeftBar)
 
-export default routedLeftbar
+export default routedLeftBar
