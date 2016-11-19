@@ -18,11 +18,26 @@ export default {
     return API.post(`users`, data)
   },
 
-  requestGetUsers: function() {
+  requestGetUsers: () => {
     return API.get(`users`)
   },
 
-  requestGetUser: function(id) {
-    return API.get(`users/` + id)
+  requestGetUser: (id) => {
+    return API.get(`users/${id}`)
   },
+
+  requestPutUser: (id, user) => {
+    const data = {
+      "userName": user.name,
+      "userGender": user.gender,
+      "userPhone": user.phone,
+      "userStatus": user.status,
+    }
+
+    if (user.password.length > 0) {
+      data["userPassword"] = user.password
+    }
+
+    return API.put(`users/${id}`, data)
+  }
 }

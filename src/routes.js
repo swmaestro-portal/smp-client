@@ -11,6 +11,7 @@ import HomeContainer from './containers/HomeContainer'
 import MainFrame from './components/MainFrame'
 import UsersContainer from './containers/UsersContainer'
 import UserContainer from './containers/UserContainer'
+import UserEditContainer from './containers/UserEditContainer'
 import LecturesContainer from './containers/LecturesContainer'
 import LectureContainer from './containers/LectureContainer'
 import AssignmentsContainer from './containers/AssignmentsContainer'
@@ -39,6 +40,10 @@ export default (
           <Route
             path="users/:userID"
             components={{mainPanel: UserContainer}}
+          />
+          <Route
+            path="users/:userID/edit"
+            components={{mainPanel: UserEditContainer}}
           />
           <Route
             path="lectures"

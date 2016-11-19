@@ -16,12 +16,6 @@ export default function (state = initialState, action) {
         users: Users.setInstance(action.payload)
       }
 
-    case AT.GET_USER:
-      return {
-        ...state,
-        users: Users.updateInstance(state.users, [action.payload])
-      }
-
     default:
       return state
   }
