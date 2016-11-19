@@ -3,11 +3,11 @@ import React from 'react'
 import { connect } from 'react-redux'
 
 /* */
-import styles from './User$.scss'
+import styles from './UserContainer.scss'
 import { userActions } from '../../actions'
 import User from '../../components/User'
 
-class User$ extends React.Component {
+class UserContainer extends React.Component {
 
   constructor() {
     super()
@@ -39,6 +39,6 @@ const mapStateToProps = (state, props) => {
   }
 }
 
-const ConnectedUser$ = connect(mapStateToProps)(User$)
+UserContainer = connect(mapStateToProps)(UserContainer)
 
-export default ConnectedUser$
+export default UserContainer

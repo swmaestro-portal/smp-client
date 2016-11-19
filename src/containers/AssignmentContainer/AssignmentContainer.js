@@ -3,9 +3,9 @@ import React from 'react'
 import {browserHistory} from 'react-router'
 
 /* */
-import styles from './Assignment.scss'
+import styles from './AssignmentContainer.scss'
 
-class Assignment$ extends React.Component {
+class AssignmentContainer extends React.Component {
 
   constructor() {
     super()
@@ -24,4 +24,4 @@ class Assignment$ extends React.Component {
 
 }
 
-export default Assignment$
+export default AssignmentContainer

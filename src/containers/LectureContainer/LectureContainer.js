@@ -3,11 +3,11 @@ import React from 'react'
 import { connect } from 'react-redux'
 
 /* */
-import styles from './Lecture$.scss'
+import styles from './LectureContainer.scss'
 import { lectureActions } from '../../actions'
 import Lecture from '../../components/Lecture'
 
-class Lecture$ extends React.Component {
+class LectureContainer extends React.Component {
 
   constructor() {
     super()
@@ -38,6 +38,6 @@ const mapStateToProps = (state, props) => {
   }
 }
 
-const ConnectedLecture$ = connect(mapStateToProps)(Lecture$)
+LectureContainer = connect(mapStateToProps)(LectureContainer)
 
-export default ConnectedLecture$
+export default LectureContainer

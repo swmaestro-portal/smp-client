@@ -1,24 +1,19 @@
-/**/
+/* Externals */
 import React from 'react'
 import { Router, Route, Link, browserHistory, useRouterHistory, hashHistory, IndexRoute, IndexRedirect } from 'react-router'
-import { createHashHistory } from 'history'
 
-/**/
+/* Internals */
 import App from './components/App'
 import Signin from './components/Signin'
 import Signup from './components/Signup'
-import Home$ from './containers/Home$'
+import HomeContainer from './containers/HomeContainer'
 import MainFrame from './components/MainFrame'
-import Users$ from './containers/Users$'
-import User$ from './containers/User$'
-import Lectures$ from './containers/Lectures$'
-import Lecture$ from './containers/Lecture$'
-import Assignments$ from './containers/Assignments$'
-import New$ from './containers/New$'
+import UsersContainer from './containers/UsersContainer'
+import UserContainer from './containers/UserContainer'
+import LecturesContainer from './containers/LecturesContainer'
+import LectureContainer from './containers/LectureContainer'
+import AssignmentsContainer from './containers/AssignmentsContainer'
 //import Assignment$ from './containers/Assignment$'
-import Leftbar from './components/Leftbar'
-import Masthead from './components/Masthead'
-import MainPanel from './components/MainPanel'
 
 /************************************************************
  * Redux
@@ -34,9 +29,6 @@ function authCheck(nextState, replace) {
   }
 }
 
-// const appHistory = useRouterHistory(createHashHistory)()
-
-
 export default (
   <Provider store={store()}>
     <Router history={browserHistory}>
@@ -44,35 +36,27 @@ export default (
         <Route path="signin" component={Signin}/>
         <Route path="signup" component={Signup}/>
         <Route component={MainFrame} onEnter={authCheck}>
-          <IndexRoute components={{mainPanel: Home$}}/>
+          <IndexRoute components={{mainPanel: HomeContainer}}/>
           <Route
             path="users"
-            components={{mainPanel: Users$}}
+            components={{mainPanel: UsersContainer}}
             />
           <Route
             path="users/:userID"
-            components={{mainPanel: User$}}
+            components={{mainPanel: UserContainer}}
           />
           <Route
             path="lectures"
-            components={{mainPanel: Lectures$}}
+            components={{mainPanel: LecturesContainer}}
             />
           <Route
-            path="lectures/new"
-            components={{mainPanel: New$}}
-          />
-          <Route
             path="lectures/:lectureID"
-            components={{mainPanel: Lecture$}}
+            components={{mainPanel: LectureContainer}}
           />
-
           <Route
               path="assignments"
-              components={{mainPanel: Assignments$}}
+              components={{mainPanel: AssignmentsContainer}}
           />
-
-
-
         </Route>
       </Route>
 

@@ -3,11 +3,11 @@ import React from 'react'
 import { connect } from 'react-redux'
 
 /* */
-import styles from './Assignments$.scss'
+import styles from './AssignmentsContainer.scss'
 import { assignmentActions } from '../../actions'
 import Assignments from '../../components/Assignments'
 
-class Assignments$ extends React.Component {
+class AssignmentsContainer extends React.Component {
 
   constructor() {
     super()
@@ -31,6 +31,6 @@ const mapStateToProps = (state/*, props*/) => {
   }
 }
 
-const ConnectedAssignments$ = connect(mapStateToProps)(Assignments$)
+AssignmentsContainer = connect(mapStateToProps)(AssignmentsContainer)
 
-export default ConnectedAssignments$
+export default AssignmentsContainer
