@@ -2,16 +2,14 @@ import AT from '../actions/ActionTypes'
 import Assignments from '../models/AssignmentsModel'
 
 const initialState = {
-  assignments: Assignments.getInstance()
+  assignments: Assignments.setInstance()
 }
 
-export default function (state = initialState, action) {
+export default function(state = initialState, action) {
   console.log('_assignments', state, action)
 
   switch (action.type) {
     
-    // const _lectures = state.
-
     case AT.GET_ASSIGNMENTS:
       return {
         ...state,

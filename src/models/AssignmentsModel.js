@@ -4,24 +4,22 @@ import Immutable from 'immutable'
 /* */
 import Assignment from './AssignmentModel'
 
-let _assignments = Immutable.List()
-
 class AssignmentsModel {
   
   constructor() {
 
   }
   
-  static setInstance(assignment) {
-    assignment.map((elem) => {
-      _assignments = _assignments.push(new Assignment(elem))
-    })
-    return _assignments
+  static setInstance(assignments) {
+    if (assignments == null) {
+      return Immutable.List()
+    }
+  
+    return Immutable.List(
+      assignments.map(assignment => new Assignment(assignment))
+    )
   }
   
-  static getInstance() {
-    return _assignments
-  }
 
 }
 

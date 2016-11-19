@@ -10,30 +10,32 @@ class LecturesModel {
     console.warn('DO NOT instantiate LecturesModel')
   }
 
-  static setInstance(lectures=null) {
+  static setInstance(lectures = null) {
     if (lectures == null) {
       return Immutable.List()
     }
-
+  
     return Immutable.List(
-      lectures.map(elem => { return Lecture.setInstance(elem) })
+      lectures.map(elem => new Lecture(elem))
     )
   }
 
-  static updateInstance(lectures, newLectures) {
-    newLectures.map((lecture) => {
-      if (lectures.filter((existsLecture) => { return existsLecture.get('articleId') == lecture.lectureId }).size == 0) {
+  static updateInstance(_lectures, lectures) {
+    lectures.map((lecture) => {
+      if (_lectures.filter((_lecture) => _lecture.get('articleId') == lecture.lectureId).size === 0) {
         // Append if not exists
-        lectures = lectures.push(Lecture.setInstance(lecture))
+        _lectures = _lectures.push(new Lecture(lecture))
       } else {
         // Update if exists
-        lectures = lectures.map((existsLecture) => {
-          return existsLecture.articleId == lecture.articleId ? Lecture.updateInstance(existsLecture, lecture) : existsLecture
+        _lectures = _lectures.map((elem) => {
+          return elem.articleId === lecture.articleId ?
+              new Lecture(lecture)
+            : elem
         })
       }
     })
 
-    return lectures
+    return _lectures
   }
 
 }
