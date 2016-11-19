@@ -11,6 +11,8 @@ class UserEditContainer extends React.Component {
 
   constructor() {
     super()
+
+    this.handleClickUserEdit = this.handleClickUserEdit.bind(this)
   }
 
   componentWillMount() {
@@ -34,7 +36,7 @@ class UserEditContainer extends React.Component {
   render() {
     return (
       <div className={styles.wrapper}>
-        <UserEdit user={this.props.user} handleClickUserEdit={this.handleClickUserEdit.bind(this)}>
+        <UserEdit user={this.props.user} handleClickUserEdit={this.handleClickUserEdit}>
         </UserEdit>
       </div>
     )
