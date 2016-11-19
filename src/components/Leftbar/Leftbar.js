@@ -8,7 +8,7 @@ import styles from './Leftbar.scss'
 import GeneralMenu from './Menu/GeneralMenu'
 import MemberMenu from './Menu/MemberMenu'
 import UserInfoContainer from '../../containers/UserInfoContainer'
-import Notifications from '../Notifications'
+import NotificationsContainer from '../../containers/NotificationsContainer'
 
 class Leftbar extends React.Component {
 
@@ -29,7 +29,7 @@ class Leftbar extends React.Component {
           <UserInfoContainer/>
           <GeneralMenu/>
           <MemberMenu/>
-          <Notifications/>
+          <NotificationsContainer />
         </div>
       </div>
     )

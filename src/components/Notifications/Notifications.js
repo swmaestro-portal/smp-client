@@ -1,55 +1,35 @@
 /* External Dependencies */
 import React from 'react'
-import classNames from 'classnames'
 import { withRouter } from 'react-router'
-import { connect } from 'react-redux'
 
 /* Internal Dependencies */
 import styles from './Notifications.scss'
+import Notification from './Notification'
 
 
-class Notifications extends React.Component {
+const Notifications = (props) => {
+  if (props.notifications == null) return <div />
 
-  constructor() {
-    super()
-  }
-  
-  componentWillMount() {
-    // this.props.dispatch()
-  }
+  const notifications = props.notifications.map(
+    (elem, i) => <Notification key={i} idx={i} notification={elem} className={styles.row} handleClickNotification={props.handleClickNotification} />
+  )
 
-  render() {
-    // console.log(1, this.props.reduxState, notificationsApi)
-    return (
-      <div className={styles.wrapper}>
-        <ul>
-          <li>
-            <i className="fa fa-bell" aria-hidden="true"/>
-            <span>foo로 부터 댓글이 달렸습니다</span>
-          </li>
-          <li>
-            <i className="fa fa-bell" aria-hidden="true"/>
-            <span>foo로 부터 댓글이 달렸습니다</span>
-          </li>
-          <li>
-            <i className="fa fa-bell" aria-hidden="true"/>
-            <span>foo로 부터 댓글이 달렸습니다</span>
-          </li>
-        </ul>
-      </div>
-    )
-  }
+  const empty = (
+    <div className={styles.empty_message}>
+      <p>알림이 없습니다.</p>
+    </div>
+  )
+
+  return (
+    <div className={styles.wrapper}>
+      <h6 className={styles.header}>
+        <i className="fa fa-bell" aria-hidden="true"/>&nbsp;&nbsp;알림
+      </h6>
+      <ul>
+        {notifications.size > 0 ? notifications : empty}
+      </ul>
+    </div>
+  )
 }
 
-
-const mapStateToProps = (state/*, props*/) => {
-  return {
-    reduxState: state
-  }
-}
-
-const routedNotifications = withRouter(Notifications)
-const connectedNotifications = connect(mapStateToProps)(routedNotifications)
-
-// export default routedNotifications
-export default connectedNotifications
+export default Notifications

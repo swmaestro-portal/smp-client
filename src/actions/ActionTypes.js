@@ -15,4 +15,7 @@ export default keymirror({
 
   'GET_COMMENTS': null,
 
+  'GET_NOTIFICATIONS': null,
+  'READ_NOTIFICATION': null
+
 })

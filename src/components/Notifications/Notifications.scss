@@ -1,8 +1,14 @@
 @import '../../styles/color.scss';
 
 .wrapper {
-  > ul > li {
-    padding: 10px 5px;
-    border-bottom: 1px solid $dark;
+
+  .header {
+    padding: 8px;
+    background-color: rgba(128, 128, 128, 0.1);
+  }
+
+  .empty_message {
+    padding: 16px 8px;
+    color: #888888;
   }
 }

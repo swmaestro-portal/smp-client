@@ -1,0 +1,41 @@
+@import '../../../styles/color.scss';
+
+.wrapper {
+  display: inline-block;
+  width: 100%;
+
+  a {
+    text-decoration: none;
+    display: block;
+    width: 100%;
+
+    margin: 0;
+    padding: 14px 8px;
+  }
+
+  .timeago {
+    display: block;
+
+    font-size: 0.8em;
+    margin-top: 4px;
+    color: #888;
+  }
+
+  border-bottom: 1px solid #ccc;
+}
+
+.unread {
+  background-color: #fcfbec;
+
+  .message {
+    color: black;
+    font-weight: bold;
+  }
+}
+
+.read {
+  background-color: #fafafa;
+  .message {
+    color: #888;
+  }
+}
