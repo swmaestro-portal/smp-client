@@ -2,7 +2,7 @@
  * Created by dbgsprw on 16. 11. 17.
  */
 
-module.exports = {
+export default {
 
   dayToKoreanWeekday: function(day) {
     var koreanWeekday = null

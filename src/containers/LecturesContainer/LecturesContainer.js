@@ -2,10 +2,11 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-/* */
+/* Internals */
 import styles from './LecturesContainer.scss'
 import { lectureActions } from '../../actions'
-import Lectures from '../../components/Lectures'
+import { combinedLecturesSelector } from '../../selectors'
+import LectureList from '../../components/LectureList'
 
 class LecturesContainer extends React.Component {
 
@@ -19,7 +20,7 @@ class LecturesContainer extends React.Component {
 
   render() {
     return (
-      <Lectures lectures={this.props.lectures}/>
+      <LectureList lectures={this.props.lectures}/>
     )
   }
 
@@ -27,7 +28,7 @@ class LecturesContainer extends React.Component {
 
 const mapStateToProps = (state/*, props*/) => {
   return {
-    lectures: state.lecturesReducer.lectures
+    lectures: combinedLecturesSelector(state)
   }
 }
 

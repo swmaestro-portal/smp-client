@@ -7,7 +7,7 @@ import Lecture from './LectureModel'
 class LecturesModel {
 
   constructor() {
-    console.warn('DO NOT instantiate LecturesModel')
+    console.warn('NOT INSTANTIABLE')
   }
 
   static setInstance(lectures = null) {

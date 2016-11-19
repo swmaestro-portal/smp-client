@@ -3,7 +3,7 @@ import Immutable from 'immutable'
 
 class LectureModel {
 
-  constructor(lecture) {
+  constructor(lecture = {}) {
     return Immutable.fromJS(lecture)
   }
 

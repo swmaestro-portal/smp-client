@@ -3,31 +3,30 @@ import React from 'react'
 import { withRouter } from 'react-router'
 import classNames from 'classnames'
 import Link from '../../Link'
-import Utils from '../../../utils'
+import { DateUtils } from '../../../utils'
 
 /* Internal Dependencies */
-import styles from './Lecture.scss'
+import styles from './LectureItem.scss'
 
-const Lecture = (props) => {
+const LectureItem = (props) => {
 
-  var beginAt = new Date(props.lecture.get('lectureBeginAt'))
-  var endAt = new Date(props.lecture.get('lectureEndAt'))
+  const beginAt = new Date(props.lecture.get('lectureBeginAt'))
+  const endAt = new Date(props.lecture.get('lectureEndAt'))
+
+  const date = `${beginAt.getFullYear()}년 
+    ${(beginAt.getMonth() + 1)}월 
+    ${beginAt.getDate()}일 
+    (${DateUtils.dayToKoreanWeekday(beginAt.getDay())})`
+  const createdAt = `게시일 ${props.lecture.get('articleCreatedAt')}`
+  const time = `${beginAt.toString().substring(15,21)} ~ ${endAt.toString().substring(15,21)}`
+  
 
   return (
     <div className={classNames(styles.wrapper, {[styles.firstItem]: props.idx === 0})}>
       <div className={styles.schedule}>
         <span>{`[${props.lecture.get('articleGenerationId')}기]`}</span>
-        <span className={styles.date}>{
-          beginAt.getFullYear() + "년 " +
-          (beginAt.getMonth() + 1) + "월 " +
-          beginAt.getDate() + "일(" +
-          Utils.dateUtils.dayToKoreanWeekday(beginAt.getDay()) + ")"
-        }</span>
-        <span className={styles.time}>{
-          "[" +
-          beginAt.toString().substring(16,21) + " ~ " +
-          endAt.toString().substring(16,21) + "]"
-        }</span>
+        <span className={styles.date}>{date}</span>
+        <span className={styles.time}>{time}</span>
       </div>
         <Link to={"/lectures/" + props.lecture.get('articleId')}>
         <div className={styles.subject}>
@@ -63,4 +62,4 @@ const Lecture = (props) => {
 // "lectureBeginAt": "string",
 // "lectureEndAt": "string"
 
-export default Lecture
+export default LectureItem

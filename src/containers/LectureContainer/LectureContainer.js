@@ -6,6 +6,7 @@ import { connect } from 'react-redux'
 import styles from './LectureContainer.scss'
 import { lectureActions } from '../../actions'
 import Lecture from '../../components/Lecture'
+import { combinedLectureSelector } from '../../selectors'
 
 class LectureContainer extends React.Component {
 
@@ -16,6 +17,8 @@ class LectureContainer extends React.Component {
   componentWillMount() {
     const id = this.props.params.lectureID
     this.props.dispatch(lectureActions.getLecture(id))
+      .then(() => {this.props.dispatch(lectureActions.getComments(id))})
+    
   }
 
   render() {
@@ -28,13 +31,9 @@ class LectureContainer extends React.Component {
 
 }
 
-const getTargetLecture = (lectures, id) => {
-  return lectures.filter((lecture) => { return lecture.get('articleId') == id }).first()
-}
-
 const mapStateToProps = (state, props) => {
   return {
-    lecture: getTargetLecture(state.lecturesReducer.lectures, props.params.lectureID)
+    lecture: combinedLectureSelector(state)
   }
 }
 

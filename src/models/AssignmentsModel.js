@@ -7,7 +7,7 @@ import Assignment from './AssignmentModel'
 class AssignmentsModel {
   
   constructor() {
-
+    console.warn('NOT INSTANTIABLE')
   }
   
   static setInstance(assignments) {

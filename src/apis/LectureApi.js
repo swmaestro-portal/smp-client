@@ -7,5 +7,9 @@ export default {
 
   requestGetLecture: function(id) {
     return API.get(`lectures/` + id)
+  },
+  
+  requestGetComments: (id) => {
+    return API.get(`lectures/${id}/comments`)
   }
 }

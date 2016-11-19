@@ -1,0 +1,6 @@
+{
+  "name": "LectureItem",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./LectureItem.js"
+}

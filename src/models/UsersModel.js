@@ -7,7 +7,7 @@ import User from './UserModel'
 class UsersModel {
 
   constructor() {
-    console.warn('DO NOT instantiate UsersModel')
+    console.warn('NOT INSTANTIABLE')
   }
 
   static setInstance(users = null) {
