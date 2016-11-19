@@ -42,13 +42,9 @@ class UserEditContainer extends React.Component {
 
 }
 
-const getTargetUser = (users, id) => {
-  return users.filter((user) => { return user.get('userId') == id }).first()
-}
-
-const mapStateToProps = (state, props) => {
+const mapStateToProps = (state/*, props*/) => {
   return {
-    user: getTargetUser(state.usersReducer.users, props.params.userID)
+    user: state.userReducer.user
   }
 }
 
