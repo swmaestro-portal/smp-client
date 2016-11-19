@@ -22,6 +22,7 @@ const Lecture = (props) => {
     (${DateUtils.dayToKoreanWeekday(beginAt.getDay())})`
   const createdAt = `게시일 ${props.lecture.get('articleCreatedAt')}`
   const time = `${beginAt.toString().substring(15,21)} ~ ${endAt.toString().substring(15,21)}`
+  const generation = `[${props.lecture.get('articleGenerationId')}기]`
 
 
   if (shouldLectureMount(props)) {
@@ -29,9 +30,7 @@ const Lecture = (props) => {
       <div className={styles.wrapper}>
         <div className={styles.header}>
           <div className={styles.subject}>
-            <span className={styles.generation}>
-              {`[${props.lecture.get('articleGenerationId')}기]`}
-            </span>
+            <span className={styles.generation}>{generation}</span>
             <span>{props.lecture.get('articleSubject')}</span>
           </div>
           <div className={styles.teacher}>
