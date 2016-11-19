@@ -2,21 +2,38 @@
 import React from 'react'
 import { withRouter } from 'react-router'
 import classNames from 'classnames'
+import Link from '../../Link'
+import Utils from '../../../utils'
 
 /* Internal Dependencies */
 import styles from './Lecture.scss'
 
 const Lecture = (props) => {
+
+  var beginAt = new Date(props.lecture.get('lectureBeginAt'))
+  var endAt = new Date(props.lecture.get('lectureEndAt'))
+
   return (
     <div className={classNames(styles.wrapper, {[styles.firstItem]: props.idx === 0})}>
       <div className={styles.schedule}>
         <span>{`[${props.lecture.get('articleGenerationId')}기]`}</span>
-        <span>{props.lecture.get('lectureBeginAt')}</span>
-        <span>{props.lecture.get('lectureEndAt')}</span>
+        <span className={styles.date}>{
+          beginAt.getFullYear() + "년 " +
+          (beginAt.getMonth() + 1) + "월 " +
+          beginAt.getDate() + "일(" +
+          Utils.dateUtils.dayToKoreanWeekday(beginAt.getDay()) + ")"
+        }</span>
+        <span className={styles.time}>{
+          "[" +
+          beginAt.toString().substring(16,21) + " ~ " +
+          endAt.toString().substring(16,21) + "]"
+        }</span>
       </div>
-      <div className={styles.subject}>
-        <span>{props.lecture.get('articleSubject')}</span>
-      </div>
+        <Link to={"/lectures/" + props.lecture.get('articleId')}>
+        <div className={styles.subject}>
+          <span>{props.lecture.get('articleSubject')}</span>
+        </div>
+      </Link>
       <div className={styles.meta}>
         <div className={styles.leftMetaGroup}>
           <span className={styles.profileImg}></span>
