@@ -2,35 +2,28 @@
 
 .wrapper {
 
-  display: inline-block;
   width: 100%;
-
   padding: 15px 30px;
+  min-height: 300px;
+  color: gray;
 
-  .head {
+  .header {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    padding-bottom: 10px;
     border-bottom: 1px solid gray;
-
-
     .subject {
-
-      font-size: 30px;
       font-weight: bold;
 
       .generation {
-        font-size: 18px;
 
       }
     }
-
     .teacher {
-      font-size: 20px;
-      align-items: center;
+
     }
   }
+
   .meta {
     display: flex;
     justify-content: space-between;
@@ -38,24 +31,26 @@
     font-size: 15px;
 
     .createdAt {
-      font-size: 5px;
       margin-right: 2px;
     }
-
   }
-  .time{
-    margin-top: 5px;
-    font-size: 20px;
+
+  .time {
+
   }
 
   .content {
     margin-top: 30px;
-
     font-size: 16px;
   }
   .attachment {
     margin-top: 15px;
-
   }
 
+}
+
+.wrapper.spinner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

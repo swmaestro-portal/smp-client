@@ -1,21 +1,21 @@
 import AT from '../actions/ActionTypes'
-import Lectures from '../models/LecturesModel'
+import Lecture from '../models/LectureModel'
 
 const initialState = {
-  lectures: Lectures.setInstance()
+  lecture: new Lecture()
 }
 
 export default function(state = initialState, action) {
-  // console.log('_lectures', state, action)
-
+  console.log('_lecture', state, action)
+  
   switch (action.type) {
-
-    case AT.GET_LECTURES:
+    
+    case AT.GET_LECTURE:
       return {
         ...state,
-        lectures: Lectures.setInstance(action.payload)
+        lecture: new Lecture(action.payload)
       }
-
+    
     default:
       return state
   }

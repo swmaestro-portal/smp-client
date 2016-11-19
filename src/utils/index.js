@@ -1,6 +1,9 @@
-import domUtils from './domUtils'
-import dateUtils from './dateUtils'
+import DomUtils from './DomUtils'
+import DateUtils from './DateUtils'
+import RouteUtils from './RouteUtils'
+
 module.exports = {
-  domUtils,
-  dateUtils
+  DomUtils,
+  DateUtils,
+  RouteUtils
 }
