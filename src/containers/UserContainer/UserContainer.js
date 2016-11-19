@@ -21,7 +21,7 @@ class UserContainer extends React.Component {
   render() {
     return (
       <div className={styles.wrapper}>
-        <User user={this.props.user}>
+        <User user={this.props.user} userID={this.props.params.userID}>
         </User>
       </div>
     )

@@ -22,5 +22,10 @@ export default {
   getUser: (id) => (dispatch, getState) => {
     return UserAPI.requestGetUser(id)
       .then(res => dispatch(createAction(AT.GET_USER, res)))
+  },
+
+  putUser: (id, user) => (dispatch, getState) => {
+    return UserAPI.requestPutUser(id, user)
+      .then(res => dispatch(createAction(AT.PUT_USER, res)))
   }
 }
