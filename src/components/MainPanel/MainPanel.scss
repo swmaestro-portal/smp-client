@@ -3,9 +3,10 @@
 .wrapper {
   width: 100%;
   border-left: 1px solid $dark;
+  color: $blackish;
 
   .header {
-    height: 55px;
+    height: 60px;
     padding: 0 15px;
     border-bottom: 1px solid $dark;
 
@@ -29,7 +30,6 @@
     > div {
       flex: 1;
       height: 300px;
-      //display: inline-block;
     }
   }
 

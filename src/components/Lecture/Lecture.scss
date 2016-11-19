@@ -5,13 +5,13 @@
   width: 100%;
   padding: 15px 30px;
   min-height: 300px;
-  color: gray;
 
   .header {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
     border-bottom: 1px solid gray;
+
     .subject {
       font-weight: bold;
 
@@ -27,7 +27,6 @@
   .meta {
     display: flex;
     justify-content: space-between;
-    margin-top: 5px;
     font-size: 15px;
 
     .createdAt {
@@ -40,7 +39,6 @@
   }
 
   .content {
-    margin-top: 30px;
     font-size: 16px;
   }
   .attachment {

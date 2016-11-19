@@ -15,7 +15,7 @@ class Logo extends React.Component {
     return (
       <div className={styles.wrapper}>
         <Link to="/">
-          <p className={styles.img}/>
+          <p className={styles.img}/>                  
         </Link>
         <Link to="/">
           <p className={styles.text}>
