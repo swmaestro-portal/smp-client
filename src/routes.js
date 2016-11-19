@@ -7,17 +7,14 @@ import { createHashHistory } from 'history'
 import App from './components/App'
 import Signin from './components/Signin'
 import Signup from './components/Signup'
-import Home$ from './containers/Home$'
+import HomeContainer from './containers/HomeContainer'
 import MainFrame from './components/MainFrame'
-import Users$ from './containers/Users$'
-import User$ from './containers/User$'
-import Lectures$ from './containers/Lectures$'
-import Lecture$ from './containers/Lecture$'
-import Assignments$ from './containers/Assignments$'
+import Users$ from './containers/UsersContainer'
+import User$ from './containers/UserContainer'
+import Lectures$ from './containers/LecturesContainer'
+import Lecture$ from './containers/LectureContainer'
+import Assignments$ from './containers/AssignmentsContainer'
 //import Assignment$ from './containers/Assignment$'
-import Leftbar from './components/Leftbar'
-import Masthead from './components/Masthead'
-import MainPanel from './components/MainPanel'
 
 /************************************************************
  * Redux
@@ -35,7 +32,6 @@ function authCheck(nextState, replace) {
 
 // const appHistory = useRouterHistory(createHashHistory)()
 
-
 export default (
   <Provider store={store()}>
     <Router history={browserHistory}>
@@ -43,7 +39,7 @@ export default (
         <Route path="signin" component={Signin}/>
         <Route path="signup" component={Signup}/>
         <Route component={MainFrame} onEnter={authCheck}>
-          <IndexRoute components={{mainPanel: Home$}}/>
+          <IndexRoute components={{mainPanel: HomeContainer}}/>
           <Route
             path="users"
             components={{mainPanel: Users$}}

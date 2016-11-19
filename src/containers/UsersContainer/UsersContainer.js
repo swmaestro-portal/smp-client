@@ -2,12 +2,12 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-/* */
-import styles from './Users$.scss'
+/* Internals */
+import styles from './UsersContainer.scss'
 import { userActions } from '../../actions'
 import Users from '../../components/Users'
 
-class Users$ extends React.Component {
+class UsersContainer extends React.Component {
 
   constructor() {
     super()
@@ -25,13 +25,13 @@ class Users$ extends React.Component {
   }
 
 }
-
+                                                  
 const mapStateToProps = (state/*, props*/) => {
   return {
     users: state.usersReducer.users
   }
 }
 
-const ConnectedUsers$ = connect(mapStateToProps)(Users$)
+UsersContainer = connect(mapStateToProps)(UsersContainer)
 
-export default ConnectedUsers$
+export default UsersContainer
