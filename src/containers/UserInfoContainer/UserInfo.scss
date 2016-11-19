@@ -1,14 +1,12 @@
-@import '../../styles/color.scss';
+@import '../../styles/color';
 
 .wrapper {
-  height: 75px;
-
+  height: 60px;
   display: flex;
   align-items: center;
 
   .avatar {
-    width: 70px;
-    font-size: 40px;
+    font-size: 35px;
     text-align: center;
     color: $dark;
   }

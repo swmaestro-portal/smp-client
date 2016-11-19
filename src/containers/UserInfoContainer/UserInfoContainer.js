@@ -5,15 +5,11 @@ import { withRouter } from 'react-router'
 /* Internal Dependencies */
 import styles from './UserInfo.scss'
 
-class UserInfo extends React.Component {
+class UserInfoContainer extends React.Component {
 
   constructor() {
     super()
     this.handleClickSignout = this.handleClickSignout.bind(this)
-  }
-
-  componentWillMount() {
-    console.log('UserInfo mount')
   }
 
   handleClickSignout() {
@@ -28,13 +24,15 @@ class UserInfo extends React.Component {
           <i className="fa fa-user-circle" aria-hidden="true"/>
         </div>
         <div className={styles.info}>
-          <p>7기</p>
-          <p>장준하</p>
-          <p>멘티</p>
+          <p>
+            <span>7기</span>
+            <span>장준하</span>
+          </p>
+          <p>
+            <span>멘티</span>
+          </p>
         </div>
-        <button 
-          className=""
-          onClick={this.handleClickSignout}>
+        <button onClick={this.handleClickSignout}>
           logout
         </button>
       </div>
@@ -43,6 +41,6 @@ class UserInfo extends React.Component {
 
 }
 
-const routedUserInfo = withRouter(UserInfo)
+UserInfoContainer = withRouter(UserInfoContainer)
 
-export default routedUserInfo
+export default UserInfoContainer

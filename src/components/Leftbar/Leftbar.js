@@ -7,7 +7,7 @@ import { withRouter } from 'react-router'
 import styles from './Leftbar.scss'
 import GeneralMenu from './Menu/GeneralMenu'
 import MemberMenu from './Menu/MemberMenu'
-import UserInfo from '../UserInfo'
+import UserInfoContainer from '../../containers/UserInfoContainer'
 import Notifications from '../Notifications'
 
 class Leftbar extends React.Component {
@@ -26,7 +26,7 @@ class Leftbar extends React.Component {
       <div
         className={classNames(styles.wrapper, this.props.className)}>
         <div className={styles.content}>
-          <UserInfo/>
+          <UserInfoContainer/>
           <GeneralMenu/>
           <MemberMenu/>
           <Notifications/>
