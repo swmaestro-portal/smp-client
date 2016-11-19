@@ -10,8 +10,6 @@ var autoprefixer = require('autoprefixer')
 
 var config = {
   entry: [
-    'webpack-dev-server/client?http://localhost:3001',
-    'webpack/hot/only-dev-server',
     APP_DIR + '/main.js',
 
   ],
@@ -21,9 +19,13 @@ var config = {
   },
   plugins: [
     new ExtractTextPlugin('style.css', { allChunks: true }),
-    new webpack.HotModuleReplacementPlugin(),
     new webpack.ProvidePlugin({
       'fetch': 'imports?this=>global!exports?global.fetch!whatwg-fetch'
+    }),
+    new webpack.NoErrorsPlugin(),
+    new webpack.optimize.UglifyJsPlugin({minimize: true}),
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': '"production"'
     })
   ],
   resolve: {
