@@ -10,13 +10,13 @@ class UsersModel {
     console.warn('DO NOT instantiate UsersModel')
   }
 
-  static setInstance(users=null) {
+  static setInstance(users = null) {
     if (users == null) {
       return Immutable.List()
     }
 
     return Immutable.List(
-      users.map(elem => { return User.setInstance(elem) })
+      users.map(elem => { return new User(elem) })
     )
   }
 
