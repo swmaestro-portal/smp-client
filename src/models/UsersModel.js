@@ -20,21 +20,22 @@ class UsersModel {
     )
   }
 
-  // static updateInstance(_users, users) {
-  //   users.map((user) => {
-  //     if (_users.filter((_user) => _user.get('userId') == user.userId).size == 0) {
-  //       // Append if not exists
-  //       _users = _users.push(new User(user))
-  //     } else {
-  //       // Update if exists
-  //       _users = _users.map((_user) => {
-  //         return _user.userId == user.userId ?
-  //           new  : existsUser
-  //       })
-  //     }
-  //   })
+  static updateInstance(_users, users) {
+    users.map((user) => {
+      if (_users.filter((_user) => _user.get('userId') == user.userId).size == 0) {
+        // Append if not exists
+        _users = _users.push(new User(user))
+      } else {
+        // Update if exists
+        _users = _users.map((_user) => {
+          return _user.userId == user.userId ?
+            new User(user)  
+            : _user
+        })
+      }
+    })
 
-    return users
+    return _users
   }
 
 }
