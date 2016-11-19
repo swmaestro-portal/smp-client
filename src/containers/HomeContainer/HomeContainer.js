@@ -2,37 +2,29 @@ import React from 'react'
 import { connect } from 'react-redux'
 
 /**/
-import styles from './Home$.scss'
+import styles from './HomeContainer.scss'
 import BigCalendar from '../../components/BigCalendar'
 import RecentBoard from '../../components/RecentBoard'
 import MyArticleBoard from '../../components/MyArticleBoard'
 
 
-var events = [
+const events = [
   {
     'title': 'All Day Event',
     'allDay': true,
     'start': new Date(2015, 3, 0),
     'end': new Date(2015, 3, 0)
-  },
-  {
-    'title': 'Long Event',
-    'start': new Date(2015, 3, 7),
-    'end': new Date(2015, 3, 10)
   }
 ]
-
-class Home$ extends React.Component {
-
-  componentDidMount() {
-    console.log('home')
-  }
+class HomeContainer extends React.Component {
 
   render () {
 
     return (
       <div className={styles.wrapper}>
-        <BigCalendar events={events}/>
+        <BigCalendar 
+          events={events} 
+          defaultDate={new Date(2015, 3, 1)}/>
         <RecentBoard/>
         <MyArticleBoard/>
       </div>
@@ -46,7 +38,7 @@ const mapStateToProps = (state/*, props*/) => {
   }
 }
 
-const ConnectedHome$ = connect(mapStateToProps)(Home$)
+HomeContainer = connect(mapStateToProps)(HomeContainer)
 
-export default ConnectedHome$
+export default HomeContainer
 

@@ -1,7 +1,7 @@
 /* */
 import Immutable from 'immutable'
 
-/* */
+/* Internals */
 import Lecture from './LectureModel'
 
 class LecturesModel {
