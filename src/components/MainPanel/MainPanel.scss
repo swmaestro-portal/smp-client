@@ -19,9 +19,7 @@
 
   .content {
     padding: 0;
-    height: 100%;
-    min-height: 50%;
-    overflow: auto;
+    max-height: calc(100% - 108px);
     display: flex;
     > div {
       margin: 0 auto;

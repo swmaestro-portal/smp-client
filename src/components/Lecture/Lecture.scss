@@ -2,7 +2,8 @@
 
 .wrapper {
 
-  min-height: calc(100% - 110px);
+  max-height: calc(100% - 110px);
+  overflow: auto;
   background-color: white;
   padding: 30px 40px;
   border-bottom: 1px solid $dark;
