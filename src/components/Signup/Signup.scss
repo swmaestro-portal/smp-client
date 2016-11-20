@@ -1,0 +1,38 @@
+
+
+.wrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .content {
+
+    > div {
+      display: inline-block;
+    }
+
+    .inputContainer {
+      > div {
+        margin-bottom: 15px;
+      }
+
+      label {
+        width: 70px;
+        margin-right: 5px;
+      }
+    }
+
+    .buttonContainer {
+      margin-left: 20px;
+
+      button:not(:last-child) {
+        margin-right: 5px;
+      }
+    }
+
+
+
+  }
+
+}

@@ -1,0 +1,37 @@
+@import '../../styles/color.scss';
+
+.wrapper {
+  width: 100%;
+  color: $blackish;
+
+  .header {
+    height: 60px;
+    padding: 0 15px;
+    border-bottom: 1px solid $dark;
+
+    display: flex;
+    align-items: center;
+
+    > span {
+      font-weight: bold;
+    }
+  }
+
+  .content {
+    padding: 0;
+    max-height: calc(100% - 108px);
+    display: flex;
+    > div {
+      margin: 0 auto;
+    }
+  }
+
+  .boardGroup {
+    display: flex;
+    > div {
+      flex: 1;
+      height: 300px;
+    }
+  }
+
+}

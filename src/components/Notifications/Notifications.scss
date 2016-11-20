@@ -1,0 +1,14 @@
+@import '../../styles/color.scss';
+
+.wrapper {
+
+  .header {
+    padding: 8px;
+    background-color: rgba(128, 128, 128, 0.1);
+  }
+
+  .empty_message {
+    padding: 16px 8px;
+    color: #888888;
+  }
+}

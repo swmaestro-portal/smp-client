@@ -1,0 +1,15 @@
+@import '../../styles/color.scss';
+
+.wrapper {
+
+  width: 220px;
+  min-height: calc(100% - 48px);
+  border-right: 1px solid $dark;
+
+  .content {
+    > div:not(:last-child) {
+      border-bottom: 1px solid $dark;
+    }
+  }
+
+}

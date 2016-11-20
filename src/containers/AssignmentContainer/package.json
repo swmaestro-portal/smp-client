@@ -1,0 +1,6 @@
+{
+  "name": "AssignmentContainer",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./AssignmentContainer.js"
+}

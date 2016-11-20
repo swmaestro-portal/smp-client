@@ -1,0 +1,18 @@
+@import '../../styles/color';
+
+.wrapper {
+  height: 60px;
+  display: flex;
+  align-items: center;
+
+  .info {
+    width: 100%;
+    padding-left: 5px;
+
+    > p {
+      font-size: 12px;
+      margin-bottom: 3px;
+      color: $blackish;
+    }
+  }
+}

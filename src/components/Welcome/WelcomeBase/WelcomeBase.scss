@@ -1,0 +1,16 @@
+@import '../../../styles/color.scss';
+
+.wrapper {
+  height: 100%;
+
+  .logoStand {
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    > img {
+
+    }
+  }
+
+}
