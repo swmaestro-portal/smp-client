@@ -22,7 +22,7 @@ class NotificationsContainer extends React.Component {
   componentDidMount() {
     setInterval(() => {
       this.props.dispatch(notificationActions.getNotifications())
-    }, 3000);
+    }, 60000);
   }
 
   handleClickNotification(id) {
