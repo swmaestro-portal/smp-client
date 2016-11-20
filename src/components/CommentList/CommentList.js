@@ -14,9 +14,9 @@ function shouldCommentListMount(props) {
 
 const tableHeader = (
   <div className={styles.tableHeader}>
-    <span>이름</span>
-    <span>내용</span>
-    <span>일시</span>
+    <span className={styles.author}>이름</span>
+    <span className={styles.content}>내용</span>
+    <span className={styles.date}>일시</span>
   </div>
 )
 

@@ -1,60 +1,32 @@
 @import '../../../styles/color.scss';
 
 .wrapper {
-  display: inline-block;
+  display: flex;
+
   width: 100%;
   border-bottom: 1px solid $dark;
-  padding: 3px 0;
+  padding: 4px 0;
 
   &:hover {
     background-color: #fcfbec;
   }
-  > div:not(:last-child) {
-    margin-bottom: 5px;
+
+  > span {
+    display: inline-block;
   }
 
-  .schedule {
-    >span:not(:last-child) {
-      margin-right: 5px;
-    }
+  .name {
+    width: 150px;
   }
 
-  .subject {
-    font-size: 16px;
-    font-weight: bold;
+  .content {
+    width: 450px;
   }
 
-  .meta {
-    display: flex;
-    margin-top: 10px;
-    font-size: 12px;
-    justify-content: space-between;
+  .date {
+    width: 100px;
   }
 
-  .leftMetaGroup {
-    display: flex;
-    align-items: center;
-    > span:not(:last-child) {
-      margin-right: 5px;
-    }
-
-    .profileImg {
-      display: inline-block;
-      width: 20px;
-      height: 20px;
-      border-radius: 20px;
-      border: 1px solid lightgray;
-    }
-
-    .lecturer {
-      font-weight: bold;
-    }
-  }
-
-  .rightMetaGroup {
-    display: flex;
-    align-items: center;
-  }
 }
 
 .wrapper.firstItem {
