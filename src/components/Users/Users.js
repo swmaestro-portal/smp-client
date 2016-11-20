@@ -9,19 +9,19 @@ import User from './User'
 
 const Users = (props) => {
   const users = []
-  props.users.map((elem, i) => users.push(<User key={i} idx={i} user={elem} className={styles.row} />))
+  props.users.map((elem, i) => users.push(<User key={i} idx={i} user={elem} className={styles.row} isAdmin={props.isAdmin} />))
 
   return (
     <div className={styles.wrapper}>
       <div className={classNames(styles.row, styles.header)}>
-        <div className={styles.cellId}>번호</div>
+        <div className={styles.cellId} hidden={!props.isAdmin}>번호</div>
+        <div className={styles.cellGroup}>그룹</div>
         <div className={styles.cellName}>이름</div>
         <div className={styles.cellEmail}>이메일</div>
-        <div className={styles.cellGroup}>그룹</div>
-        <div className={styles.cellPhone}>전화번호</div>
-        <div className={styles.cellGender}>성별</div>
-        <div className={styles.cellSignupDate}>가입일</div>
-        <div className={styles.cellStatus}>상태</div>
+        <div className={styles.cellPhone} hidden={!props.isAdmin}>전화번호</div>
+        <div className={styles.cellGender} hidden={!props.isAdmin}>성별</div>
+        <div className={styles.cellSignupDate} hidden={!props.isAdmin}>가입일</div>
+        <div className={styles.cellStatus} hidden={!props.isAdmin}>상태</div>
       </div>
       {users}
     </div>
