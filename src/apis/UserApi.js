@@ -1,8 +1,8 @@
 import * as API from './lib.js'
 
 export default {
-  requestSignin: function(username, password) {
-    return API.get(`auth/token?email=${username}&password=${password}`)
+  requestSignin: (username, password) => {
+    return API.getToken(username, password)
   },
 
   requestSignup: (user) => {

@@ -12,6 +12,19 @@ function parseJSON(data) {
   }
 }
 
+export function getToken(username, password) {
+  let headers = new Headers({
+    'Authorization': `Basic ${btoa(username + ":" + password)}`
+  })
+
+  const url = ROOT + 'auth/token'
+  return fetch(url, {
+    headers: headers
+  })
+    .then(checkStatus)
+    .then(parseJSON)
+}
+
 export function get(url) {
   let headers = new Headers({
     'Authorization': `Bearer ${window.sessionStorage.getItem('smp-token')}`
