@@ -3,8 +3,8 @@
 .wrapper {
   display: inline-block;
   width: 100%;
-  border-bottom: 1px solid gray;
-  padding: 10px 0;
+  border-bottom: 1px solid $dark;
+  padding: 3px 0;
 
   &:hover {
     background-color: #fcfbec;
@@ -58,5 +58,5 @@
 }
 
 .wrapper.firstItem {
-  border-top: 1px solid gray;
+  border-top: 1px solid $dark;
 }

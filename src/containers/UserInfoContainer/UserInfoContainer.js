@@ -3,7 +3,8 @@ import React from 'react'
 import { withRouter } from 'react-router'
 
 /* Internal Dependencies */
-import styles from './UserInfo.scss'
+import styles from './UserInfoContainer.scss'
+import Avatar from '../../components/Avatar'
 
 class UserInfoContainer extends React.Component {
 
@@ -20,9 +21,7 @@ class UserInfoContainer extends React.Component {
   render() {
     return (
       <div className={styles.wrapper}>
-        <div className={styles.avatar}>
-          <i className="fa fa-user-circle" aria-hidden="true"/>
-        </div>
+        <Avatar/>
         <div className={styles.info}>
           <p>
             <span>7기</span>

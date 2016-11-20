@@ -7,8 +7,9 @@ import { RouteUtils } from './utils'
 import App from './components/App'
 import Signin from './components/Signin'
 import Signup from './components/Signup'
-import HomeContainer from './containers/HomeContainer'
 import MainFrame from './components/MainFrame'
+import LectureHeader from './components/Header/LectureHeader'
+import HomeContainer from './containers/HomeContainer'
 import UsersContainer from './containers/UsersContainer'
 import UserContainer from './containers/UserContainer'
 import UserEditContainer from './containers/UserEditContainer'
@@ -16,8 +17,10 @@ import LecturesContainer from './containers/LecturesContainer'
 import LectureContainer from './containers/LectureContainer'
 import AssignmentsContainer from './containers/AssignmentsContainer'
 //import Assignment$ from './containers/Assignment$'
+import New$ from './containers/New$'
 
 
+console.log(LectureHeader)
 /************************************************************
  * Redux
  ************************************************************/
@@ -47,11 +50,15 @@ export default (
           />
           <Route
             path="lectures"
-            components={{mainPanel: LecturesContainer}}
+            components={{mainPanel: LecturesContainer, header: LectureHeader}}
             />
           <Route
             path="lectures/:lectureID"
             components={{mainPanel: LectureContainer}}
+          />
+          <Route
+            path="addLecture"
+            components={{mainPanel: New$}}
           />
           <Route
             path="assignments"
