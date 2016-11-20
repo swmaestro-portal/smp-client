@@ -26,17 +26,18 @@ console.log(LectureHeader)
 /************************************************************
  * Redux
  ************************************************************/
-import store from './redux'
+import createStore from './redux'
 import { Provider } from 'react-redux'
 
+const store = createStore()
 
 export default (
-  <Provider store={store()}>
+  <Provider store={store}>
     <Router history={browserHistory}>
       <Route path="/" component={App}>
         <Route path="signin" component={Signin}/>
         <Route path="signup" component={Signup}/>
-        <Route component={MainFrame} onEnter={RouteUtils.authCheck}>
+        <Route component={MainFrame} onEnter={(nextState, replace, callback) => {RouteUtils.authCheck(nextState, replace, callback, store)}}>
           <IndexRoute components={{mainPanel: HomeContainer}}/>
           <Route
             path="users"
