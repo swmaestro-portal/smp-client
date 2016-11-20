@@ -2,8 +2,25 @@
 
 .wrapper {
 
-  width: 100%;
-  min-height: 300px;
+  width: 700px;
+  font-size: 13px;
+  margin-bottom: 20px;
 
+  .tableHeader {
+    font-weight: bold;
+    > span {
+      display: inline-block;
+    }
+
+    .author {
+      width: 150px;
+    }
+    .content {
+      width: 450px;
+    }
+    .date {
+      width: 100px;
+    }
+  }
 
 }
