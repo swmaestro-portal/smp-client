@@ -18,6 +18,10 @@ export default {
     return API.post(`users`, data)
   },
 
+  requestGetMe: () => {
+    return API.get(`users/me`)
+  },
+
   requestGetUsers: () => {
     return API.get(`users`)
   },
