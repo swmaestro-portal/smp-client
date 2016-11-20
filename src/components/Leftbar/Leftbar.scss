@@ -4,6 +4,7 @@
 
   width: 220px;
   min-height: calc(100% - 48px);
+  border-right: 1px solid $dark;
 
   .content {
     > div:not(:last-child) {
