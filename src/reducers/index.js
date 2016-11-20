@@ -5,6 +5,7 @@ import assignmentsReducer from './assignmentsReducer'
 import commentsReducer from './commentsReducer'
 import lectureReducer from './lectureReducer'
 import notificationsReducer from './notificationsReducer'
+import assignmentReducer from './assignmentReducer'
 
 export default {
   userReducer,
@@ -14,4 +15,5 @@ export default {
   commentsReducer,
   lectureReducer,
   notificationsReducer,
+  assignmentReducer,
 }

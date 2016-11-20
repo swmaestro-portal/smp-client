@@ -2,8 +2,8 @@
 import Immutable from 'immutable'
 
 class AssignmentModel {
-  
-  constructor(assignment) {
+
+  constructor(assignment = {}) {
     return Immutable.fromJS(assignment)
   }
 

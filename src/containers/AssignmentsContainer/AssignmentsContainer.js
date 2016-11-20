@@ -2,10 +2,11 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-/* */
+/* Internals */
 import styles from './AssignmentsContainer.scss'
 import { assignmentActions } from '../../actions'
-import Assignments from '../../components/Assignments'
+import { combinedAssignmentsSelector } from '../../selectors'
+import AssignmentList from '../../components/AssignmentList'
 
 class AssignmentsContainer extends React.Component {
 
@@ -14,12 +15,12 @@ class AssignmentsContainer extends React.Component {
   }
 
   componentWillMount() {
-    this.props.dispatch(assignmentActions.getLectures())
+    this.props.dispatch(assignmentActions.getAssignments())
   }
 
   render() {
     return (
-      <Assignments assignments={this.props.assignments}/>
+        <AssignmentList assignments={this.props.assignments}/>
     )
   }
 
@@ -27,7 +28,7 @@ class AssignmentsContainer extends React.Component {
 
 const mapStateToProps = (state/*, props*/) => {
   return {
-    assignments: state.assignmentsReducer.assignments
+    assignments: combinedAssignmentsSelector(state)
   }
 }
 

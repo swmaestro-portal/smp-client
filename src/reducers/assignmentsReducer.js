@@ -6,10 +6,10 @@ const initialState = {
 }
 
 export default function(state = initialState, action) {
-  // console.log('_assignments', state, action)
+  // console.log('_lectures', state, action)
 
   switch (action.type) {
-    
+
     case AT.GET_ASSIGNMENTS:
       return {
         ...state,

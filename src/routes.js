@@ -9,6 +9,7 @@ import Signin from './components/Signin'
 import Signup from './components/Signup'
 import MainFrame from './components/MainFrame'
 import LectureHeader from './components/Header/LectureHeader'
+import AssignmentHeader from './components/Header/AssignmentHeader'
 import HomeContainer from './containers/HomeContainer'
 import UsersContainer from './containers/UsersContainer'
 import UserContainer from './containers/UserContainer'
@@ -16,7 +17,8 @@ import UserEditContainer from './containers/UserEditContainer'
 import LecturesContainer from './containers/LecturesContainer'
 import LectureContainer from './containers/LectureContainer'
 import AssignmentsContainer from './containers/AssignmentsContainer'
-//import Assignment$ from './containers/Assignment$'
+import AssignmentContainer from './containers/AssignmentContainer'
+
 import New$ from './containers/New$'
 
 
@@ -57,12 +59,16 @@ export default (
             components={{mainPanel: LectureContainer}}
           />
           <Route
-            path="addLecture"
-            components={{mainPanel: New$}}
+            path="assignments"
+            components={{mainPanel: AssignmentsContainer, header: AssignmentHeader}}
           />
           <Route
-            path="assignments"
-            components={{mainPanel: AssignmentsContainer}}
+            path="assignments/:assignmentID"
+            components={{mainPanel: AssignmentContainer}}
+          />
+          <Route
+            path="addLecture"
+            components={{mainPanel: New$}}
           />
         </Route>
       </Route>

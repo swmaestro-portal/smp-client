@@ -12,6 +12,7 @@ export default keymirror({
   'GET_LECTURE': null,
 
   'GET_ASSIGNMENTS': null,
+  'GET_ASSIGNMENT': null,
 
   'GET_COMMENTS': null,
 
