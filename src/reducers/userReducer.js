@@ -8,8 +8,6 @@ export default function _user(state = {}, action) {
   switch (action.type) {
 
     case AT.SIGNIN:
-      window.sessionStorage.setItem('smp-token', action.payload.token)
-      browserHistory.push('/')
       return state
 
     case AT.GET_USER:

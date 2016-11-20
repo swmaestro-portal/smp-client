@@ -1,14 +1,18 @@
 const ROOT = 'https://smp-dev.heek.kr/'
 
 function checkStatus(response) {
-  return response.text()
+  if (response.status >= 200 && response.status < 300) {
+    return Promise.resolve(response)
+  } else {
+    return Promise.reject(new Error(response))
+  }
 }
 
-function parseJSON(data) {
-  if (!data) {
-    return data
+function toJSON(response) {
+  if (!response) {
+    return response
   } else {
-    return JSON.parse(data)
+    return response.json()
   }
 }
 
@@ -16,13 +20,12 @@ export function getToken(username, password) {
   let headers = new Headers({
     'Authorization': `Basic ${btoa(username + ":" + password)}`
   })
-
   const url = ROOT + 'auth/token'
   return fetch(url, {
     headers: headers
   })
     .then(checkStatus)
-    .then(parseJSON)
+    .then(toJSON)
 }
 
 export function get(url) {
@@ -35,7 +38,7 @@ export function get(url) {
     headers: headers
   })
     .then(checkStatus)
-    .then(parseJSON)
+    .then(toJSON)
 }
 
 export function post(url, data) {
@@ -49,7 +52,7 @@ export function post(url, data) {
     body: JSON.stringify(data)
   })
     .then(checkStatus)
-    .then(parseJSON)
+    .then(toJSON)
 }
 
 export function put(url, data) {
@@ -63,9 +66,9 @@ export function put(url, data) {
     body: JSON.stringify(data)
   })
     .then(checkStatus)
-    .then(parseJSON)
-}
+    .then(toJSON)
 
+}
 
 // credentials: 'include'
 // 'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2FwaS5zd21hZXN0cm8ubmV0IiwiZXhwIjoxNDgxNDU4NzMzLCJ1c2VyX2lkIjo0LCJpYXQiOjE0NzYyNzQ3MzN9.95sFi_ICx57Jh2tHeycmxusZg_-luWkQf5AF2Y8p9qY'

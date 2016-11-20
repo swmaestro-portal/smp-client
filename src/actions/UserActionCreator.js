@@ -4,9 +4,19 @@ import AT from './ActionTypes'
 
 export default {
   signin: (user) => (dispatch, getState) => {
-    return UserAPI.requestSignin(user.username, user.password)
-      .then(res => dispatch(createAction(AT.SIGNIN, res))
-    )
+    const promise = new Promise((resolve, reject) => {
+
+      UserAPI.requestSignin(user.username, user.password)
+        .then(res => {
+          dispatch(createAction(AT.SIGNIN, res))
+          resolve(res)
+        })
+        .catch(err => {
+          reject(err)
+        })
+    })
+
+    return promise
   },
 
   signup: (user) => (dispatch, getState) => {
