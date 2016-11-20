@@ -10,7 +10,7 @@ const MainPanel = (props) => {
     <div className={classNames(styles.wrapper, props.className)}>
       <div className={styles.header}>
          <span>
-           header
+           {props.header}
          </span>
       </div>
       <div className={styles.content}>
