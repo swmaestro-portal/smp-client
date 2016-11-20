@@ -9,11 +9,9 @@ function checkStatus(response) {
 }
 
 function toJSON(response) {
-  if (!response) {
-    return response
-  } else {
-    return response.json()
-  }
+  return response.text().then(function(text) {
+    return text ? JSON.parse(text) : {}
+  })
 }
 
 export function getToken(username, password) {
