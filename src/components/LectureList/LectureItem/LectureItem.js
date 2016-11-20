@@ -36,7 +36,7 @@ const LectureItem = (props) => {
       <div className={styles.meta}>
         <div className={styles.leftMetaGroup}>
           <span className={styles.profileImg}></span>
-          <span className={styles.lecturer}>박정규 멘토</span>
+          <span className={styles.lecturer}>{props.lecture.getIn(['lectureTeacher', 'userName'])}</span>
         </div>
         <div className={styles.rightMetaGroup}>
           <span>{props.lecture.get('articleCreatedAt')}</span>

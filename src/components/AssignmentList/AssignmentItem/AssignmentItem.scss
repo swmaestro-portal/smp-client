@@ -1,25 +1,19 @@
 @import '../../../styles/color.scss';
 
 .wrapper {
-
   display: inline-block;
   width: 100%;
   border-bottom: 1px solid gray;
   padding: 10px 0;
-  color: $blackish;
 
   &:hover {
     background-color: #fcfbec;
   }
-
   > div:not(:last-child) {
     margin-bottom: 5px;
   }
 
   .schedule {
-    font-weight: bold;
-    color: $darker;
-
     >span:not(:last-child) {
       margin-right: 5px;
     }
@@ -38,10 +32,8 @@
   }
 
   .leftMetaGroup {
-
     display: flex;
     align-items: center;
-
     > span:not(:last-child) {
       margin-right: 5px;
     }
@@ -54,14 +46,14 @@
       border: 1px solid lightgray;
     }
 
-    .lecturer {
+    .articleWriter {
       font-weight: bold;
-      color: $darker;
     }
   }
 
   .rightMetaGroup {
-
+    display: flex;
+    align-items: center;
   }
 }
 
