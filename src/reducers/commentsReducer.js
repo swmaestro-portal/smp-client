@@ -16,12 +16,6 @@ export default function(state = initialState, action) {
         comments: Comments.setInstance(action.payload)
       }
 
-    case AT.GET_LECTURE:
-      return {
-        ...state,
-        comments: Comments.updateInstance(state.comments, [action.payload])
-      }
-
     default:
       return state
   }

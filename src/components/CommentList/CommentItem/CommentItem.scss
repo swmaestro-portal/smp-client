@@ -1,0 +1,62 @@
+@import '../../../styles/color.scss';
+
+.wrapper {
+  display: inline-block;
+  width: 100%;
+  border-bottom: 1px solid $dark;
+  padding: 3px 0;
+
+  &:hover {
+    background-color: #fcfbec;
+  }
+  > div:not(:last-child) {
+    margin-bottom: 5px;
+  }
+
+  .schedule {
+    >span:not(:last-child) {
+      margin-right: 5px;
+    }
+  }
+
+  .subject {
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  .meta {
+    display: flex;
+    margin-top: 10px;
+    font-size: 12px;
+    justify-content: space-between;
+  }
+
+  .leftMetaGroup {
+    display: flex;
+    align-items: center;
+    > span:not(:last-child) {
+      margin-right: 5px;
+    }
+
+    .profileImg {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      border-radius: 20px;
+      border: 1px solid lightgray;
+    }
+
+    .lecturer {
+      font-weight: bold;
+    }
+  }
+
+  .rightMetaGroup {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.wrapper.firstItem {
+  border-top: 1px solid $dark;
+}

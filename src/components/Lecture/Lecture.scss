@@ -2,53 +2,17 @@
 
 .wrapper {
 
+  min-height: calc(100% - 110px);
+  background-color: white;
+  padding: 30px 40px;
+  border-bottom: 1px solid $dark;
+  font-size: 14px;
+  line-height: 1.5;
   width: 100%;
-  padding: 15px 30px;
-  min-height: 300px;
 
-  .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    border-bottom: 1px solid gray;
-
-    .subject {
-      font-weight: bold;
-
-      .generation {
-
-      }
-    }
-    .teacher {
-
-    }
+  > div {
+    max-width: 800px;
   }
 
-  .meta {
-    display: flex;
-    justify-content: space-between;
-    font-size: 15px;
 
-    .createdAt {
-      margin-right: 2px;
-    }
-  }
-
-  .time {
-
-  }
-
-  .content {
-    font-size: 16px;
-  }
-  .attachment {
-    margin-top: 15px;
-  }
-
-}
-
-.wrapper.spinner {
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
