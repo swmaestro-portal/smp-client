@@ -30,9 +30,13 @@ class Signin extends React.Component {
       password: this.nodes.password.value
     }
     this.props.dispatch(userActions.signin(userInfo))
-      // .then(this.props.router.push('/'))
-      // .catch(error => {console.log(2, error)})
-
+      .then((res) => {
+        window.sessionStorage.setItem('smp-token', res.token)
+        this.props.router.push('/')
+      })
+      .catch(error => {
+        window.alert('Login Fail. Check the credential')
+      })
   }
 
   handleClickSignup() {
@@ -83,7 +87,7 @@ const mapStateToProps = (state/*, props*/) => {
   }
 }
 
-const routedSignin = withRouter(Signin)
-const connectedSignin = connect(mapStateToProps)(routedSignin)
+Signin = withRouter(Signin)
+Signin = connect(mapStateToProps)(Signin)
 
-export default connectedSignin
+export default Signin
