@@ -32,6 +32,7 @@ class Signin extends React.Component {
     this.props.dispatch(userActions.signin(userInfo))
       .then((res) => {
         window.localStorage.setItem('smp-token', res.token)
+        this.props.dispatch(userActions.getMe())
         this.props.router.push('/')
       })
       .catch(error => {
