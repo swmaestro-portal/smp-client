@@ -14,7 +14,7 @@ class UserInfoContainer extends React.Component {
   }
 
   handleClickSignout() {
-    window.sessionStorage.removeItem('smp-token')
+    window.localStorage.removeItem('smp-token')
     this.props.router.push('/signin');
   }
 
