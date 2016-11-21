@@ -1,0 +1,6 @@
+{
+  "name": "AttachmentList",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./AttachmentList.js"
+}
