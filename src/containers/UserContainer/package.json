@@ -1,0 +1,6 @@
+{
+  "name": "UserContainer",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./UserContainer.js"
+}

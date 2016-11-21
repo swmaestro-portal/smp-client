@@ -12,3 +12,9 @@ node_modules/
 
 # webstorm
 .idea/
+
+# backup
+_backup/
+
+#build
+build/

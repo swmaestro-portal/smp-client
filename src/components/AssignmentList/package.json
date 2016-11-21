@@ -1,0 +1,6 @@
+{
+  "name": "AssignmentList",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./AssignmentList.js"
+}

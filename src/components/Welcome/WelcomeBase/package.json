@@ -1,0 +1,6 @@
+{
+  "name": "WelcomeBase",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./WelcomeBase.js"
+}

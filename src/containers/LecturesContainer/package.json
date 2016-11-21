@@ -1,0 +1,6 @@
+{
+  "name": "LecturesContainer",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./LecturesContainer.js"
+}
