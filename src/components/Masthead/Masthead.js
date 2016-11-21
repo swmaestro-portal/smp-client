@@ -6,10 +6,37 @@ import { connect } from 'react-redux'
 import styles from './Masthead.scss'
 import Logo from '../Logo'
 
+
 class Masthead extends React.Component {
 
   constructor() {
     super()
+    this.handleClickSearch = this.handleClickSearch.bind(this)
+    this.handleKeyDown = this.handleKeyDown.bind(this)
+  }
+
+  handleClickSearch(event) {
+    console.log(1,"hihi")
+    // return;
+    // const userInfo = {
+    //   username: this.nodes.username.value,
+    //   password: this.nodes.password.value
+    // }
+    // this.props.dispatch(userActions.signin(userInfo))
+    //   .then((res) => {
+    //     window.sessionStorage.setItem('smp-token', res.token)
+    //     this.props.router.push('/search')
+    //   })
+    //   .catch(error => {
+    //     window.alert('Login Fail. Check the credential')
+    //   })
+  }
+
+  handleKeyDown(event) {
+    if (event.which === 13 || event.keyCode === 13) {
+      this.handleClickSearch()
+      event.preventDefault()
+    }
   }
 
   render() {
@@ -19,9 +46,11 @@ class Masthead extends React.Component {
           <div className={styles.logoContainer}>
             <Logo/>
           </div>
-          <div className={styles.searchBox}>
-            <input
-              type="text"/>
+          <div className={styles.searchBox} onKeyDown={this.handleKeyDown}>
+            <input type="text"/>
+            <span onClick={this.handleClickSearch}>
+              <i className="fa fa-search" aria-hidden="true"></i>
+            </span>
           </div>
           <div className={styles.rightBtnGroup}>
             <ul>
