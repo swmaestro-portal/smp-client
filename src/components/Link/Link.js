@@ -9,7 +9,7 @@ const LinkComponent = (props) => {
   return (
     <Link
       className={styles.wrapper}
-      to={props.to}>
+      to={props.to} ref={props.ref}>
       {props.children}
     </Link>
   )

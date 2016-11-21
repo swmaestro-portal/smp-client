@@ -1,6 +1,6 @@
 {
-  "name": "AssignmentsContainer",
+  "name": "SearchContainer",
   "version": "0.0.0",
   "private": true,
-  "main": "./AssignmentsContainer.js"
+  "main": "./SearchContainer.js"
 }
