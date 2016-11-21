@@ -7,6 +7,7 @@ import commentsReducer from './commentsReducer'
 import lectureReducer from './lectureReducer'
 import notificationsReducer from './notificationsReducer'
 import assignmentReducer from './assignmentReducer'
+import searchReducer from './searchReducer'
 
 export default {
   meReducer,
@@ -18,4 +19,5 @@ export default {
   lectureReducer,
   notificationsReducer,
   assignmentReducer,
+  searchReducer,
 }
