@@ -21,7 +21,7 @@ const CommentItem = (props) => {
 
   moment.locale('ko');
   return (
-    <div className={classNames(styles.wrapper, {[styles.firstItem]: props.idx === 0})}>
+    <div className={classNames(styles.wrapper, {[styles.firstItem]: props.idx === 0})} id={"comment-" + comment.get('commentId')}>
       <span className={styles.name}>{comment.getIn(['commentWriter', 'userName'])}</span>
       <span className={styles.content}>{content}</span>
       <span className={styles.date}>{moment(date).fromNow()}</span>

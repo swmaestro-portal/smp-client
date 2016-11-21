@@ -8,6 +8,7 @@ import styles from './AssignmentContainer.scss'
 import { assignmentActions } from '../../actions'
 import Assignment from '../../components/Assignment'
 import { combinedAssignmentSelector } from '../../selectors'
+import { HashLinkUtils } from '../../utils'
 
 class AssignmentContainer extends React.Component {
 
@@ -18,6 +19,7 @@ class AssignmentContainer extends React.Component {
   componentWillMount() {
     const id = this.props.params.assignmentID
     this.props.dispatch(assignmentActions.getComments(id))
+      .then(HashLinkUtils.hashLinkScroll)
     this.props.dispatch(assignmentActions.getAssignment(id))
 
   }
