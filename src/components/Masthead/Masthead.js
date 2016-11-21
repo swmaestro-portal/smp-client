@@ -1,44 +1,45 @@
 /* External Dependencies */
 import React from 'react'
 import { connect } from 'react-redux'
+import { withRouter } from 'react-router'
 
 /* Internal Dependencies */
 import styles from './Masthead.scss'
 import Logo from '../Logo'
+import { searchActions } from '../../actions'
+import Link from '../Link'
 
 
 class Masthead extends React.Component {
 
   constructor() {
     super()
+    this.nodes = {}
     this.handleClickSearch = this.handleClickSearch.bind(this)
     this.handleKeyDown = this.handleKeyDown.bind(this)
   }
 
   handleClickSearch(event) {
-    console.log(1,"hihi")
-    // return;
-    // const userInfo = {
-    //   username: this.nodes.username.value,
-    //   password: this.nodes.password.value
-    // }
-    // this.props.dispatch(userActions.signin(userInfo))
-    //   .then((res) => {
-    //     window.sessionStorage.setItem('smp-token', res.token)
-    //     this.props.router.push('/search')
-    //   })
-    //   .catch(error => {
-    //     window.alert('Login Fail. Check the credential')
-    //   })
+    if (this.nodes.inputText.value === "") {
+      window.alert('내용을 입력해주세요.')
+      return;
+    }
+
+    if (event.shiftKey || event.ctrlKey) {
+      window.open('/search?q=' + this.nodes.inputText.value);
+      return;
+    }
+
+    this.props.dispatch(searchActions.getAll(this.nodes.inputText.value))
+    this.props.router.push('/search?q=' + this.nodes.inputText.value)
   }
 
   handleKeyDown(event) {
     if (event.which === 13 || event.keyCode === 13) {
-      this.handleClickSearch()
+      this.handleClickSearch(event)
       event.preventDefault()
     }
   }
-
   render() {
     return (
       <div className={styles.wrapper}>
@@ -47,7 +48,9 @@ class Masthead extends React.Component {
             <Logo/>
           </div>
           <div className={styles.searchBox} onKeyDown={this.handleKeyDown}>
-            <input type="text"/>
+            <input
+              type="text"
+              ref={(elem)=>{this.nodes.inputText = elem}}/>
             <span onClick={this.handleClickSearch}>
               <i className="fa fa-search" aria-hidden="true"></i>
             </span>
@@ -85,6 +88,7 @@ const mapStateToProps = (state/*, props*/) => {
   }
 }
 
+Masthead = withRouter(Masthead)
 const ConnectedMasthead = connect(mapStateToProps)(Masthead)
 
 export default ConnectedMasthead
