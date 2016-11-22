@@ -6,24 +6,25 @@ import moment from 'moment'
 
 /* Internal Dependencies */
 import styles from './CommentItem.scss'
-import { DateUtils } from '../../../utils'
+import { DateUtils, FormUtils } from '../../../utils'
 import Link from '../../Link'
 
 const CommentItem = (props) => {
 
   const comment = props.comment
   const date = `${comment.get('commentCreatedAt')}`
-  const content = comment.get('commentContent').split('\n').map(function(item, idx) {
-    return (
-      <span key={idx}>{item}<br/></span>
-    )
-  })
+  const content = comment.get('commentContent')
+
+  const taAdjust = () => {
+    FormUtils.textAreaAdjust('#comment-ta-' + comment.get('commentId'))
+  }
 
   moment.locale('ko');
   return (
     <div className={classNames(styles.wrapper, {[styles.firstItem]: props.idx === 0})} id={"comment-" + comment.get('commentId')}>
       <span className={styles.name}>{comment.getIn(['commentWriter', 'userName'])}</span>
-      <span className={styles.content}>{content}</span>
+      <textarea className={styles.content} id={"comment-ta-" + comment.get('commentId')} readOnly={true} defaultValue={content} onChange={taAdjust} />
+      <script>{taAdjust()}</script>
       <span className={styles.date}>{moment(date).fromNow()}</span>
     </div>
   )

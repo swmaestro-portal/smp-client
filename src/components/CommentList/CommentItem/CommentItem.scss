@@ -23,6 +23,13 @@
     width: 450px;
   }
 
+  .content:read-only {
+    border: none;
+    background-color: transparent;
+    resize: none;
+    overflow: hiden;
+  }
+
   .date {
     width: 100px;
   }
