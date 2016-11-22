@@ -8,7 +8,7 @@ import styles from './Masthead.scss'
 import Logo from '../Logo'
 import { searchActions } from '../../actions'
 import Link from '../Link'
-
+import SearchUserContainer from '../../containers/SearchUserContainer'
 
 class Masthead extends React.Component {
 
@@ -54,6 +54,9 @@ class Masthead extends React.Component {
             <span onClick={this.handleClickSearch}>
               <i className="fa fa-search" aria-hidden="true"></i>
             </span>
+          </div>
+          <div>
+            <SearchUserContainer/>
           </div>
           <div className={styles.rightBtnGroup}>
             <ul>
