@@ -21,7 +21,7 @@ class UserEditContainer extends React.Component {
   }
 
   handleClickUserEdit(event) {
-    const inputs = document.querySelectorAll('#useredit-form input, #useredit-form select')
+    const inputs = document.querySelectorAll('#useredit-form input:not([type=radio]), #useredit-form input[type=radio]:checked, #useredit-form select')
     let arr = [], ret = {}
 
     arr.forEach.call(inputs, function(elem) {
