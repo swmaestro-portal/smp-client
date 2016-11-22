@@ -5,31 +5,25 @@ import classNames from 'classnames'
 import moment from 'moment'
 
 /* Internal Dependencies */
-import styles from './CommentItem.scss'
-import { DateUtils } from '../../../utils'
+import styles from './SearchedItem.scss'
+import searchedListStyles from '../SearchedList.scss'
 import Link from '../../Link'
 
-const CommentItem = (props) => {
 
-  const comment = props.comment
-  const date = `${comment.get('commentCreatedAt')}`
-  const content = comment.get('commentContent').split('\n').map(function(item, idx) {
-    return (
-      <span key={idx}>{item}<br/></span>
-    )
-  })
+const SearchedItem = (props) => {
 
-  moment.locale('ko');
   return (
-    <div className={classNames(styles.wrapper, {[styles.firstItem]: props.idx === 0})}>
-      <span className={styles.name}>{comment.getIn(['commentWriter', 'userName'])}</span>
-      <span className={styles.content}>{content}</span>
-      <span className={styles.date}>{moment(date).fromNow()}</span>
-    </div>
+      <Link to={props.link}>
+        <div className={classNames(styles.wrapper, {[styles.firstItem]: props.idx === 0}, props.className)}>
+          <div className={searchedListStyles.cellFirst}>{props.firstColumn}</div>
+          <div className={searchedListStyles.cellSecond}>{props.secondColumn}</div>
+          <div className={searchedListStyles.cellThird}>{props.thirdColumn}</div>
+        </div>
+      </Link>
   )
 }
 
-export default CommentItem
+export default SearchedItem
 
 
 // const year = +date.substring(0, 4)

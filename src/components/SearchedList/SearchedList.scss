@@ -2,24 +2,51 @@
 
 .wrapper {
 
-  width: 700px;
-  font-size: 13px;
-  margin-bottom: 20px;
+  display: inline-block;
+  width: 100%;
 
-  .tableHeader {
-    font-weight: bold;
-    > span {
-      display: inline-block;
+  padding: 0 30px;
+  .label {
+    margin-top: 10px;
+    font-size: 15px;
+    font-weight:600;
+    padding-bottom: 10px;
+    border-bottom: 2px solid gray;
+  }
+
+  .row {
+    display: flex;          display: -webkit-flex;
+    flex-direction: row;    -webkit-flex-direction: row;
+    flex-grow: 0;           -webkit-flex-grow: 0;
+    flex-wrap: nowrap;      -webkit-flex-wrap: nowrap;
+    border-bottom: 1px solid #cccccc;
+    vertical-align: middle;
+
+    &:hover:not(.header) {
+      background-color: rgba(160, 160, 160, 0.1);
+
     }
 
-    .author {
-      width: 150px;
+    &.header {
+      background-color: #e0e0e0;
+      border-top: 1px solid #cccccc;
     }
-    .content {
-      width: 450px;
+
+    > div {
+      padding: 8px 8px;
     }
-    .date {
-      width: 100px;
+
+    .cellThird, .cellFirst, .cellSecond{
+      flex-grow: 1;           -webkit-flex-grow: 1;
+    }
+    .cellThird {
+      width: 120px;
+    }
+    .cellFirst {
+      width: 200px;
+    }
+    .cellSecond {
+      width: 300px;
     }
   }
 

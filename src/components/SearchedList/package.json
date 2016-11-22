@@ -1,6 +1,6 @@
 {
-  "name": "CommentList",
+  "name": "SearchedList",
   "version": "0.0.0",
   "private": true,
-  "main": "./CommentList.js"
+  "main": "./SearchedList.js"
 }
