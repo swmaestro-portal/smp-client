@@ -24,6 +24,11 @@ export default {
       .then(res => dispatch(createAction(AT.SIGNUP, res)))
   },
 
+  getMe: () => (dispatch, getState) => {
+    return UserAPI.requestGetMe()
+      .then(res => dispatch(createAction(AT.GET_ME, res)))
+  },
+
   getUsers: () => (dispatch, getState) => {
     return UserAPI.requestGetUsers()
       .then(res => dispatch(createAction(AT.GET_USERS, res)))
