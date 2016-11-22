@@ -3,6 +3,7 @@
 .wrapper {
   width: 100%;
   color: $blackish;
+  overflow: auto;
 
   .header {
     height: 60px;
