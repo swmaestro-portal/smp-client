@@ -56,7 +56,6 @@ class Masthead extends React.Component {
             </span>
           </div>
           <div>
-            <SearchUserContainer/>
           </div>
           <div className={styles.rightBtnGroup}>
             <ul>
