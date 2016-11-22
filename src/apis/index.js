@@ -4,6 +4,7 @@ import LectureAPI from './LectureApi'
 import AssignmentAPI from './AssignmentApi'
 import NotificationAPI from './NotificationApi'
 import CommentAPI from './CommentAPI'
+import SearchAPI from './searchApi'
 
 module.exports = {
   UserAPI,
@@ -11,5 +12,6 @@ module.exports = {
   AssignmentAPI,
   NotificationAPI,
   CommentAPI,
+  SearchAPI,
 }
 
