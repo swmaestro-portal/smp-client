@@ -5,8 +5,7 @@ import Immutable from 'immutable'
 /* Internals */
 import styles from './Assignment.scss'
 import AssignmentInfo from '../AssignmentInfo'
-import CommentList from '../CommentList'
-import AddComment from '../../containers/AddCommentContainer'
+import CommentContainer from '../../containers/CommentContainer'
 import Spinner from '../Spinner'
 
 
@@ -15,15 +14,11 @@ function shouldAssignmentMount(props) {
 }
 
 const Assignment = (props) => {
-
   if (shouldAssignmentMount(props)) {
     return (
       <div className={styles.wrapper}>
         <AssignmentInfo assignment={props.assignment} />
-        <AddComment
-          articleType={'assignments'}
-          articleId={props.assignment.get('articleId')}/>
-        <CommentList comments={props.assignment.get('comments') || Immutable.List()}/>
+        <CommentContainer articleType={'assignments'} articleId={props.assignment.get('articleId')} />
       </div>
     )
   } else {

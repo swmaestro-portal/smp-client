@@ -1,0 +1,6 @@
+{
+  "name": "CommentContainer",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./CommentContainer.js"
+}

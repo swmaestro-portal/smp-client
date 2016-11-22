@@ -8,19 +8,22 @@ import styles from './LectureContainer.scss'
 import { lectureActions } from '../../actions'
 import Lecture from '../../components/Lecture'
 import { combinedLectureSelector } from '../../selectors'
-import { HashLinkUtils } from '../../utils'
 
 class LectureContainer extends React.Component {
 
   constructor() {
     super()
+    this.state = {
+      lectureIsFetched: false
+    }
   }
 
   componentWillMount() {
     const id = this.props.params.lectureID
-    this.props.dispatch(lectureActions.getComments(id))
-      .then(HashLinkUtils.hashLinkScroll)
     this.props.dispatch(lectureActions.getLecture(id))
+      .then(() => {
+        this.setState({lectureIsFetched: true})
+      })
 
   }
 
@@ -30,9 +33,12 @@ class LectureContainer extends React.Component {
   }
 
   render() {
-    console.log(1, this.props.lecture.toJS())
+    if (!this.state.lectureIsFetched) {
+      return <div />
+    }
     return (
-      <Lecture lecture={this.props.lecture}/>
+      <Lecture style={styles.wrapper} lecture={this.props.lecture}>
+      </Lecture>
     )
   }
 
