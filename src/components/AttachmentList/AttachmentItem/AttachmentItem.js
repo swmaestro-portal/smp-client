@@ -9,7 +9,7 @@ import styles from './AttachmentItem.scss'
 const AttachmentItem = (props) => {
 
   return (
-    <a href={"https://api.swmaestro.net/attachments/" + props.attachment.get('attachmentId')}>
+    <a href={"https://api.swmaestro.net/attachments/" + props.attachment.get('attachmentId')} target="_blank">
       <div className={styles.wrapper}>
         {props.attachment.get('attachmentName')}
       </div>
