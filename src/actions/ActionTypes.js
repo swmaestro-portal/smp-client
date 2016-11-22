@@ -22,4 +22,5 @@ export default keymirror({
 
   'POST_COMMENT': null,
 
+  'GET_SEARCH' : null,
 })

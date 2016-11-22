@@ -11,6 +11,7 @@ import MainFrame from './components/MainFrame'
 import LectureHeader from './components/Header/LectureHeader'
 import AssignmentHeader from './components/Header/AssignmentHeader'
 import UsersHeader from './components/Header/UsersHeader'
+import SearchHeader from './components/Header/SearchHeader'
 import HomeContainer from './containers/HomeContainer'
 import UsersContainer from './containers/UsersContainer'
 import UserContainer from './containers/UserContainer'
@@ -19,6 +20,7 @@ import LecturesContainer from './containers/LecturesContainer'
 import LectureContainer from './containers/LectureContainer'
 import AssignmentsContainer from './containers/AssignmentsContainer'
 import AssignmentContainer from './containers/AssignmentContainer'
+import SearchContainer from './containers/SearchContainer'
 
 import New$ from './containers/New$'
 
@@ -67,6 +69,10 @@ export default (
           <Route
             path="assignments/:assignmentID"
             components={{mainPanel: AssignmentContainer}}
+          />
+          <Route
+            path="search"
+            components={{mainPanel: SearchContainer, header: SearchHeader}}
           />
           <Route
             path="addLecture"
