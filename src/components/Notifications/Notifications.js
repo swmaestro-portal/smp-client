@@ -25,9 +25,11 @@ const Notifications = (props) => {
       <h6 className={styles.header}>
         <i className="fa fa-bell" aria-hidden="true"/>&nbsp;&nbsp;알림
       </h6>
-      <ul>
-        {notifications.size > 0 ? notifications : empty}
-      </ul>
+      <div className={styles.notifications}>
+        <ul>
+          {notifications.size > 0 ? notifications : empty}
+        </ul>
+      </div>
     </div>
   )
 }
