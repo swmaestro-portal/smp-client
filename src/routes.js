@@ -11,6 +11,7 @@ import MainFrame from './components/MainFrame'
 import LectureHeader from './components/Header/LectureHeader'
 import AssignmentHeader from './components/Header/AssignmentHeader'
 import UsersHeader from './components/Header/UsersHeader'
+import SearchHeader from './components/Header/SearchHeader'
 import HomeContainer from './containers/HomeContainer'
 import UsersContainer from './containers/UsersContainer'
 import UserContainer from './containers/UserContainer'
@@ -71,7 +72,7 @@ export default (
           />
           <Route
             path="search"
-            components={{mainPanel: SearchContainer}}
+            components={{mainPanel: SearchContainer, header: SearchHeader}}
           />
           <Route
             path="addLecture"
