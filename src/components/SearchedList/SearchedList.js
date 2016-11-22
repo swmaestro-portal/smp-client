@@ -43,7 +43,7 @@ const SearchedList = (props) => {
       {(props.assignments && props.assignments.size) ?
           <div className={styles.assignments}>
             <div className={styles.label}>
-              강의
+              과제
             </div>
             <div className={classNames(styles.row, styles.header)}>
               <div className={styles.cellFirst}>출제자</div>
