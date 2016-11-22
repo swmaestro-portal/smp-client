@@ -1,6 +1,6 @@
 {
-  "name": "CommentItem",
+  "name": "SearchedItem",
   "version": "0.0.0",
   "private": true,
-  "main": "./CommentItem.js"
+  "main": "./SearchedItem.js"
 }
