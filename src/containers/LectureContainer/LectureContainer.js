@@ -8,6 +8,7 @@ import styles from './LectureContainer.scss'
 import { lectureActions } from '../../actions'
 import Lecture from '../../components/Lecture'
 import { combinedLectureSelector } from '../../selectors'
+import { HashLinkUtils } from '../../utils'
 
 class LectureContainer extends React.Component {
 
@@ -18,6 +19,7 @@ class LectureContainer extends React.Component {
   componentWillMount() {
     const id = this.props.params.lectureID
     this.props.dispatch(lectureActions.getComments(id))
+      .then(HashLinkUtils.hashLinkScroll)
     this.props.dispatch(lectureActions.getLecture(id))
 
   }
