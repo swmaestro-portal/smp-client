@@ -4,17 +4,17 @@ import Immutable from 'immutable'
 
 /* Internals */
 import DefaultHeader from '../DefaultHeader'
-import styles from './AssignmentHeader.scss'
+import styles from './UsersHeader.scss'
 import Spinner from '../../Spinner'
 
 
-const AssignmentHeader = (props) => {
+const UsersHeader = (props) => {
 
   return (
     <div>
-      <DefaultHeader header="과제"/>
+      <DefaultHeader header="사람들"/>
     </div>
   )
 }
 
-export default AssignmentHeader
+export default UsersHeader

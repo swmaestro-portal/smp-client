@@ -5,12 +5,14 @@ import Immutable from 'immutable'
 /* Internals */
 import styles from './LectureHeader.scss'
 import Spinner from '../../Spinner'
-
+import DefaultHeader from '../DefaultHeader'
 
 const LectureHeader = (props) => {
 
   return (
-    <div>123</div>
+    <div>
+      <DefaultHeader header="강의"/>
+    </div>
   )
 }
 
