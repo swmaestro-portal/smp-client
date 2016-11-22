@@ -6,9 +6,7 @@ import { connect } from 'react-redux'
 import styles from './SearchContainer.scss'
 import { searchActions } from '../../actions'
 import { combinedAssignmentsSelector } from '../../selectors'
-import AssignmentList from '../../components/AssignmentList'
-import LectureList from '../../components/LectureList'
-import Users from '../../components/Users'
+import SearchedList from '../../components/SearchedList'
 
 class SearchContainer extends React.Component {
 
@@ -16,12 +14,12 @@ class SearchContainer extends React.Component {
     super()
   }
 
+
   render() {
     return (
         <div className={styles.wrapper}>
-          <Users users={this.props.users}/>
-          <AssignmentList assignments={this.props.assignments}/>
-          <LectureList lectures={this.props.lectures}/>
+          <SearchedList users={this.props.users} lectures={this.props.lectures}
+          assignments={this.props.assignments}/>
         </div>
     )
   }
@@ -29,7 +27,6 @@ class SearchContainer extends React.Component {
 }
 
 const mapStateToProps = (state/*, props*/) => {
-  console.log(1,state)
   return {
     users: state.searchReducer.users,
     assignments: state.searchReducer.assignments,
