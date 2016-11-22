@@ -1,34 +1,7 @@
 @import '../../../styles/color.scss';
 
 .wrapper {
-  display: flex;
 
+  display: inline-block;
   width: 100%;
-  border-bottom: 1px solid $dark;
-  padding: 4px 0;
-
-  &:hover {
-    background-color: #fcfbec;
-  }
-
-  > span {
-    display: inline-block;
-  }
-
-  .name {
-    width: 150px;
-  }
-
-  .content {
-    width: 450px;
-  }
-
-  .date {
-    width: 100px;
-  }
-
-}
-
-.wrapper.firstItem {
-  border-top: 1px solid $dark;
 }
