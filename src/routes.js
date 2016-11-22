@@ -10,6 +10,7 @@ import Signup from './components/Signup'
 import MainFrame from './components/MainFrame'
 import LectureHeader from './components/Header/LectureHeader'
 import AssignmentHeader from './components/Header/AssignmentHeader'
+import UsersHeader from './components/Header/UsersHeader'
 import HomeContainer from './containers/HomeContainer'
 import UsersContainer from './containers/UsersContainer'
 import UserContainer from './containers/UserContainer'
@@ -41,7 +42,7 @@ export default (
           <IndexRoute components={{mainPanel: HomeContainer}}/>
           <Route
             path="users"
-            components={{mainPanel: UsersContainer}}
+            components={{mainPanel: UsersContainer, header: UsersHeader}}
             />
           <Route
             path="users/:userID"
