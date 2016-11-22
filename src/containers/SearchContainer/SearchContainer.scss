@@ -1,8 +1,10 @@
 @import '../../styles/color';
 
 .wrapper {
-  min-height: 100%;
   background-color: $light;
+  overflow: auto;
+  max-height: calc(100% - 110px);
+  overflow: auto;
 
   font-size: 14px;
 }
