@@ -30,7 +30,7 @@ class MemberMenu extends React.Component {
               <span>강의</span>
             </li>
           </Link>
-          <Link to="/me">
+          <Link to={"/users/" + this.props.me.get('userId')}>
             <li>
               <i className="fa fa-user-o" aria-hidden="true"/>
               <span>MyPage</span>
@@ -43,6 +43,12 @@ class MemberMenu extends React.Component {
 
 }
 
-const ConnectedMemberMenu = connect()(MemberMenu)
+const mapStateToProps = (state/*, props*/) => {
+  return {
+    me: state.meReducer.me
+  }
+}
+
+const ConnectedMemberMenu = connect(mapStateToProps)(MemberMenu)
 
 export default ConnectedMemberMenu
