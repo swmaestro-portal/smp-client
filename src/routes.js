@@ -18,11 +18,8 @@ import LecturesContainer from './containers/LecturesContainer'
 import LectureContainer from './containers/LectureContainer'
 import AssignmentsContainer from './containers/AssignmentsContainer'
 import AssignmentContainer from './containers/AssignmentContainer'
+import AddLectureContainer from './containers/AddLectureContainer'
 
-import New$ from './containers/New$'
-
-
-console.log(LectureHeader)
 /************************************************************
  * Redux
  ************************************************************/
@@ -68,7 +65,7 @@ export default (
           />
           <Route
             path="addLecture"
-            components={{mainPanel: New$}}
+            components={{mainPanel: AddLectureContainer}}
           />
         </Route>
       </Route>
