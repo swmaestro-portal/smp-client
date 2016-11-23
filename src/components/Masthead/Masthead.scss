@@ -65,12 +65,9 @@ $height: 48px;
 
       li:not(:last-child) {
         margin-right: 15px;
-      }
-
-      .fb {
-      }
-
-      .swm {
+        &:hover {
+          color: $purple;
+        }
       }
 
       .ministry {
