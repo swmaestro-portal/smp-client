@@ -5,7 +5,7 @@ import classNames from 'classnames'
 
 /* Internal Dependencies */
 import styles from './LectureInfo.scss'
-import { DateUtils } from '../../utils'
+import { DateUtils, FormatUtils } from '../../utils'
 import Avatar from '../Avatar'
 import AttachmentList from '../AttachmentList'
 
@@ -43,7 +43,7 @@ const LectureInfo = (props) => {
       </div>
       <div className={styles.content}>
         <span className={styles.label}>내용</span>
-        <span className={styles.content}>{props.lecture.get('articleContent')}</span>
+        <span className={styles.content}>{FormatUtils.nl2br(props.lecture.get('articleContent'))}</span>
       </div>
       <div className={styles.attahment}>
         <span className={styles.label}>첨부파일</span>

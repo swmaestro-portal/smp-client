@@ -1,3 +1,5 @@
+import React from 'react'
+
 let formatGroupCode = (groupCode) => {
   switch (groupCode) {
     case "0":
@@ -49,6 +51,14 @@ let formatStatus = (str) => {
   if (str == 'D') return '탈퇴'
 }
 
+let nl2br = (str) => {
+  return str.split('\n').map(function(item, idx) {
+    return (
+      <span key={idx}>{item}<br/></span>
+    )
+  })
+}
+
 module.exports = {
   formatGroupCode: formatGroupCode,
   formatGenerationId: formatGenerationId,
@@ -56,5 +66,6 @@ module.exports = {
   formatGroups: formatGroups,
   formatGender: formatGender,
   formatSignupDate: formatSignupDate,
-  formatStatus: formatStatus
+  formatStatus: formatStatus,
+  nl2br: nl2br
 }
