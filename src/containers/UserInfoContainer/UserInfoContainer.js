@@ -43,8 +43,8 @@ class UserInfoContainer extends React.Component {
             <span>{groupInfo}</span>
           </p>
         </div>
-        <button onClick={this.handleClickSignout}>
-          logout
+        <button className={styles.button} onClick={this.handleClickSignout}>
+          Logout
         </button>
       </div>
     )
