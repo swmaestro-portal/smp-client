@@ -19,15 +19,7 @@ class Logo extends React.Component {
         </Link>
         <Link to="/">
           <p className={styles.text}>
-            <span>S</span>
-            <span>W </span>
-            <span>M</span>
-            <span>a</span>
-            <span>e</span>
-            <span>s</span>
-            <span>t</span>
-            <span>r</span>
-            <span>o</span>
+            <span>SW_ Maestro_</span>
           </p>
         </Link>
       </div>

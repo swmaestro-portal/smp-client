@@ -1,0 +1,6 @@
+{
+  "name": "SelectTime",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./SelectTime.js"
+}

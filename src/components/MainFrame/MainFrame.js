@@ -8,7 +8,7 @@ import MainPanel from '../MainPanel'
 import Masthead from '../Masthead/Masthead'
 
 const MainFrame = (props) => {
-  console.log(33, props)
+  // console.log(33, props)
   return (
     <div className={styles.wrapper}>
       <Masthead/>

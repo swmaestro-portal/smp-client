@@ -19,6 +19,8 @@ require('./styles/normalize.css')
 require('./styles/reset.scss')
 require('./styles/global.scss')
 require('./styles/font-awesome.css')
+require('react-datepicker/dist/react-datepicker.css');
+require('react-select/dist/react-select.css');
 
 
 /************************************************************

@@ -8,7 +8,6 @@ import LectureInfo from '../LectureInfo'
 import CommentContainer from '../../containers/CommentContainer'
 import Spinner from '../Spinner'
 
-
 function shouldLectureMount(props) {
   return props.lecture.get('articleId')
 }

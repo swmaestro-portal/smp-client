@@ -1,0 +1,6 @@
+{
+  "name": "AddLectureContainer",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./AddLectureContainer.js"
+}

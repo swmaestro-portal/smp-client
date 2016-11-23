@@ -1,0 +1,67 @@
+@import '../../styles/color.scss';
+
+.wrapper {
+  display: inline-block;
+  padding: 30px 30px;
+  background-color: white;
+  width: 100%;
+  overflow: auto;
+
+  > div {
+    max-width: 800px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  label {
+    width: 100px;
+    font-weight: bold;
+    color: $blackish;
+  }
+
+  .gen {
+    margin-right: 15px;
+  }
+
+  .subject {
+    display: flex;
+    height: 26px;
+    align-items: center;
+    width: 600px;
+    border-radius: 3px;
+    border: 1px solid $dark;
+
+    > input {
+      width: 100%;
+      padding: 0 10px;
+    }
+  }
+
+  .schedule {
+    > div {
+      margin-right: 10px;
+    }
+  }
+
+  .lecturer {
+    input {
+      border: 1px solid $dark;
+      height: 24px;
+      padding: 0 10px;
+    }
+  }
+
+  .desc {
+    textarea {
+      resize: none;
+      width: 600px;
+      height: 600px;
+      border: 1px solid $dark;
+      border-radius: 1px;
+      padding: 10px;
+    }
+  }
+
+
+}

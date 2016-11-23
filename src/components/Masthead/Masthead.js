@@ -59,12 +59,12 @@ class Masthead extends React.Component {
           </div>
           <div className={styles.rightBtnGroup}>
             <ul>
-              <li>
+              <li className={styles.fb}>
                 <a href="https://www.facebook.com/groups/199546453425248/">
                   <i className="fa fa-facebook-official" aria-hidden="true"/>
                 </a>
               </li>
-              <li>
+              <li className={styles.swm}>
                 <a href="http://swmaestro.kr/">
                 <i className="fa fa-barcode" aria-hidden="true"/>
                 </a>
