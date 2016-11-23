@@ -13,12 +13,18 @@ const CommentItem = (props) => {
 
   const comment = props.comment
   const date = `${comment.get('commentCreatedAt')}`
-  const content = comment.get('commentContent')
 
   const taID = 'comment-ta-' + comment.get('commentId');
 
   const taAdjust = () => {
     FormUtils.textAreaAdjust('#' + taID)
+  }
+
+  const foo = () => {
+    setTimeout(() => {
+      document.getElementById(taID).value = comment.get('commentContent')
+      taAdjust()
+    }, 0)
   }
 
   const toggleEdit = () => {
@@ -44,12 +50,13 @@ const CommentItem = (props) => {
     props.handleEditComment(comment.get('commentId'), {'commentContent': ta.value})
   }
 
+
   moment.locale('ko');
   return (
     <div className={classNames(styles.wrapper, {[styles.firstItem]: props.idx === 0})} id={"comment-" + comment.get('commentId')}>
       <span className={styles.name}>{comment.getIn(['commentWriter', 'userName'])}</span>
-      <textarea className={styles.content} id={taID} readOnly={true} defaultValue={content} onChange={taAdjust} />
-      <script>{taAdjust()}</script>
+      <textarea className={styles.content} id={taID} readOnly={true} onChange={taAdjust} />
+      <script>{foo()}</script>
       <span className={styles.date}>{moment(date).fromNow()}</span>
       <span className={styles.moreArea}>
         <i className={classNames(styles.editButton, "fa fa-pencil")} aria-hidden="true" id={taID + "-btn-edit"} onClick={toggleEdit} style={{display: props.isMe ? 'block' : 'none'}} />
@@ -60,11 +67,3 @@ const CommentItem = (props) => {
 }
 
 export default CommentItem
-
-
-// const year = +date.substring(0, 4)
-// const month = +date.substring(5, 7) - 1
-// const day = +date.substring(8, 10)
-// const hour = +date.substring(11, 13)
-// const minute = +date.substring(14, 16)
-// const second = +date.substring(17, 19)
