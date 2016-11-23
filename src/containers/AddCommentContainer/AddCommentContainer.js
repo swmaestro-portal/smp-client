@@ -7,7 +7,7 @@ import { withRouter } from 'react-router'
 import styles from './AddCommentContainer.scss'
 import { combinedLecturesSelector } from '../../selectors'
 import AddComment from '../../components/AddComment'
-import { lectureActions, commentActions } from '../../actions'
+import { commentActions } from '../../actions'
 
 class AddCommentContainer extends React.Component {
 
@@ -45,7 +45,7 @@ class AddCommentContainer extends React.Component {
 
     this.props.dispatch(commentActions.postComment(arg))
         .then(res => {
-          this.props.dispatch(lectureActions.getComments(arg.articleId))
+          this.props.dispatch(commentActions.getComments(arg.articleType, arg.articleId))
           commentTextArea.value = ""
         })
 

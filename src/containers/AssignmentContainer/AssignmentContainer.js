@@ -8,19 +8,22 @@ import styles from './AssignmentContainer.scss'
 import { assignmentActions } from '../../actions'
 import Assignment from '../../components/Assignment'
 import { combinedAssignmentSelector } from '../../selectors'
-import { HashLinkUtils } from '../../utils'
 
 class AssignmentContainer extends React.Component {
 
   constructor() {
     super()
+    this.state = {
+      assignmentIsFetched: false
+    }
   }
 
   componentWillMount() {
     const id = this.props.params.assignmentID
-    this.props.dispatch(assignmentActions.getComments(id))
-      .then(HashLinkUtils.hashLinkScroll)
     this.props.dispatch(assignmentActions.getAssignment(id))
+      .then(() => {
+        this.setState({assignmentIsFetched: true})
+      })
 
   }
 
@@ -30,7 +33,9 @@ class AssignmentContainer extends React.Component {
   }
 
   render() {
-    console.log(1, this.props.assignment.toJS())
+    if (!this.state.assignmentIsFetched) {
+      return <div />
+    }
     return (
         <Assignment assignment={this.props.assignment}/>
     )

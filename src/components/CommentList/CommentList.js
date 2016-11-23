@@ -26,7 +26,7 @@ const CommentList = (props) => {
     return (
       <div className={styles.wrapper}>
         {tableHeader}
-        {props.comments.map((elem, i) => (<CommentItem key={i} idx={i} comment={elem}/>))}
+        {props.comments.map((elem, i) => (<CommentItem key={i} idx={i} comment={elem} handleEditComment={props.handleEditComment} isMe={props.me.get('userId') == elem.get('commentWriter').get('userId')} />))}
       </div>
     )
   } else {
