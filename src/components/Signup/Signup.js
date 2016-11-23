@@ -17,7 +17,7 @@ class Signup extends React.Component {
   }
 
   handleClickSignup(event) {
-    const inputs = document.querySelectorAll('#signup-form input, #signup-form select')
+    const inputs = document.querySelectorAll('#signup-form input:not([type=radio]), #signup-form input[type=radio]:checked, #signup-form select')
     let arr = [], ret = {}
 
     arr.forEach.call(inputs, function(elem) {

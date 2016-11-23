@@ -13,12 +13,17 @@ class LectureContainer extends React.Component {
 
   constructor() {
     super()
+    this.state = {
+      lectureIsFetched: false
+    }
   }
 
   componentWillMount() {
     const id = this.props.params.lectureID
-    this.props.dispatch(lectureActions.getComments(id))
     this.props.dispatch(lectureActions.getLecture(id))
+      .then(() => {
+        this.setState({lectureIsFetched: true})
+      })
 
   }
 
@@ -28,9 +33,12 @@ class LectureContainer extends React.Component {
   }
 
   render() {
-    console.log(1, this.props.lecture.toJS())
+    if (!this.state.lectureIsFetched) {
+      return <div />
+    }
     return (
-      <Lecture lecture={this.props.lecture}/>
+      <Lecture style={styles.wrapper} lecture={this.props.lecture}>
+      </Lecture>
     )
   }
 

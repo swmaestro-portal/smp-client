@@ -22,6 +22,14 @@ class Signin extends React.Component {
     this.nodes = {}
     this.handleClickSignin = this.handleClickSignin.bind(this)
     this.handleClickSignup = this.handleClickSignup.bind(this)
+    this.handleKeyDown = this.handleKeyDown.bind(this)
+  }
+
+  handleKeyDown(event) {
+    if (event.which === 13 || event.keyCode === 13) {
+      this.handleClickSignin()
+      event.preventDefault()
+    }
   }
 
   handleClickSignin(event) {
@@ -31,7 +39,8 @@ class Signin extends React.Component {
     }
     this.props.dispatch(userActions.signin(userInfo))
       .then((res) => {
-        window.sessionStorage.setItem('smp-token', res.token)
+        window.localStorage.setItem('smp-token', res.token)
+        this.props.dispatch(userActions.getMe())
         this.props.router.push('/')
       })
       .catch(error => {
@@ -48,7 +57,7 @@ class Signin extends React.Component {
       <WelcomeBase>
         <div className={styles.wrapper}>
           <div className={styles.content}>
-            <div className={styles.inputContainer}>
+            <div className={styles.inputContainer} onKeyDown={this.handleKeyDown}>
               <div>
                 <label htmlFor="">email</label>
                 <input

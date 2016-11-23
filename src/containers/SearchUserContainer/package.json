@@ -1,0 +1,6 @@
+{
+  "name": "SearchUserContainer",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./SearchUserContainer.js"
+}

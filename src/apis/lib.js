@@ -9,11 +9,9 @@ function checkStatus(response) {
 }
 
 function toJSON(response) {
-  if (!response) {
-    return response
-  } else {
-    return response.json()
-  }
+  return response.text().then(function(text) {
+    return text ? JSON.parse(text) : {}
+  })
 }
 
 export function getToken(username, password) {
@@ -30,7 +28,7 @@ export function getToken(username, password) {
 
 export function get(url) {
   let headers = new Headers({
-    'Authorization': `Bearer ${window.sessionStorage.getItem('smp-token')}`
+    'Authorization': `Bearer ${window.localStorage.getItem('smp-token')}`
   })
 
   url = ROOT + url
@@ -47,7 +45,7 @@ export function post(url, data) {
     method: 'post',
     headers: new Headers({
       'Content-Type': 'application/json',
-      'Authorization': `Bearer ${window.sessionStorage.getItem('smp-token')}`
+      'Authorization': `Bearer ${window.localStorage.getItem('smp-token')}`
     }),
     body: JSON.stringify(data)
   })
@@ -61,7 +59,7 @@ export function put(url, data) {
     method: 'put',
     headers: new Headers({
       'Content-Type': 'application/json',
-      'Authorization': `Bearer ${window.sessionStorage.getItem('smp-token')}`
+      'Authorization': `Bearer ${window.localStorage.getItem('smp-token')}`
     }),
     body: JSON.stringify(data)
   })

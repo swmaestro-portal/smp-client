@@ -1,11 +1,24 @@
+import React from 'react'
+
+let formatGroupCode = (groupCode) => {
+  switch (groupCode) {
+    case "0":
+      return '멘티'
+    case "1":
+      return '멘토'
+    case "2":
+      return '관리자'
+    default:
+      return ''
+  }
+}
+
+let formatGenerationId = (generationId) => {
+  return generationId + '기'
+}
 
 let formatGroup = (group) => {
-  var groupName = ''
-  if (group.get('groupCode') == 0) groupName = '멘티'
-  if (group.get('groupCode') == 1) groupName = '멘토'
-  if (group.get('groupCode') == 2) groupName = '관리자'
-
-  return group.get('generationId') + '기 ' + groupName
+  return formatGenerationId(group.get('generationId')) + ' ' + formatGroupCode(group.get('groupCode'))
 }
 
 let formatGroups = (groups) => {
@@ -38,11 +51,21 @@ let formatStatus = (str) => {
   if (str == 'D') return '탈퇴'
 }
 
-module.exports = {
+let nl2br = (str) => {
+  return str.split('\n').map(function(item, idx) {
+    return (
+      <span key={idx}>{item}<br/></span>
+    )
+  })
+}
 
+module.exports = {
+  formatGroupCode: formatGroupCode,
+  formatGenerationId: formatGenerationId,
   formatGroup: formatGroup,
   formatGroups: formatGroups,
   formatGender: formatGender,
   formatSignupDate: formatSignupDate,
-  formatStatus: formatStatus
+  formatStatus: formatStatus,
+  nl2br: nl2br
 }

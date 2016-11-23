@@ -10,6 +10,8 @@ import Signup from './components/Signup'
 import MainFrame from './components/MainFrame'
 import LectureHeader from './components/Header/LectureHeader'
 import AssignmentHeader from './components/Header/AssignmentHeader'
+import UsersHeader from './components/Header/UsersHeader'
+import SearchHeader from './components/Header/SearchHeader'
 import HomeContainer from './containers/HomeContainer'
 import UsersContainer from './containers/UsersContainer'
 import UserContainer from './containers/UserContainer'
@@ -19,25 +21,27 @@ import LectureContainer from './containers/LectureContainer'
 import AssignmentsContainer from './containers/AssignmentsContainer'
 import AssignmentContainer from './containers/AssignmentContainer'
 import AddLectureContainer from './containers/AddLectureContainer'
+import SearchContainer from './containers/SearchContainer'
 
 /************************************************************
  * Redux
  ************************************************************/
-import store from './redux'
+import createStore from './redux'
 import { Provider } from 'react-redux'
 
+const store = createStore()
 
 export default (
-  <Provider store={store()}>
+  <Provider store={store}>
     <Router history={browserHistory}>
       <Route path="/" component={App}>
         <Route path="signin" component={Signin}/>
         <Route path="signup" component={Signup}/>
-        <Route component={MainFrame} onEnter={RouteUtils.authCheck}>
+        <Route component={MainFrame} onEnter={(nextState, replace, callback) => {RouteUtils.authCheck(nextState, replace, callback, store)}}>
           <IndexRoute components={{mainPanel: HomeContainer}}/>
           <Route
             path="users"
-            components={{mainPanel: UsersContainer}}
+            components={{mainPanel: UsersContainer, header: UsersHeader}}
             />
           <Route
             path="users/:userID"
@@ -62,6 +66,10 @@ export default (
           <Route
             path="assignments/:assignmentID"
             components={{mainPanel: AssignmentContainer}}
+          />
+          <Route
+            path="search"
+            components={{mainPanel: SearchContainer, header: SearchHeader}}
           />
           <Route
             path="addLecture"

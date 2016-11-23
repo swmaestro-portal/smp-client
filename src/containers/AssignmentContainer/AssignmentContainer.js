@@ -13,12 +13,17 @@ class AssignmentContainer extends React.Component {
 
   constructor() {
     super()
+    this.state = {
+      assignmentIsFetched: false
+    }
   }
 
   componentWillMount() {
     const id = this.props.params.assignmentID
-    this.props.dispatch(assignmentActions.getComments(id))
     this.props.dispatch(assignmentActions.getAssignment(id))
+      .then(() => {
+        this.setState({assignmentIsFetched: true})
+      })
 
   }
 
@@ -28,7 +33,9 @@ class AssignmentContainer extends React.Component {
   }
 
   render() {
-    console.log(1, this.props.assignment.toJS())
+    if (!this.state.assignmentIsFetched) {
+      return <div />
+    }
     return (
         <Assignment assignment={this.props.assignment}/>
     )

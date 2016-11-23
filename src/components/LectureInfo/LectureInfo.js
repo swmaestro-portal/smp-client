@@ -5,8 +5,9 @@ import classNames from 'classnames'
 
 /* Internal Dependencies */
 import styles from './LectureInfo.scss'
-import { DateUtils } from '../../utils'
+import { DateUtils, FormatUtils } from '../../utils'
 import Avatar from '../Avatar'
+import AttachmentList from '../AttachmentList'
 
 
 const LectureInfo = (props) => {
@@ -21,7 +22,7 @@ const LectureInfo = (props) => {
   const time = `${beginAt.toString().substring(15,21)} ~ ${endAt.toString().substring(15,21)}`
   const generation = `${props.lecture.get('articleGenerationId')}기 | `
 
-
+  console.log(99,props.lecture.get('attachmentList'))
   return (
     <div className={styles.wrapper}>
       <div className={styles.subject}>
@@ -42,11 +43,13 @@ const LectureInfo = (props) => {
       </div>
       <div className={styles.content}>
         <span className={styles.label}>내용</span>
-        <span className={styles.content}>{props.lecture.get('articleContent')}</span>
+        <span className={styles.content}>{FormatUtils.nl2br(props.lecture.get('articleContent'))}</span>
       </div>
       <div className={styles.attahment}>
         <span className={styles.label}>첨부파일</span>
-        <span className={styles.content}>파일</span>
+        <span className={styles.content}>
+          <AttachmentList attachments={props.lecture.get('attachmentList')}/>
+        </span>
       </div>
       <p className={styles.horizontalLine}/>
       <div className={styles.createdAt}>
