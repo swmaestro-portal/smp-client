@@ -1,4 +1,5 @@
 @import '../../styles/color.scss';
+@import '../../styles/base.scss';
 
 .wrapper {
   display: inline-block;
@@ -63,5 +64,23 @@
     }
   }
 
+  .btnContainer {
+
+    > button {
+      margin-right: 7px;
+    }
+
+    .submit {
+      @include btnBase;
+      background-color: $purple;
+      color: white;
+      height: 24px;
+    }
+
+    .cancel {
+      @include btnBase;
+      height: 24px;
+    }
+  }
 
 }

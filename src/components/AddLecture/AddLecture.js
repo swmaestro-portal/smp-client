@@ -64,8 +64,8 @@ const AddLecture = (props) => {
       </div>
       <div className={styles.btnContainer}>
         <label htmlFor=""></label>
-        <button>올리기</button>
-        <button>취소</button>
+        <button type='button' className={styles.submit}>올리기</button>
+        <button type='button' className={styles.cancel}>취소</button>
       </div>
     </form>
   )
