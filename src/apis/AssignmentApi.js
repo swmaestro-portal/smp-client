@@ -11,5 +11,13 @@ export default {
 
   requestGetComments: (id) => {
     return API.get(`assignments/${id}/comments`)
+  },
+
+  requestPostAttachment: (args) => {
+      return API.postFile(`attachments`, args)
+  },
+
+  requestPostAssignment: (args) => {
+      return API.post(`assignments`, args)
   }
 }
