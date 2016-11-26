@@ -1,7 +1,3 @@
-/**
- * Created by dbgsprw on 16. 11. 17.
- */
-
 export default {
 
   dayToKoreanWeekday: function(day) {

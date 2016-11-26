@@ -6,7 +6,7 @@ const initialState = {
 }
 
 export default function(state = initialState, action) {
-  console.log('_lecture', state, action)
+  // console.log('_lecture', state, action)
   
   switch (action.type) {
     

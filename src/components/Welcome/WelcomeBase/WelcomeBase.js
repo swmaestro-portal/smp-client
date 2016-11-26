@@ -15,7 +15,7 @@ class WelcomeBase extends React.Component {
     return (
       <div className={styles.wrapper}>
         <div className={styles.logoStand}>
-          <img src="http://cdn.swmaestro.net/images/swmaestro-logo-140.png"/>
+          <img src="https://storage.googleapis.com/cdn.swmaestro.net/images/swmaestro-logo-140.png"/>
         </div>
         {this.props.children}
       </div>

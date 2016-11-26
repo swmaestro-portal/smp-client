@@ -1,5 +1,5 @@
 
-module.exports = {
+export default {
 
   setRefToNode: function(refs, key, elem) {
     if (!refs[key]) {
