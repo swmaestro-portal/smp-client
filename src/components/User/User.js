@@ -18,7 +18,9 @@ const User = (props) => {
       <div className={styles.group} key="group">
         <div className={styles.label}>그룹</div>
         <div className={styles.content}>
-          {props.user.get('userGroups').map((group) => FormatUtils.formatGroup(group)).join('<br>')}
+          {
+            FormatUtils.nl2br(props.user.get('userGroups').map((group) => FormatUtils.formatGroup(group)).join(`\n`))
+          }
         </div>
       </div>,
     name:

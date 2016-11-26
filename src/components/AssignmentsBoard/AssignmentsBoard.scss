@@ -1,0 +1,38 @@
+@import '../../styles/color.scss';
+
+.wrapper {
+
+  background-color: white;
+  padding: 3px 5px;
+  border: 1px solid $dark;
+
+  .header {
+    display: flex;
+    font-weight: bold;
+    height: 20px;
+  }
+
+  .article {
+    display: flex;
+    margin-bottom: 3px;
+    cursor: pointer;
+
+    &:hover {
+      font-weight: bold;
+    }
+
+  }
+
+  .due {
+    width: 85px;
+  }
+
+  .subject {
+    width: 300px;
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+}

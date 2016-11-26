@@ -5,8 +5,13 @@ import AT from './ActionTypes'
 export default {
 
   getLectures: () => (dispatch, getState) => {
-    return LectureAPI.requestGetLectures()
-      .then(res => dispatch(createAction(AT.GET_LECTURES, res)))
+    return new Promise((resolve, reject) => {
+      LectureAPI.requestGetLectures()
+        .then(res => {
+          dispatch(createAction(AT.GET_LECTURES, res))
+          resolve(res)
+        })
+    })
   },
 
   getLecture: (id) => (dispatch, getState) => {
