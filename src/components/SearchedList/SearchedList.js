@@ -53,7 +53,7 @@ const SearchedList = (props) => {
             {props.assignments.map((elem, i) => (
                 <SearchedItem key={i} idx={i}
                               link={"/assignments/" + elem.get('articleId')}
-                              firstColumn={elem.getIn('articleWriter', 'userName')}
+                              firstColumn={elem.get('articleWriter').get('userName')}
                               secondColumn={elem.get('articleSubject')}
                               thirdColumn={elem.get('articleGenerationId')}
                               className={styles.row}/>))}
@@ -72,7 +72,7 @@ const SearchedList = (props) => {
             {props.lectures.map((elem, i) => (
                 <SearchedItem key={i} idx={i}
                               link={"/lectures/" + elem.get('articleId')}
-                              firstColumn={elem.getIn('lectureTeacher', 'userName')}
+                              firstColumn={elem.get('lectureTeacher').get('userName')}
                               secondColumn={elem.get('articleSubject')}
                               thirdColumn={elem.get('articleGenerationId')}
                               className={styles.row}/>))}

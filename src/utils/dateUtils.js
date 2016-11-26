@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> exp
 export default {
 
   dayToKoreanWeekday: function(day) {
