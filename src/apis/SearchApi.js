@@ -1,3 +1,4 @@
+/**/
 import * as API from './lib.js'
 
 export default {
