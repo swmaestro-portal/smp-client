@@ -4,8 +4,13 @@ import AT from './ActionTypes'
 
 export default {
   getAssignments: () => (dispatch, getState) => {
-    return AssignmentAPI.requestGetAssignments()
-        .then(res => dispatch(createAction(AT.GET_ASSIGNMENTS, res)))
+    return new Promise((resolve, reject) => {
+      AssignmentAPI.requestGetAssignments()
+        .then(res => {
+          dispatch(createAction(AT.GET_ASSIGNMENTS, res))
+          resolve(res)
+        })
+    })
   },
 
   getAssignment: (id) => (dispatch, getState) => {

@@ -1,0 +1,6 @@
+{
+  "name": "AssignmentsBoard",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./AssignmentsBoard.js"
+}
