@@ -2,5 +2,18 @@
 
 .wrapper {
 
+  height: 30px;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+
+  .back {
+    width: 30px;
+    cursor: pointer;
+  }
+
+  .write {
+    cursor: pointer;
+  }
 
 }

@@ -10,8 +10,16 @@ import DefaultHeader from '../DefaultHeader'
 const LecturesHeader = (props) => {
 
   return (
-    <div>
+    <div className={styles.wrapper}>
+      <div
+        className={styles.back}
+        onClick={()=>{browserHistory.goBack()}}>
+        <i className="fa fa-chevron-left" aria-hidden="true"/>
+      </div>
       <DefaultHeader header="강의"/>
+      <div className={styles.write}>
+        <i className="fa fa-pencil-square-o" aria-hidden="true"/>
+      </div>
     </div>
   )
 }
