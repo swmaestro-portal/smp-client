@@ -6,7 +6,6 @@ import moment from 'moment';
 
 /* Internal Dependencies */
 import styles from './BigCalendar.scss'
-require('../../styles/react-big-calendar/react-big-calendar.css')
 
 BigCalendarComponent.momentLocalizer(moment);
 
@@ -17,9 +16,7 @@ class BigCalendar extends React.Component {
       <div className={styles.wrapper}>
         <BigCalendarComponent
           events={this.props.events}
-          defaultDate={this.props.defaultDate}
-          startAccessor='startDate'
-          endAccessor='endDate'/>
+          defaultDate={this.props.defaultDate}/>
       </div>
     )
   }

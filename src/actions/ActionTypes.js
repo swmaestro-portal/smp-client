@@ -23,4 +23,8 @@ export default keymirror({
   'POST_COMMENT': null,
 
   'GET_SEARCH' : null,
+  
+  'POST_ATTACHMENT': null,
+  'POST_LECTURE': null
+  
 })
