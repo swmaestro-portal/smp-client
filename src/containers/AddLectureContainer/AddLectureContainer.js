@@ -2,6 +2,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import moment from 'moment'
+import { withRouter } from 'react-router'
 
 /* Internals */
 import styles from './AddLectureContainer.scss'
@@ -94,7 +95,12 @@ class AddLectureContainer extends React.Component {
           lectureEndAt: `${endYear}-${endMonth}-${endDay} ${endTime}:00`,
           articleAttachmentIds: res[0] ? [res[0].attachmentId] : []
         }))
+          .then((res) => {
+            this.props.router.push('/lectures')
+          })
       })
+
+
   }
   
   requestGetAuthor()  {
@@ -138,5 +144,6 @@ const mapStateToProps = (state/*, props*/) => {
 }
 
 AddLectureContainer = connect(mapStateToProps)(AddLectureContainer)
+AddLectureContainer = withRouter(AddLectureContainer)
 
 export default AddLectureContainer

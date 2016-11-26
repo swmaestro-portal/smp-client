@@ -15,6 +15,7 @@ class BigCalendar extends React.Component {
     return (
       <div className={styles.wrapper}>
         <BigCalendarComponent
+          {...this.props}
           events={this.props.events}
           defaultDate={this.props.defaultDate}/>
       </div>

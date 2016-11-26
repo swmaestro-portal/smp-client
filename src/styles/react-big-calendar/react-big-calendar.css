@@ -84,8 +84,10 @@ button.rbc-input::-moz-focus-inner {
   width: 100%;
   padding: 0 10px;
   text-align: center;
+  font-weight: bold;
 }
 .rbc-toolbar button {
+  font-size: 12px;
   color: #373a3c;
   display: inline-block;
   margin: 0;
@@ -94,7 +96,7 @@ button.rbc-input::-moz-focus-inner {
   background: none;
   background-image: none;
   border: 1px solid #ccc;
-  padding: .375rem 1rem;
+  padding: 3px 4px;
   border-radius: 4px;
   line-height: normal;
   white-space: nowrap;
@@ -163,12 +165,12 @@ button.rbc-input::-moz-focus-inner {
 .rbc-event {
   cursor: pointer;
   padding: 2px 5px;
-  background-color: #3174ad;
+  background-color: #7d56ff;
   border-radius: 5px;
   color: #fff;
 }
 .rbc-event.rbc-selected {
-  background-color: #265985;
+  background-color: #523aa5;
 }
 .rbc-event-label {
   font-size: 80%;
@@ -208,6 +210,7 @@ button.rbc-input::-moz-focus-inner {
   white-space: nowrap;
 }
 .rbc-month-view {
+  background-color: white;
   position: relative;
   border: 1px solid #DDD;
   display: -ms-flexbox;
@@ -385,7 +388,7 @@ button.rbc-input::-moz-focus-inner {
   position: relative;
 }
 .rbc-day-slot .rbc-event {
-  border: 1px solid #265985;
+  /*border: 1px solid #265985;*/
   display: -ms-flexbox;
   display: flex;
   max-height: 100%;

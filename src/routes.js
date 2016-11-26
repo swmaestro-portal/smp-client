@@ -8,10 +8,13 @@ import App from './components/App'
 import Signin from './components/Signin'
 import Signup from './components/Signup'
 import MainFrame from './components/MainFrame'
+import LecturesHeader from './components/Header/LecturesHeader'
+import AssignmentsHeader from './components/Header/AssignmentsHeader'
 import LectureHeader from './components/Header/LectureHeader'
 import AssignmentHeader from './components/Header/AssignmentHeader'
 import UsersHeader from './components/Header/UsersHeader'
 import SearchHeader from './components/Header/SearchHeader'
+import HomeHeader from './components/Header/HomeHeader'
 import HomeContainer from './containers/HomeContainer'
 import UsersContainer from './containers/UsersContainer'
 import UserContainer from './containers/UserContainer'
@@ -39,7 +42,7 @@ export default (
         <Route path="signin" component={Signin}/>
         <Route path="signup" component={Signup}/>
         <Route component={MainFrame} onEnter={(nextState, replace, callback) => {RouteUtils.authCheck(nextState, replace, callback, store)}}>
-          <IndexRoute components={{mainPanel: HomeContainer}}/>
+          <IndexRoute components={{mainPanel: HomeContainer, header: HomeHeader}}/>
           <Route
             path="users"
             components={{mainPanel: UsersContainer, header: UsersHeader}}
@@ -54,19 +57,19 @@ export default (
           />
           <Route
             path="lectures"
-            components={{mainPanel: LecturesContainer, header: LectureHeader}}
+            components={{mainPanel: LecturesContainer, header: LecturesHeader}}
             />
           <Route
             path="lectures/:lectureID"
-            components={{mainPanel: LectureContainer}}
+            components={{mainPanel: LectureContainer, header: LectureHeader}}
           />
           <Route
             path="assignments"
-            components={{mainPanel: AssignmentsContainer, header: AssignmentHeader}}
+            components={{mainPanel: AssignmentsContainer, header: AssignmentsHeader}}
           />
           <Route
             path="assignments/:assignmentID"
-            components={{mainPanel: AssignmentContainer}}
+            components={{mainPanel: AssignmentContainer, header: AssignmentHeader}}
           />
           <Route
             path="search"
