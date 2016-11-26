@@ -15,7 +15,11 @@ const AttachmentList = (props) => {
   if (shouldAttachmentListMount(props)) {
     return (
       <div className={styles.wrapper}>
-        {props.attachments.map((elem) => (<AttachmentItem attachment={elem}/>))}
+        {props.attachments.map((elem, idx) => (
+          <AttachmentItem
+            key={idx}
+            attachment={elem}/>
+        ))}
       </div>
     )
   } else {

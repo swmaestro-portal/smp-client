@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack-dev-server --colors --content-base build/ --host 0.0.0.0 --port 3001 --config ./webpack/dev.config.js",
-    "build": "webpack -p --config --progress --colors ./webpack/prod.config.js"
+    "build": "webpack -p --config ./webpack/prod.config.js --progress --colors"
   },
   "author": "",
   "license": "ISC",
@@ -44,6 +44,7 @@
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.9.0",
     "imports-loader": "^0.6.5",
+    "json-loader": "^0.5.4",
     "less-loader": "^2.2.3",
     "node-sass": "^3.10.0",
     "normalize.css": "^4.2.0",

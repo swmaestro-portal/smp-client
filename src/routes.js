@@ -77,11 +77,11 @@ export default (
           />
           <Route
             path="addLecture"
-            components={{mainPanel: AddLectureContainer}}
+            components={{mainPanel: AddLectureContainer, header: LectureHeader}}
           />
           <Route
-              path="addAssignment"
-              components={{mainPanel: AddAssignmentContainer}}
+            path="addAssignment"
+            components={{mainPanel: AddAssignmentContainer, header: AssignmentHeader}}
           />
         </Route>
       </Route>

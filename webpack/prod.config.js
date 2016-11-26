@@ -27,6 +27,11 @@ var config = {
       'process.env.NODE_ENV': '"production"'
     })
   ],
+  node: {
+    net: 'empty',
+    dns: 'empty',
+    fs: 'empty'
+  },
   resolve: {
     extensions: ['', '.js', '.jsx']
   },
@@ -34,14 +39,6 @@ var config = {
     loaders : [
       {
         test: /\.jsx?$/,
-        exclude: /node_modules/,
-        loader: 'babel-loader',
-        query: {
-          presets:[ 'es2015', 'react', 'stage-2' ]
-        }
-      },
-      {
-        test: /\.js?$/,
         exclude: /node_modules/,
         loader: 'babel-loader',
         query: {
@@ -66,6 +63,10 @@ var config = {
       {
         test: /\.png$/,
         loader: 'url-loader?limit=10000&mimetype=image/png'
+      },
+      {
+        test: /\.json$/,
+        loader: 'json-loader'
       }
     ]
   },
@@ -76,7 +77,8 @@ var config = {
     },
     headers: { "Access-Control-Allow-Origin": "*" }
   },
-  postcss: [ autoprefixer({ browsers: ['last 2 versions'] }) ]
+  postcss: [ autoprefixer({ browsers: ['last 2 versions'] }) ],
+  target: 'node'
 };
 
 module.exports = config;
