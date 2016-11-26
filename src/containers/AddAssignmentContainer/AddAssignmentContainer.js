@@ -2,6 +2,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import moment from 'moment'
+import { withRouter } from 'react-router'
 
 /* Internals */
 import styles from './AddAssignmentContainer.scss'
@@ -70,6 +71,9 @@ class AddAssignmentContainer extends React.Component {
                 assignmentEndAt: `${endYear}-${endMonth}-${endDay} ${endTime}:00`,
                 articleAttachmentIds: res[0] ? [res[0].attachmentId] : []
             }))
+              .then(res => {
+                this.props.router.push('/assignments')
+              })
         })
   }
 
@@ -105,5 +109,6 @@ const mapStateToProps = (state/*, props*/) => {
 }
 
 AddAssignmentContainer = connect(mapStateToProps)(AddAssignmentContainer)
+AddAssignmentContainer = withRouter(AddAssignmentContainer)
 
 export default AddAssignmentContainer
