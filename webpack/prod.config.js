@@ -21,7 +21,9 @@ var config = {
     new webpack.NoErrorsPlugin(),
     new webpack.optimize.UglifyJsPlugin({minimize: true}),
     new webpack.DefinePlugin({
-      'process.env.NODE_ENV': '"production"'
+      'process.env.NODE_ENV': '"production"',
+      'global': {}, // bizarre lodash(?) webpack workaround
+      'global.GENTLY': false // superagent client fix
     })
   ],
   node: {
