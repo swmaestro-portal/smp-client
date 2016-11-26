@@ -1,0 +1,17 @@
+@import '../../../styles/color.scss';
+
+.wrapper {
+  height: 26px;
+  display: flex;
+  align-items: center;
+  width: 90px;
+  border: 1px solid $dark;
+  border-radius: 1px;
+  font-size: 13px;
+
+  .datePicker {
+    width: 100%;
+    text-align: center;
+  }
+
+}

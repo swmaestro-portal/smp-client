@@ -1,0 +1,24 @@
+@import '../../../../styles/color.scss';
+
+.wrapper {
+
+  padding: 10px 0;
+
+  ul li {
+    height: 36px;
+    padding: 0 15px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #dddddd;
+    }
+
+     i {
+      margin-right: 15px;
+    }
+  }
+
+
+}

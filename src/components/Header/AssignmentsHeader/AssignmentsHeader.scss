@@ -1,0 +1,29 @@
+@import '../../../styles/color.scss';
+
+.wrapper {
+
+  height: 30px;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  font-size: 20px;
+
+  .back {
+    width: 30px;
+    cursor: pointer;
+    &:hover {
+      color: $purple;
+    }
+  }
+
+  .write {
+    margin-left: 40px;
+    color: $blackish;
+    cursor: pointer;
+    &:hover {
+      color: $purple;
+    }
+
+  }
+
+}

@@ -1,0 +1,21 @@
+@import '../../styles/color';
+
+.wrapper {
+  background-color: $light;
+  padding: 30px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  .boardContainer {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    width: 800px;
+
+    > div {
+      width: 390px;
+      overflow: scroll;
+    }
+  }
+}

@@ -1,0 +1,26 @@
+@import './color.scss';
+
+%textBtnBase {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  text-align: center;
+  background-color: transparent;
+}
+
+
+@mixin btnBase {
+  border: 1px solid $dark;
+  color: $blackish;
+  font-weight: bold;
+  background-color: transparent;
+  outline: none;
+
+  &:hover {
+    box-shadow: 0px 0px 1px 0px rgba(66,66,66,1);
+  }
+
+  &:focus {
+    box-shadow: inset 0px 0px 1px 0px rgba(117,117,117,1);
+  }
+}

@@ -1,0 +1,29 @@
+@import '../../styles/color.scss';
+
+.wrapper {
+  display: flex;
+  align-items: center;
+
+  > p {
+    cursor: pointer;
+  }
+
+  .img {
+    height: 100%;
+    margin-right: 10px;
+    width: 90px;
+    background-image: url('http://www.swmaestro.kr/web/web/_Img/Common/logo.gif');
+  }
+
+  .text {
+    text-align: center;
+    font-weight: bold;
+    color: $blackish;
+    align-items: center;
+
+    &:hover {
+      color: $purple;
+    }
+  }
+
+}

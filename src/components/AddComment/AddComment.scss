@@ -1,0 +1,20 @@
+@import '../../styles/color.scss';
+@import '../../styles/base.scss';
+
+.wrapper {
+  display: flex;
+  margin-bottom: 30px;
+
+  .textarea {
+    resize: none;
+    width: 600px;
+    outline: none;
+    border: 1px solid $dark;
+    border-radius: 2px;
+  }
+
+  button {
+    @extend %textBtnBase;
+    align-self: flex-end;
+  }
+}

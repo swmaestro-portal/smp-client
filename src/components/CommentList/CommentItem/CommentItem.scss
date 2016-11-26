@@ -1,0 +1,68 @@
+@import '../../../styles/color.scss';
+
+.wrapper {
+  display: flex;
+
+  width: 100%;
+  border-bottom: 1px solid $dark;
+  padding: 4px 0;
+
+  &:hover {
+    background-color: #fcfbec;
+  }
+
+  > span:not(.moreArea) {
+    display: inline-block;
+    flex-grow: 1;           -webkit-flex-grow: 1;
+  }
+
+  .name {
+    width: 150px;
+  }
+
+  .content {
+    width: 450px;
+  }
+
+  .content:read-only {
+    border: none;
+    background-color: transparent;
+    resize: none;
+    overflow: hidden;
+  }
+
+  .date {
+    width: 100px;
+  }
+
+  .moreArea {
+    width: 20px;
+    color: #888;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    > * {
+      margin: 4px;
+    }
+
+    .editButton:hover, .doneButton:hover {
+      color: #222;
+      cursor: pointer;
+    }
+
+    .editButton {
+
+    }
+
+    .doneButton {
+      color: #ff6666;
+    }
+  }
+
+}
+
+.wrapper.firstItem {
+  border-top: 1px solid $dark;
+}

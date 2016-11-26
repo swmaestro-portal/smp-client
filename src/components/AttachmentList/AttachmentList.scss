@@ -1,0 +1,23 @@
+@import '../../styles/color.scss';
+
+.wrapper {
+  font-size: 13px;
+
+  .tableHeader {
+    font-weight: bold;
+    > span {
+      display: inline-block;
+    }
+
+    .author {
+      width: 150px;
+    }
+    .content {
+      width: 450px;
+    }
+    .date {
+      width: 100px;
+    }
+  }
+
+}
