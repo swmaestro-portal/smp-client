@@ -26,7 +26,7 @@ class UserInfoContainer extends React.Component {
     const groupInfo = formatGroupCode(lastGroup.get('groupCode'))
     let generationInfo = formatGenerationId(lastGroup.get('generationId')) + ' '
 
-    console.log(9000000, lastGroup)
+    // console.log(1, lastGroup)
     if (lastGroup.get('groupCode') == 2) {
       generationInfo = ''
     }

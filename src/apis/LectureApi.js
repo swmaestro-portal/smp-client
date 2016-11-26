@@ -11,5 +11,13 @@ export default {
   
   requestGetComments: (id) => {
     return API.get(`lectures/${id}/comments`)
+  },
+  
+  requestPostAttachment: (args) => {
+    return API.postFile(`attachments`, args)
+  },
+  
+  requestPostLecture: (args) => {
+    return API.post(`lectures`, args)
   }
 }

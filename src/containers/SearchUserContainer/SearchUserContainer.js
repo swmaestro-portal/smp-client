@@ -14,21 +14,20 @@ class SearchUserContainer extends React.Component {
   constructor() {
     super()
     this.request = this.request.bind(this)
-    this.nodes = {}
+    this.selectedUserId = ''
   }
 
   request(value, cb) {
-    SearchAPI.requestGetUser(value).
-    then(function(items) {
-
-      items.filter((state) => {
-        return matchStateToTerm(state, value)
+    SearchAPI.requestGetUser(value)
+      .then(function(items) {
+        items.filter((state) => {
+          return matchStateToTerm(state, value)
+        })
+        setTimeout(() => {
+          cb(items)
+        }, 500)
+  
       })
-      setTimeout(() => {
-        cb(items)
-      }, 500)
-
-    })
   }
 
   getSelectedUserId() {

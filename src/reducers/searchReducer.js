@@ -10,7 +10,7 @@ const initialState = {
 }
 
 export default function(state = initialState, action) {
-  console.log('_search', state, action)
+  // console.log('_search', state, action)
 
   switch (action.type) {
 

@@ -1,4 +1,4 @@
-const ROOT = 'https://smp-dev.heek.kr/'
+const ROOT = 'https://api.swmaestro.net/'
 
 function checkStatus(response) {
   if (response.status >= 200 && response.status < 300) {
@@ -65,7 +65,19 @@ export function put(url, data) {
   })
     .then(checkStatus)
     .then(toJSON)
+}
 
+export function postFile(url, data) {
+  url = ROOT + url
+  return fetch(url, {
+    method: 'post',
+    headers: new Headers({
+      'Authorization': `Bearer ${window.localStorage.getItem('smp-token')}`
+    }),
+    body: data
+  })
+    .then(checkStatus)
+    .then(toJSON)
 }
 
 // credentials: 'include'

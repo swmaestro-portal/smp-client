@@ -26,7 +26,10 @@ const AddLecture = (props) => {
       <div className={styles.assignment}>
         <label htmlFor="">과제명</label>
         <p className={styles.subject}>
-          <input type="text" placeholder="제목"/>
+          <input
+            id="smp-AddLecture-subject"
+            type="text"
+            placeholder="제목"/>
         </p>
       </div>
       <div className={styles.schedule}>
@@ -52,19 +55,32 @@ const AddLecture = (props) => {
       </div>
       <div className={styles.lecturer}>
         <label htmlFor="">발의자</label>
-        <input type="text" placeholder="강의자"/>
+        <input
+          id="smp-AddLecture-author"
+          type="text"
+          placeholder="강의자"/>
       </div>
       <div className={styles.desc}>
         <label htmlFor="">내용</label>
-        <textarea className={styles.textArea}/>
+        <textarea
+          id={"smp-AddLecture-content"}
+          className={styles.textArea}/>
       </div>
       <div className={styles.attachment}>
         <label htmlFor="">첨부파일</label>
-        <input type="file" onChange={props.handleChangeFile}/>
+        <input
+          id={"smp-AddLecture-file"}
+          type="file"
+          onChange={props.handleChangeFile}/>
       </div>
       <div className={styles.btnContainer}>
         <label htmlFor=""></label>
-        <button type='button' className={styles.submit}>올리기</button>
+        <button
+          type='button'
+          className={styles.submit}
+          onClick={props.handleClickSubmit}>
+          올리기
+        </button>
         <button type='button' className={styles.cancel}>취소</button>
       </div>
     </form>

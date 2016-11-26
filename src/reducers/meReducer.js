@@ -10,7 +10,7 @@ const initialState = {
 }
 
 export default function(state = initialState, action) {
-  console.log('_me', state, action)
+  // console.log('_me', state, action)
 
   switch (action.type) {
 
