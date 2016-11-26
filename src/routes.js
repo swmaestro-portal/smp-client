@@ -21,6 +21,7 @@ import LectureContainer from './containers/LectureContainer'
 import AssignmentsContainer from './containers/AssignmentsContainer'
 import AssignmentContainer from './containers/AssignmentContainer'
 import AddLectureContainer from './containers/AddLectureContainer'
+import AddAssignmentContainer from './containers/AddAssignmentContainer'
 import SearchContainer from './containers/SearchContainer'
 
 /************************************************************
@@ -74,6 +75,10 @@ export default (
           <Route
             path="addLecture"
             components={{mainPanel: AddLectureContainer}}
+          />
+          <Route
+              path="addAssignment"
+              components={{mainPanel: AddAssignmentContainer}}
           />
         </Route>
       </Route>

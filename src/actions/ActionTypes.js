@@ -25,6 +25,7 @@ export default keymirror({
   'GET_SEARCH' : null,
   
   'POST_ATTACHMENT': null,
-  'POST_LECTURE': null
+  'POST_LECTURE': null,
+  'POST_ASSIGNMENT': null,
   
 })

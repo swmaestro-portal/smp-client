@@ -1,0 +1,6 @@
+{
+  "name": "AddAssignment",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./AddAssignment.js"
+}
